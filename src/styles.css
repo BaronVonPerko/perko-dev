@@ -9,3 +9,10 @@
     font-family: "Roboto Mono", serif;
     font-weight: 300;
 }
+
+body {
+    background-color: var(--color-primary);
+    color: var(--color-accent);
+    margin: 0;
+    padding: 0;
+}

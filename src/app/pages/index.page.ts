@@ -4,9 +4,18 @@ import { Component } from '@angular/core';
   selector: 'app-home',
   standalone: true,
   template: `
-    <p>hello world</p>
+    <section class="hero">
+      
+    </section>
   `,
-  styles: [],
+  styles: [`
+  section.hero {
+    background-image: url('/hero.jpeg');
+    min-height: 80vh;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  `],
 })
 export default class HomeComponent {
 }
