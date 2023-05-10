@@ -3,6 +3,7 @@
 :root {
     --color-primary: #1e141f;
     --color-accent: #87fdfe;
+    --color-accent-2: #900fa0;
 }
 
 * {
@@ -15,4 +16,20 @@ body {
     color: var(--color-accent);
     margin: 0;
     padding: 0;
+}
+
+a:hover {
+    border-bottom: 2px solid var(--color-accent-2);
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 5px 0;
+}
+
+p {
+    font-size: 1.3rem;
+    font-weight: 300;
+    line-height: 2.3rem;
 }
