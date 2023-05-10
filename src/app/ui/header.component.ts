@@ -41,12 +41,13 @@ import { CommonModule } from '@angular/common';
           li {
               margin: 0 20px;
           }
-          
+
           li a {
               color: var(--color-accent);
               font-size: 1.2rem;
               font-weight: 700;
               text-decoration: none;
+              text-transform: uppercase;
           }
 
           li a:hover {
