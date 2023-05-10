@@ -43,11 +43,12 @@ import { CommonModule } from '@angular/common';
           }
 
           li a {
-              color: var(--color-accent);
+              color: var(--color-secondary);
               font-size: 1.2rem;
               font-weight: 700;
               text-decoration: none;
               text-transform: uppercase;
+              border-bottom: 0;
           }
 
           li a:hover {

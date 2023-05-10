@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
   styles: [`
     footer {
       margin-top: 40px;
-      border-top: 4px solid var(--color-accent);
+      border-top: 4px solid var(--color-secondary);
       text-align: center;
     }
   `

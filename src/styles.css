@@ -2,8 +2,8 @@
 
 :root {
     --color-primary: #1e141f;
-    --color-accent: #87fdfe;
-    --color-accent-2: #900fa0;
+    --color-secondary: #87fdfe;
+    --color-accent: #900fa0;
 }
 
 * {
@@ -13,13 +13,19 @@
 
 body {
     background-color: var(--color-primary);
-    color: var(--color-accent);
+    color: var(--color-secondary);
     margin: 0;
     padding: 0;
 }
 
+a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    border-bottom: 2px solid var(--color-accent);
+}
+
 a:hover {
-    border-bottom: 2px solid var(--color-accent-2);
+    border-bottom: 2px solid var(--color-accent);
 }
 
 h1 {
