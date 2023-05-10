@@ -23,6 +23,7 @@ import { Component } from '@angular/core';
       }
 
       section.about {
+          position: relative;
           border: 4px solid var(--color-accent);
           width: 60%;
           margin: -80px 0 0 10%;
@@ -31,7 +32,9 @@ import { Component } from '@angular/core';
       }
 
       section.about .circles {
-          text-align: right;
+          position: absolute;
+          top: 16px;
+          right: 16px;
       }
 
       section.about .circles .circle {
@@ -40,7 +43,7 @@ import { Component } from '@angular/core';
           height: 16px;
           border-radius: 50%;
           border: 2px solid var(--color-accent);
-        margin: 0 5px;
+          margin: 0 5px;
       }
   `],
 })
