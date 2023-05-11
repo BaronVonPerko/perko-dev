@@ -1,16 +1,16 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {Component} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule],
+    imports: [CommonModule],
   template: `
       <header>
           <img src="/logo.png" alt="logo"/>
           <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Blog</a></li>
+              <li><a href="/">Home</a></li>
+              <li><a href="/blog">Blog</a></li>
               <li><a href="#">Talks</a></li>
               <li><a href="#">About Me</a></li>
               <li><a href="#">Portfolio</a></li>
