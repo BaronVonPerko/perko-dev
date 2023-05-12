@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono:wght@100;300;500;700&display=swap');
 
 :root {
     --color-primary: #1e141f;
@@ -30,18 +30,44 @@ a:hover {
 
 h1 {
     font-size: 4rem;
-    font-weight: 700;
-    margin: 5px 0;
 }
 
 h2 {
     font-size: 3rem;
-    font-weight: 700;
-    margin: 5px 0;
 }
 
-p {
+h1,
+h2 {
+    text-shadow: 0 2px 3px var(--color-secondary);
+    margin: 5px 0;
+    font-weight: 700;
+}
+
+p,
+em {
     font-size: 1.3rem;
     font-weight: 300;
     line-height: 2.3rem;
+    font-family: "Roboto", serif;
+}
+
+.analog-markdown {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.analog-markdown img {
+    max-width: 100%;
+}
+
+.analog-markdown p {
+    margin: 40px 0;
+    line-height: 2.5rem;
+}
+
+.analog-markdown h1,
+.analog-markdown h2 {
+    margin: 80px 0 20px;
+    border-bottom: 4px solid var(--color-accent);
+    padding-bottom: 16px;
 }

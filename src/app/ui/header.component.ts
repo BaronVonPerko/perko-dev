@@ -52,6 +52,7 @@ import {CommonModule} from '@angular/common';
 
           li a:hover {
               color: #6bcacb;
+              text-shadow: 0 0 40px var(--color-secondary);
           }
       `
   ]
