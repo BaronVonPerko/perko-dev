@@ -4,6 +4,7 @@
     --color-primary: #1e141f;
     --color-secondary: #87fdfe;
     --color-accent: #900fa0;
+    --article-width: 600px;
 }
 
 * {
@@ -52,7 +53,7 @@ em {
 }
 
 .analog-markdown {
-    max-width: 600px;
+    max-width: var(--article-width);
     margin: 0 auto;
 }
 
@@ -70,4 +71,9 @@ em {
     margin: 80px 0 20px;
     border-bottom: 4px solid var(--color-accent);
     padding-bottom: 16px;
+}
+
+.analog-markdown p code {
+    padding: 0 8px;
+    background-color: black;
 }
