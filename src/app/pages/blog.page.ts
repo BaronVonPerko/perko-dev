@@ -4,6 +4,8 @@ import {CommonModule} from '@angular/common';
 import {BlogSlugPipe} from '../pipes/blog-slug.pipe';
 import {InjectContentFilesFilterFunction} from '@analogjs/content/lib/inject-content-files';
 import {PostAttributes} from '../models';
+import {of, take} from 'rxjs';
+import {sortPostsByDate} from '../operators';
 
 @Component({
     standalone: true,
@@ -12,7 +14,7 @@ import {PostAttributes} from '../models';
         BlogSlugPipe,
     ],
     template: `<h1>Blog</h1>
-    <p *ngFor="let blog of blogs">
+    <p *ngFor="let blog of blogs$ | async">
         <a href="{{blog.slug | blogSlug}}">{{blog.attributes.title }}</a>
     </p>
     `
@@ -21,4 +23,7 @@ export default class BlogListComponent {
     private readonly contentFilterFn: InjectContentFilesFilterFunction<PostAttributes> =
         (contentFile) => !!contentFile.filename.includes('/src/content/posts/');
     readonly blogs = injectContentFiles(this.contentFilterFn);
+    blogs$ = of(this.blogs).pipe(
+        sortPostsByDate(),
+    );
 }

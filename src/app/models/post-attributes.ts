@@ -3,4 +3,5 @@ export interface PostAttributes {
     slug: string;
     description: string;
     image: string;
+    date: string;
 }
