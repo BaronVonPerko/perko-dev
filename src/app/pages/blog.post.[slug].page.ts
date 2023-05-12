@@ -17,7 +17,7 @@ import {MarkdownComponent} from '@analogjs/content';
         `
             h2 {
                 max-width: var(--article-width);
-                margin: 0 auto;
+                margin: 160px auto 0;
                 border-bottom: 8px solid var(--color-accent);
                 padding-bottom: 20px;
             }
