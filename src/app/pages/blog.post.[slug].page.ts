@@ -10,6 +10,7 @@ import {MarkdownComponent} from '@analogjs/content';
     template: `
         <ng-container *ngIf="post$ | async as post">
             <h2>{{ post.attributes.title }}</h2>
+            <img src="images/{{post.attributes.image}}"/>
             <analog-markdown [content]="post.content"></analog-markdown>
         </ng-container>
     `,
@@ -17,9 +18,14 @@ import {MarkdownComponent} from '@analogjs/content';
         `
             h2 {
                 max-width: var(--article-width);
-                margin: 160px auto 0;
+                margin: 160px auto 40px;
                 border-bottom: 8px solid var(--color-accent);
                 padding-bottom: 20px;
+            }
+            img {
+                max-width: var(--article-width);
+                margin: 0 auto 40px;
+                display: block;
             }
         `],
 })
