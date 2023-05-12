@@ -10,7 +10,7 @@ tags: reflection,resolution
 
 We are wrapping up 2016.  As it comes to a close, I'd like to take a look back at the year and plan for a new year resolution.  On February 28, I started the RewardApp as I am calling it.  I still don't have a name for it, and it is still not yet ready for a Beta release.  It's not a terribly complicated app, so why has it taken so long to complete?
 
-![Commits to the raffle repo](/assets/images/raffle-commits.png)
+![Commits to the raffle repo](/images/raffle-commits.png)
 
 You can clearly see several places where I went weeks without updating the code.  It seems to me that it coordinates well with the deadlines and stress levels I had throughout the year at my full-time job.  When I feel stressed, I often times just want to sit down after work and stare at mindless television.  So how can I better myself in 2017 to complete these side projects of mine?
 

@@ -16,7 +16,7 @@ I did ask one of the developers that works on the GPS Track module at the confer
 
 After getting back to Decatur, I decided to do some more testing. I don't live near skyscrapers or large venues, so I thought maybe the GPS would be much more consistent.
 
-![Field Testing ESRI Geolocation Services](/assets/images/esri-ipad.jpg)
+![Field Testing ESRI Geolocation Services](/images/esri-ipad.jpg)
 
 As you can see, the dots tracking my location were still a bit all over the place, but it wasn't *terrible*.
 

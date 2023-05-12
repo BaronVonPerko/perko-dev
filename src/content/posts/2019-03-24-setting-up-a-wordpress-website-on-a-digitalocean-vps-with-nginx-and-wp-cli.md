@@ -174,7 +174,7 @@ sudo service nginx restart
 
 Navigate to your website in your browser, and you should see the installation screen. Congratulations! You now have a fully functioning WordPress installation running on your very own LEMP droplet!
 
-![WordPress Installation Page](/assets/images/wp-installation-page.png)
+![WordPress Installation Page](/images/wp-installation-page.png)
 
 **Troubleshooting**: If your browser is not directing you to your droplet, it could be a DNS issue. If this is a public domain, make sure your domain is pointed to the droplet's IP address. If you are just messing around like I am here with a fake URL, you will need to edit your *hosts* file on your local computer to point to your droplet.
 

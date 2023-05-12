@@ -66,7 +66,7 @@ export default function Edit() {
 
 And we can take a look at it in the editor by adding the block to a new post:
 
-![The simple example block shown in the Gutenberg editor](/assets/images/simple-editor-block.png)
+![The simple example block shown in the Gutenberg editor](/images/simple-editor-block.png)
 
 This is pretty straightforward.  The *edit* function is called when the example block is 
 added to the editor, and renders out a paragraph with some text.  But what happens when
@@ -189,7 +189,7 @@ export default function Edit({attributes, setAttributes}) {
 Save your work, and update your post.  I've entered "hello world"
 into my newly updated block.
 
-![Updated block with text input](/assets/images/simple-editor-block-with-input.png)
+![Updated block with text input](/images/simple-editor-block-with-input.png)
 
 Let's publish the work and check what's in the database.  Here's where
 things get strange.  We already stated that the *save* function is responsible

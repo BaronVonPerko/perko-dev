@@ -1,33 +1,24 @@
 import {Component} from '@angular/core';
-import {RouterLink, RouterOutlet} from '@angular/router';
-import {NgFor} from '@angular/common';
-import {injectContentFiles, InjectContentFilesFilterFunction} from '@analogjs/content/lib/inject-content-files';
-
-export interface PostAttributes {
-    title: string;
-    slug: string;
-    description: string;
-    coverImage: string;
-}
+import {injectContentFiles} from '@analogjs/content';
+import {CommonModule} from '@angular/common';
+import {BlogSlugPipe} from '../pipes/blog-slug.pipe';
+import {InjectContentFilesFilterFunction} from '@analogjs/content/lib/inject-content-files';
+import {PostAttributes} from '../models';
 
 @Component({
     standalone: true,
-    imports: [RouterOutlet, RouterLink, NgFor],
-    template: `
-        <h1>Blog</h1>
-        <router-outlet></router-outlet>
-<!--    <ul *ngFor="let post of posts">-->
-<!--      <li>-->
-<!--        <a [routerLink]="['/blog', 'posts', post.slug]">-->
-<!--          {{ post.attributes.title }}</a-->
-<!--        >-->
-<!--      </li>-->
-<!--    </ul>-->
-  `,
+    imports: [
+        CommonModule,
+        BlogSlugPipe,
+    ],
+    template: `<h1>Blog</h1>
+    <p *ngFor="let blog of blogs">
+        <a href="{{blog.slug | blogSlug}}">{{blog.attributes.title }}</a>
+    </p>
+    `
 })
-export default class BlogComponent {
-    // private readonly contentFilterFn: InjectContentFilesFilterFunction<PostAttributes> =
-    //     (contentFile) => !!contentFile.filename.includes('/src/content/blog/');
-    // readonly posts = injectContentFiles<PostAttributes>(this.contentFilterFn);
-    // readonly posts = injectContentFiles<PostAttributes>();
+export default class BlogListComponent {
+    private readonly contentFilterFn: InjectContentFilesFilterFunction<PostAttributes> =
+        (contentFile) => !!contentFile.filename.includes('/src/content/posts/');
+    readonly blogs = injectContentFiles(this.contentFilterFn);
 }

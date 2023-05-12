@@ -8,7 +8,7 @@ tags: bug,css,fitbit,javascript
 
 When developing my first FitBit Versa watch face, I ran into an issue when my wife and I were testing on our devices.  When the battery gets low, the OS displays a low battery icon.  The issue here is that the face that I developed already has an icon that changes with the battery level:
 
-![The FitBit Roni Watchface](/assets/images/fitbit-roni.jpg)
+![The FitBit Roni Watchface](/images/fitbit-roni.jpg)
 
 Now the OS battery icon is in almost the same exact place, so it looks really weird to have them overlapping each other.  From what I have found on the developer's forum, there is no way to suppress the OS's icon.
 

@@ -11,15 +11,15 @@ The problem I ran into while building a site for a friend of mine, was that I co
 
 First, create a new custom post type using the CPT UI plugin like you would normally do. Next, you want to find these settings on your custom post type:
 
-![CPTUI Settings](/assets/images/cptui-settings.png)
+![CPTUI Settings](/images/cptui-settings.png)
 
 Set the dropdown to **True**, and create a slug. For instance, if the custom post type is for paintings for an art gallery, we could set it to **paintings**. Optional: In your WordPress menu, simply create a custom link with **/paintings** being your url.
 
-![CPTUI Slug](/assets/images/cptui-slug.png)
+![CPTUI Slug](/images/cptui-slug.png)
 
 The last step is to actually build your archive design in Oxygen. Open up the Oxygen templates page, and create a new template for your archive. Simply set the template type to an Archive, and target your custom post type.
 
-![Oxygen Archive Settings](/assets/images/oxygen-archive.png)
+![Oxygen Archive Settings](/images/oxygen-archive.png)
 
 That's all you need to do! Now just navigate to the slug you specified on your custom post type (in this case **/paintings**), and you will now see your Oxygen design! You can now use Easy Posts to easily loop over the posts within this custom post type!
 

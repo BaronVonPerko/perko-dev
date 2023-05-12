@@ -10,7 +10,7 @@ I have been planning a custom theme for my personal site here at [ChrisPerko.NET
 
 ## _Underscores
 
-![Underscores Logo](/assets/images/underscores.png)
+![Underscores Logo](/images/underscores.png)
 
 [_Underscores](https://underscores.me/) is a great starter theme. It was created by the same folks that created and maintain WordPress itself. I am currently using this as part of the [TailwindCSS Theming Series](https://www.youtube.com/playlist?list=PLht-7jHewMA4KfgZGHNyEx3mD-OJjaasM) on YouTube. _Underscores gets rid of all the annoying parts of developing a theme, such as setting up the header.php and footer.php files, javascript and stylesheet enqueues, and even setting up a simple mobile navigation menu! If you are fairly new to WordPress theme development, it is a great place to start. Honestly, a simple theme could be built by just working the CSS of the _Underscores theme.
 
@@ -18,7 +18,7 @@ I have been planning a custom theme for my personal site here at [ChrisPerko.NET
 
 ## Sage
 
-![Sage Logo](/assets/images/sage.png)
+![Sage Logo](/images/sage.png)
 
 I have been working in Laravel development for that past year, and really love the framework. One thing I really like about it, is how fast you can get an application running using Blade templates. If you don't know, [Blade](https://laravel.com/docs/5.6/blade) allows you to write very clean front-end code with access to all the PHP goodness. Instead of having to break into PHP to do something such as a for loop, you can simply do this in Blade: **@foreach(users as user):**.
 
@@ -30,7 +30,7 @@ My last gripe with Sage really just comes down to this: What if I build a theme 
 
 ## AWPS
 
-![AWPS Logo](/assets/images/awps.png)
+![AWPS Logo](/images/awps.png)
 
 The last starter theme for this post is [AWPS](https://github.com/alecaddd/awps), or the Alecaddd WordPress Starter Theme. AWPS is based on _Underscores, so if you like what _Underscores has to offer, I highly recommend at least taking a look at this theme.
 

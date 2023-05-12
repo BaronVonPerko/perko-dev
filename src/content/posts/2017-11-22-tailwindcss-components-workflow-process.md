@@ -56,8 +56,8 @@ The last bit is to setup Tailwind.  Open up **webpack.mix.js** and change it to 
 let mix = require('laravel-mix');
 let tailwindcss = require('tailwindcss');
  
-mix.js('resources/assets/js/app.js', 'public/js')
-    .sass('resources/assets/sass/app.scss', 'public/css')
+mix.js('resources/js/app.js', 'public/js')
+    .sass('resources/sass/app.scss', 'public/css')
     .options({
     processCssUrls: false,
     postCss: [
@@ -72,7 +72,7 @@ mix.js('resources/assets/js/app.js', 'public/js')
 ./node_modules/.bin/tailwind init tailwind.js
 ```
 
-For this example, we are going to leave the generated **tailwind.js** config file alone, and focus only on our components.  Last step for our project setup is to clear out **resources/assets/sass/app.scss** and set it to use the Tailwind preflight and utilities:
+For this example, we are going to leave the generated **tailwind.js** config file alone, and focus only on our components.  Last step for our project setup is to clear out **resources/sass/app.scss** and set it to use the Tailwind preflight and utilities:
 
 ```css
 @tailwind preflight;
@@ -96,7 +96,7 @@ Let's build a basic navigation bar using the Tailwind utilities.  We just need a
 </div>
 ```
 
-![Navbar Image](/assets/images/navbar-tailwind.png)
+![Navbar Image](/images/navbar-tailwind.png)
 
 Now we must think about if this could make use of turning all of those classes into a component or not.  Since we are using a layout file that all of our pages will inherit, I do not think it is worth it to make a component for the navbar.  This is easy enough to update here in the HTML if we ever want to change the styles.
 
@@ -112,7 +112,7 @@ We know that our app will need to use buttons.  Let's style one up using the Tai
 </div>
 ```
 
-This is great!  We were able to use the utility classes to design a button that we want to use within our app.  Since we know we will need many buttons, this is a perfect candidate to turn it into a component.  Let's create a new file for our buttons: **resources/assets/sass/buttons.scss**, and load it into our **app.scss** file.
+This is great!  We were able to use the utility classes to design a button that we want to use within our app.  Since we know we will need many buttons, this is a perfect candidate to turn it into a component.  Let's create a new file for our buttons: **resources/sass/buttons.scss**, and load it into our **app.scss** file.
 
 ```css
 @tailwind preflight;
@@ -183,7 +183,7 @@ That's it!  We have just a few lines of code that completely define how we want 
 </button>
 ```
 
-![Tailwind Buttons](/assets/images/tailwind-buttons.png)
+![Tailwind Buttons](/images/tailwind-buttons.png)
 
 ## Building Some Forms
 
@@ -221,7 +221,7 @@ Forms are also an important part of any application.  Let's steal an example for
 </div>
 ```
 
-Whoa! That's a lot of classes! Let's take a look at what we can already change: the button. We want the button to match our primary button, so by just changing the class to be .btn .btn-primary, we will have it match our theme. We also have a link here for 'Forgot Password'. We should have our links all look the same on the site. Let's make a file for HTML elements: **resources/assets/sass/elements.scss**.
+Whoa! That's a lot of classes! Let's take a look at what we can already change: the button. We want the button to match our primary button, so by just changing the class to be .btn .btn-primary, we will have it match our theme. We also have a link here for 'Forgot Password'. We should have our links all look the same on the site. Let's make a file for HTML elements: **resources/sass/elements.scss**.
 
 ```css
 a {
@@ -245,7 +245,7 @@ We can now remove all of the classes from the Forgot Password hyperlink. Be sure
 @tailwind utilities;
 ```
 
-We may or may not want all forms to look the same. Let's say we want the login and register forms to exist in this small white card, and others will not have these features. We can refactor the classes on the form tag into a component. We will create a new file: **resources/assets/sass/forms.scss**, and you guessed it, we will need to import it into app.scss.
+We may or may not want all forms to look the same. Let's say we want the login and register forms to exist in this small white card, and others will not have these features. We can refactor the classes on the form tag into a component. We will create a new file: **resources/sass/forms.scss**, and you guessed it, we will need to import it into app.scss.
 
 ```css
 form.login-register-form {
@@ -367,8 +367,8 @@ We can now easily create a registration form, and have it look similar to the si
 </div>
 ```
 
-![Tailwind Login](/assets/images/login.png)
-![Tailwind Register](/assets/images/tailwind-register.png)
+![Tailwind Login](/images/login.png)
+![Tailwind Register](/images/tailwind-register.png)
 
 ## Conclusion
 

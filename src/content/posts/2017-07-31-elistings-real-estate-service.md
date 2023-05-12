@@ -7,7 +7,7 @@ tags: laravel,saas
 ---
 This weekend I launched the landing page for a new real estate service.  The product itself is scheduled to launch in September, but I wanted to post a little bit about it here.
 
-![eListings Example](/assets/images/elistings-responsive.png)
+![eListings Example](/images/elistings-responsive.png)
 
 eListings is a simple site that allows real estate agents to create beautiful websites for their listings. There are other services that do this, but the sites are not always responsive, and usually require a lot of information before getting a site up.  Not to mention, these services can cost over $25 per month!
 

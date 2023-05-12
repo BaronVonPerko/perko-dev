@@ -16,7 +16,7 @@ I was ready to update my personal site from Angular 14 to 15, and in the process
 on the page with the most images, my blog archive page.  This page lists many posts with a featured image next to 
 each of them.  
 
-![Latest Posts on perko.dev](/assets/images/perkodev-blog-archive.jpeg)
+![Latest Posts on perko.dev](/images/perkodev-blog-archive.jpeg)
 
 ## Before Performance
 
@@ -24,11 +24,11 @@ My site is already quite fast, thanks to the power of the Angular static site ge
 I also host my site using Amazon S3, which has been super reliable and fast.  So, starting out with my Angular 14 build
 with mostly standalone components, I ran my first lighthouse test on my production site.
 
-![Lighthouse scores for Angular 14](/assets/images/Lighthouse-Angular14.png)
+![Lighthouse scores for Angular 14](/images/Lighthouse-Angular14.png)
 
 And here are some details on the performance metrics:
 
-![Lighthouse performance metrics, Angular 14](/assets/images/LighthouseMetrics-Angular14.png)
+![Lighthouse performance metrics, Angular 14](/images/LighthouseMetrics-Angular14.png)
 
 ## Simple Changes
 
@@ -63,11 +63,11 @@ import { CommonModule, NgOptimizedImage } from '@angular/common';
 Once this was done, I simply committed my code and allowed Github Actions to deploy to S3.  Then, I re-ran the same
 lighthouse test on the production site to see the improvements:
 
-![Lighthouse scores for Angular 15 with NgOptimizedImage](/assets/images/Lighthouse-Angular15.png)
+![Lighthouse scores for Angular 15 with NgOptimizedImage](/images/Lighthouse-Angular15.png)
 
 And the detailed performance metrics:
 
-![Lighthouse performance metrics, Angular 15 with NgOptimizedImage](/assets/images/LighthouseMetrics-Angular15.png)
+![Lighthouse performance metrics, Angular 15 with NgOptimizedImage](/images/LighthouseMetrics-Angular15.png)
 
 This is a pretty big improvement in the **Time to Interactive** and **Largest Contentful Paint** metrics!  It's so easy
 to achieve this with a simple directive provided by Angular.  I highly suggest trying it out on your own websites

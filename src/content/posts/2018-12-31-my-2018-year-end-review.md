@@ -21,7 +21,7 @@ One accomplishment that I had during this time of burnout was the redesign of my
 
 Here is the new design. I'm putting an image as I'm sure it will change in the next year or two.
 
-![2019 Website Redesign](/assets/images/2019-redesign.png)
+![2019 Website Redesign](/images/2019-redesign.png)
 
 ## Podcasts
 

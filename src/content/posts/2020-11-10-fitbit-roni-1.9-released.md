@@ -13,7 +13,7 @@ on the Fitbit gallery.  [You can install the watch face here.](https://gallery.f
 This update includes a user-requested feature, *calories*.  From within the settings, the user can now select any or all
 available health metrics (steps, heart rate, calories).  I may add more in the future, after the v2 release.
 
-![Roni metric settings](/assets/images/roni-metric-settings.jpg)
+![Roni metric settings](/images/roni-metric-settings.jpg)
 
 ## What's in v2?
 

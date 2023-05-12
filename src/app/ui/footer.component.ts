@@ -1,13 +1,12 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   template: `
     <footer>
-      <p>&copy;{{year}} Perko.DEV</p>
+      <p>&copy; {{year}} Perko.DEV</p>
     </footer>
   `,
   styles: [`

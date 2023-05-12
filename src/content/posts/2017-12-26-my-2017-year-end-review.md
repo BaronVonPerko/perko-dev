@@ -18,13 +18,13 @@ In my spare time, I have been interested in learning WordPress development. My f
 
 In last year's post, I talked about my lack of completed personal projects, and reasons why it took me so long to get work done in my spare time. I made a goal for myself to code every day, even if just for a few minutes, on side projects, but did not exactly succeed. I knew coding every day would almost be impossible. Family and down-time is also important, but it was a goal I wanted to strive for. Here is my Github commits for this year:
 
-![GitHub Card from 2017](/assets/images/github2017.png)
+![GitHub Card from 2017](/images/github2017.png)
 
 I am pretty proud of this chart, and it has allowed me to complete two side projects. e-Listings is a Laravel app I originally intended to use as a learning tool to get up to speed when starting my new job. I launched it earlier this year, and wrote a post about how it was a failure in many ways, but also a success.
 
 After feeling happy about completing and launching a side project, I quickly started on my second. KickoffWP will be launching this week, making two projects released this year. KickoffWP is an open-sourced Laravel project that will be free for the community to use. It's a simple tool that I built to speed up the process of writing object-oriented PHP classes for the WordPress customizer. I plan to release a post going into more details on the project soon, as well as a YouTube video.
 
-![KickoffWP Home Page](/assets/images/kickoffwp.png)
+![KickoffWP Home Page](/images/kickoffwp.png)
 
 ## Starting my YouTube Channel
 

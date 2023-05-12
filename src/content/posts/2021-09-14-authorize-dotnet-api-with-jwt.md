@@ -18,7 +18,7 @@ This will create a new WebAPI project without any built-in authentication.  We w
 
 Let's first test our new API, hitting the *weatherforecast/* route using PostMan.  This route is provided to you as an example when creating a new WebAPI project.
 
-![PostMan Fetching Weather From the API](/assets/images/jwt-postman-weather.png)
+![PostMan Fetching Weather From the API](/images/jwt-postman-weather.png)
 
 Now that we can see that our basic API route is working, let's protect this route from unauthorized users.  In our **WeatherForecastController.cs** file, let's add the *Authorize* attribute:
 
@@ -33,7 +33,7 @@ public class WeatherForecastController : ControllerBase
 
 When we try to get the weather forecast again, we now get a **401 Unauthorized** error from the API.
 
-![Unauthorized Response from WebAPI](/assets/images/jwt-postman-weather-unauthorized.png)
+![Unauthorized Response from WebAPI](/images/jwt-postman-weather-unauthorized.png)
 
 ## Setup JWT
 
@@ -181,8 +181,8 @@ namespace LearnJwt.Controllers
 
 Let's test it out!  Let's point PostMan to our Login route and pass in a username (I used 'chris').  Our response is our new JWT token for this user!
 
-![Getting our Token](/assets/images/jwt-postman-get-token.png)
+![Getting our Token](/images/jwt-postman-get-token.png)
 
 We can then use that token to fetch the weather forecast by using it in the authorization tab within PostMan.
 
-![Getting the Forecast with the JWT Token](/assets/images/jwt-postman-forecast-with-token.png)
+![Getting the Forecast with the JWT Token](/images/jwt-postman-forecast-with-token.png)

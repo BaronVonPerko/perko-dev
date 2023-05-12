@@ -19,11 +19,11 @@ Can you imagine if you wanted to have a bunch of images look the same, re-using 
 
 Tailwind does allow you to make extremely quick mock-ups and proof of concepts.  I finally gave in to my grumpiness and read through the docs, and started playing with the code on [CodePen](https://codepen.io/ChrisPerko/).  The first thing I did was a recreation of a Twitter profile card, which actually landed on the front-page of Codepen.  [You can view the pen and the source code here](https://codepen.io/ChrisPerko/pen/XzMRQJ?editors=1000).
 
-![A twitter card I built with Tailwind](/assets/images/tailwind-twitter-card.jpg)
+![A twitter card I built with Tailwind](/images/tailwind-twitter-card.jpg)
 
 I also started playing with making my own set of alert boxes.  First, I started by recreating a couple of the examples from the Tailwind docs, then made some modifications to design my own.  [(Again, you can view the code on Codepen](https://codepen.io/ChrisPerko/pen/YEVvWz).
 
-![Alert boxes built with Tailwind](/assets/images/tailwind-alert-boxes.png)
+![Alert boxes built with Tailwind](/images/tailwind-alert-boxes.png)
 
 ## I'm Not So Grumpy Anymore
 

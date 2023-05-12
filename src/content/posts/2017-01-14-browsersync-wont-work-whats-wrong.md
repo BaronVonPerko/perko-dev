@@ -53,7 +53,7 @@ So, next time you start a new project and your automated syncing is just not wor
 ## Solution #2
 Still not working?  Browsersync also has a little trick up it's sleeve.  It will inject some other scripts into the page that it needs to do its magic.  The following shows the scripts that are in the html when running in the browser:
 
-![Browsersync loading scripts](/assets/images/browsersync.png)
+![Browsersync loading scripts](/images/browsersync.png)
 
 In order for this to happen, your code needs a <body> tag.  This has happened to me before when first setting up a gulpfile.js for a new project and not actually fleshing out your typical html, head and body.
 

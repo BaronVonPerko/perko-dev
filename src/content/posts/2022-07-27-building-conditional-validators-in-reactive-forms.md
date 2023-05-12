@@ -114,7 +114,7 @@ So, if the form control in question (**parent’s email address**) is being
 shown only when needed, what is the problem with our site? Let’s try 
 logging in with a user that is older than the required 13 years of age.
 
-![Logging in with a user under the age of 13](/assets/images/dynamic-form-validator-1.png)
+![Logging in with a user under the age of 13](/images/dynamic-form-validator-1.png)
 
 We’ve added a debug line to display the validity of our form. The form 
 is invalid here because even though we do not display the 

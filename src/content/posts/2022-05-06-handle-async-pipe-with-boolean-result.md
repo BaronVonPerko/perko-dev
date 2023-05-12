@@ -65,7 +65,7 @@ When we initialize our component, we get our boolean observable back.  We then u
 
 Currently, we are passing in the username of 'chris', which returns true, and the browser displays the text correctly.
 
-![Updated block with text input](/assets/images/angular-async-pipe-true.jpeg)
+![Updated block with text input](/images/angular-async-pipe-true.jpeg)
 
 However, if we change the username to something like 'bob', the entire text disappears.  We would rather it say "User active state: false".  How do we accomplish this?  When the observable passes back *false*, the **ngIf** directive remove the DOM element from the page.
 
