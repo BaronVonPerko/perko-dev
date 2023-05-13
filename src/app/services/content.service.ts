@@ -10,4 +10,8 @@ export class ContentService {
     private readonly contentFilterFn: InjectContentFilesFilterFunction<PostAttributes> =
         (contentFile) => !!contentFile.filename.includes('/src/content/posts/');
     readonly blogs = injectContentFiles(this.contentFilterFn);
+
+    private readonly talksFilterFn: InjectContentFilesFilterFunction<PostAttributes> =
+        (contentFile) => !!contentFile.filename.includes('/src/content/talks/');
+    readonly talks = injectContentFiles(this.talksFilterFn);
 }
