@@ -1,0 +1,13 @@
+import {Injectable} from '@angular/core';
+import {InjectContentFilesFilterFunction} from '@analogjs/content/lib/inject-content-files';
+import {PostAttributes} from '../models';
+import {injectContentFiles} from '@analogjs/content';
+
+@Injectable({
+    providedIn: 'root'
+})
+export class ContentService {
+    private readonly contentFilterFn: InjectContentFilesFilterFunction<PostAttributes> =
+        (contentFile) => !!contentFile.filename.includes('/src/content/posts/');
+    readonly blogs = injectContentFiles(this.contentFilterFn);
+}

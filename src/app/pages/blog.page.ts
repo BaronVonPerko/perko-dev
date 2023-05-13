@@ -1,13 +1,11 @@
-import {Component} from '@angular/core';
-import {injectContentFiles} from '@analogjs/content';
+import {Component, inject} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {BlogSlugPipe} from '../pipes/blog-slug.pipe';
-import {InjectContentFilesFilterFunction} from '@analogjs/content/lib/inject-content-files';
-import {PostAttributes} from '../models';
-import {of, take} from 'rxjs';
+import {of} from 'rxjs';
 import {sortPostsByDate} from '../operators';
 import {PostPreviewComponent} from '../ui/post-preview.component';
 import {PageHeaderComponent} from '../ui/page-header.component';
+import {ContentService} from '../services/content.service';
 
 @Component({
     standalone: true,
@@ -33,10 +31,9 @@ import {PageHeaderComponent} from '../ui/page-header.component';
     ]
 })
 export default class BlogListComponent {
-    private readonly contentFilterFn: InjectContentFilesFilterFunction<PostAttributes> =
-        (contentFile) => !!contentFile.filename.includes('/src/content/posts/');
-    readonly blogs = injectContentFiles(this.contentFilterFn);
-    blogs$ = of(this.blogs).pipe(
+    private content = inject(ContentService);
+
+    blogs$ = of(this.content.blogs).pipe(
         sortPostsByDate(),
     );
 }
