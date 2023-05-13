@@ -7,6 +7,7 @@ import {PostAttributes} from '../models';
 import {of, take} from 'rxjs';
 import {sortPostsByDate} from '../operators';
 import {PostPreviewComponent} from '../ui/post-preview.component';
+import {PageHeaderComponent} from '../ui/page-header.component';
 
 @Component({
     standalone: true,
@@ -14,8 +15,9 @@ import {PostPreviewComponent} from '../ui/post-preview.component';
         CommonModule,
         BlogSlugPipe,
         PostPreviewComponent,
+        PageHeaderComponent,
     ],
-    template: `<h1>Blog</h1>
+    template: `<app-page-header>Blog</app-page-header>
     <app-post-preview *ngFor="let blog of blogs$ | async" [post]="blog"/>
     `,
     styles: [
