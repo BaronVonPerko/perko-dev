@@ -1,10 +1,9 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-control-buttons',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   template: `
     <div class="circles">
       <span class="circle"></span><span class="circle"></span><span class="circle"></span>
@@ -27,6 +26,4 @@ import { CommonModule } from '@angular/common';
     }
   `]
 })
-export class ControlButtonsComponent {
-
-}
+export class ControlButtonsComponent { }

@@ -6,18 +6,29 @@ import {InjectContentFilesFilterFunction} from '@analogjs/content/lib/inject-con
 import {PostAttributes} from '../models';
 import {of, take} from 'rxjs';
 import {sortPostsByDate} from '../operators';
+import {PostPreviewComponent} from '../ui/post-preview.component';
 
 @Component({
     standalone: true,
     imports: [
         CommonModule,
         BlogSlugPipe,
+        PostPreviewComponent,
     ],
     template: `<h1>Blog</h1>
-    <p *ngFor="let blog of blogs$ | async">
-        <a href="{{blog.slug | blogSlug}}">{{blog.attributes.title }}</a>
-    </p>
-    `
+    <app-post-preview *ngFor="let blog of blogs$ | async" [post]="blog"/>
+    `,
+    styles: [
+        `
+            h1 {
+                margin-bottom: 80px;
+            }
+            
+            app-post-preview {
+                margin-bottom: 80px;
+            }
+        `
+    ]
 })
 export default class BlogListComponent {
     private readonly contentFilterFn: InjectContentFilesFilterFunction<PostAttributes> =

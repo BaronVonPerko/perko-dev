@@ -4,6 +4,7 @@
 
 :root {
     --color-primary: #1e141f;
+    --color-primary-opaque: rgba(30, 20, 31, 0.8);
     --color-secondary: #87fdfe;
     --color-accent: #900fa0;
     --article-width: 800px;
@@ -37,6 +38,13 @@ h1 {
 
 h2 {
     font-size: 3rem;
+}
+
+h3,
+h3 a {
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 3.5rem;
 }
 
 h1,
