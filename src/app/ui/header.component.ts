@@ -12,7 +12,7 @@ import {CommonModule} from '@angular/common';
               <li><a href="/">Home</a></li>
               <li><a href="/blog">Blog</a></li>
               <li><a href="/talks">Talks</a></li>
-              <li><a href="#">Portfolio</a></li>
+              <li><a href="/portfolio">Portfolio</a></li>
               <li><a href="#">Work History</a></li>
               <li><a href="#">Contact</a></li>
           </ul>
