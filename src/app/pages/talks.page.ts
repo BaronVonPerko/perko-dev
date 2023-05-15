@@ -6,6 +6,7 @@ import {AsyncPipe, DatePipe, NgForOf} from '@angular/common';
 import {PreviewCardComponent} from '../ui/preview-card.component';
 import {ImagePipe} from '../pipes/image.pipe';
 import {TalkSubtitlePipe} from '../pipes/talk-subtitle.pipe';
+import {sortTalksByDate} from '../operators';
 
 @Component({
     standalone: true,
@@ -23,5 +24,7 @@ import {TalkSubtitlePipe} from '../pipes/talk-subtitle.pipe';
 })
 export default class TalksComponent {
     private content = inject(ContentService);
-    talks$ = of(this.content.talks);
+    talks$ = of(this.content.talks).pipe(
+        sortTalksByDate(),
+    );
 }
