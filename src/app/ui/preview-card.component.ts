@@ -31,13 +31,13 @@ import {ImagePipe} from '../pipes/image.pipe';
     styles: [`
         :host {
             display: block;
-            margin-bottom: 60px;
+            max-width: var(--max-page-width);
+            margin: 60px auto 0;
         }
 
         .wrapper {
             padding: 0 20px 160px;
             max-width: 600px;
-            margin: 0 auto;
             border: 4px solid var(--color-secondary);
             position: relative;
             background-position: center;

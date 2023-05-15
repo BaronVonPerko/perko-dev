@@ -22,10 +22,11 @@ import {CommonModule} from '@angular/common';
       `
           header {
               background-color: var(--color-primary);
-              padding: 0 40px;
               display: flex;
               justify-content: space-between;
               align-items: center;
+              max-width: var(--max-page-width);
+              margin: 0 auto;
           }
 
           img {

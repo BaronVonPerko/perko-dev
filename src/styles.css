@@ -7,7 +7,21 @@
     --color-primary-opaque: rgba(30, 20, 31, 0.8);
     --color-secondary: #87fdfe;
     --color-accent: #900fa0;
-    --article-width: 800px;
+    --article-width: 95%;
+    --max-page-width: 95%;
+}
+
+@media (min-width: 800px) {
+    :root {
+        --article-width: 700px;
+        --max-page-width: 700px;
+    }
+}
+
+@media (min-width: 1400px) {
+    :root {
+        --max-page-width: 1200px;
+    }
 }
 
 * {

@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
   styles: [
       `
           h1 {
-              max-width: var(--article-width);
+              max-width: var(--max-page-width);
               margin: 40px auto 80px;
           }
       `
