@@ -33,7 +33,7 @@ import {ControlButtonsComponent} from '../ui/control-buttons.component';
       width: 60%;
       margin: -80px 0 0 10%;
       background-color: var(--color-primary);
-      padding: 20px;
+      padding: 0 20px 20px;
     }
   `],
   imports: [

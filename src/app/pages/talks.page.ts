@@ -2,19 +2,24 @@ import {Component, inject} from '@angular/core';
 import {PageHeaderComponent} from '../ui/page-header.component';
 import {of} from 'rxjs';
 import {ContentService} from '../services/content.service';
-import {AsyncPipe, NgForOf} from '@angular/common';
-import {PostPreviewComponent} from '../ui/post-preview.component';
+import {AsyncPipe, DatePipe, NgForOf} from '@angular/common';
+import {PreviewCardComponent} from '../ui/preview-card.component';
+import {ImagePipe} from '../pipes/image.pipe';
+import {TalkSubtitlePipe} from '../pipes/talk-subtitle.pipe';
 
 @Component({
     standalone: true,
-    imports: [PageHeaderComponent, AsyncPipe, NgForOf, PostPreviewComponent],
+    imports: [PageHeaderComponent, AsyncPipe, NgForOf, PreviewCardComponent, DatePipe, ImagePipe, TalkSubtitlePipe],
     template: `
         <app-page-header>Talks</app-page-header>
-        <app-post-preview *ngFor="let talk of talks$ | async" [post]="talk"/>
+        <app-preview-card *ngFor="let talk of talks$ | async"
+                          [title]="talk.attributes.title"
+                          [subtitle]="talk | talkSubtitle"
+                          [imageUrl]="talk.attributes.image | image"
+                          [linkUrl]="talk.slug">
+            {{talk.attributes.abstract}}
+        </app-preview-card>
     `,
-    styles: [
-        ``
-    ]
 })
 export default class TalksComponent {
     private content = inject(ContentService);

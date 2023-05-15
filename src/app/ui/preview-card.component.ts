@@ -13,6 +13,7 @@ import {ImagePipe} from '../pipes/image.pipe';
              style="background-image: url({{imageUrl}});">
             <div class="overlay"></div>
             <div class="content">
+                <app-control-buttons/>
                 <p *ngIf="date">{{date | date }}</p>
                 <h3 *ngIf="linkUrl; else titleOnly">
                     <a href="{{linkUrl}}">{{title}}</a>
@@ -21,7 +22,9 @@ import {ImagePipe} from '../pipes/image.pipe';
                     <h3>{{title}}</h3>
                 </ng-template>
                 <h4 *ngIf="subtitle">{{subtitle}}</h4>
-                <p><ng-content></ng-content></p>
+                <p>
+                    <ng-content></ng-content>
+                </p>
             </div>
         </div>
     `,

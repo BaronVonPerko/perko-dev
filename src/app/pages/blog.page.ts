@@ -7,6 +7,7 @@ import {PageHeaderComponent} from '../ui/page-header.component';
 import {ContentService} from '../services/content.service';
 import {PreviewCardComponent} from '../ui/preview-card.component';
 import {ImagePipe} from '../pipes/image.pipe';
+import {PillComponent} from '../ui/pill.component';
 
 @Component({
     standalone: true,
@@ -16,13 +17,22 @@ import {ImagePipe} from '../pipes/image.pipe';
         PageHeaderComponent,
         PreviewCardComponent,
         ImagePipe,
+        PillComponent,
     ],
-    template: `<app-page-header>Blog</app-page-header>
-    <app-preview-card *ngFor="let blog of blogs$ | async" 
-        [title]="blog.attributes.title"
-        [imageUrl]="blog.attributes.image | image"
-        [subtitle]="blog.attributes.date | date"
-        [linkUrl]="blog.slug | blogSlug" />
+    template: `
+        <app-page-header>Blog</app-page-header>
+        <app-preview-card *ngFor="let blog of blogs$ | async"
+                          [title]="blog.attributes.title"
+                          [imageUrl]="blog.attributes.image | image"
+                          [subtitle]="blog.attributes.date | date"
+                          [linkUrl]="blog.slug | blogSlug">
+            <ng-container *ngIf="blog.attributes.tags">
+                <app-pill
+                        *ngFor="let tag of blog.attributes.tags.split(',')">
+                    {{tag}}
+                </app-pill>
+            </ng-container>
+        </app-preview-card>
     `,
     styles: [
         `

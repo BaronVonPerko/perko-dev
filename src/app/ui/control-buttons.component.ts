@@ -11,9 +11,10 @@ import {Component} from '@angular/core';
   `,
   styles: [`
     .circles {
-      position: absolute;
-      top: 16px;
-      right: 16px;
+      width: 100%;
+      margin: 20px 0;
+      display: flex;
+      justify-content: end;
     }
 
     .circles .circle {
