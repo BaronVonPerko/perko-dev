@@ -46,6 +46,19 @@ a:hover {
     border-bottom: 2px solid var(--color-accent);
 }
 
+a.linkbtn {
+    border: 2px solid var(--color-accent);
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+    font-weight: 500;
+}
+
+a.linkbtn:hover {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+}
+
 h1 {
     font-size: 4rem;
 }
