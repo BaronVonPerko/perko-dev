@@ -7,9 +7,9 @@ import {injectContentFiles} from '@analogjs/content';
     providedIn: 'root'
 })
 export class ContentService {
-    private readonly contentFilterFn: InjectContentFilesFilterFunction<PostAttributes> =
+    private readonly postContentFn: InjectContentFilesFilterFunction<PostAttributes> =
         (contentFile) => !!contentFile.filename.includes('/src/content/posts/');
-    readonly blogs = injectContentFiles(this.contentFilterFn);
+    readonly blogs = injectContentFiles(this.postContentFn);
 
     private readonly talksFilterFn: InjectContentFilesFilterFunction<TalkAttributes> =
         (contentFile) => !!contentFile.filename.includes('/src/content/talks/');
