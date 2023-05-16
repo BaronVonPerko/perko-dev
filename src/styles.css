@@ -56,7 +56,7 @@ a.linkbtn {
 
 a.linkbtn:hover {
     background-color: var(--color-accent);
-    color: var(--color-primary);
+    color: white;
 }
 
 h1 {

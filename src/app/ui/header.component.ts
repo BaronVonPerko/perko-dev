@@ -7,9 +7,8 @@ import {CommonModule} from '@angular/common';
     imports: [CommonModule],
   template: `
       <header>
-          <img src="/logo.png" alt="logo"/>
+          <a style="border-bottom: 0" href="/"><img src="/logo.png" alt="logo"/></a>
           <ul>
-              <li><a href="/">Home</a></li>
               <li><a href="/blog">Blog</a></li>
               <li><a href="/talks">Talks</a></li>
               <li><a href="/portfolio">Portfolio</a></li>
