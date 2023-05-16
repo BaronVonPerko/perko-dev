@@ -8,18 +8,19 @@ import {ImagePipe} from '../pipes/image.pipe';
 import {ContentFile} from '@analogjs/content';
 import {PostAttributes} from '../models';
 import {PillComponent} from './pill.component';
+import {BlogSlugPipe} from '../pipes/blog-slug.pipe';
 
 @Component({
   selector: 'app-recent-posts',
   standalone: true,
-  imports: [NgForOf, NgIf, AsyncPipe, PreviewCardComponent, DatePipe, ImagePipe, PillComponent],
+  imports: [NgForOf, NgIf, AsyncPipe, PreviewCardComponent, DatePipe, ImagePipe, PillComponent, BlogSlugPipe],
   template: `
       <ng-container *ngIf="posts$ | async as posts">
           <app-preview-card *ngFor="let post of posts"
                             [title]="post.attributes.title"
                             [imageUrl]="post.attributes.image | image"
                             [subtitle]="post.attributes.date | date"
-                            [linkUrl]="post.slug">
+                            [linkUrl]="post.slug | blogSlug">
               <ng-container *ngIf="post.attributes.tags">
                   <app-pill
                           *ngFor="let tag of post.attributes.tags.split(',')">
