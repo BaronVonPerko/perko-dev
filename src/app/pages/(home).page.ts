@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {ControlButtonsComponent} from '../ui/control-buttons.component';
 import {RecentPostsComponent} from '../ui/recent-posts.component';
+import {SocialIconLinksComponent} from '../ui/social-icon-links.component';
 
 @Component({
     selector: 'app-home',
@@ -8,6 +9,7 @@ import {RecentPostsComponent} from '../ui/recent-posts.component';
     imports: [
         ControlButtonsComponent,
         RecentPostsComponent,
+        SocialIconLinksComponent,
     ],
     template: `
         <section class="hero">
@@ -25,6 +27,7 @@ import {RecentPostsComponent} from '../ui/recent-posts.component';
                 topics, and I always have a blast doing it.</p>
             <p>If you want to know more about me or my work, feel free to contact me anytime. I'd love to hear from
                 you!</p>
+            <app-social-icon-links />
         </section>
         <section class="recent-posts">
             <h3>Latest Post</h3>
@@ -38,6 +41,7 @@ import {RecentPostsComponent} from '../ui/recent-posts.component';
             min-height: 80vh;
             background-size: cover;
             background-attachment: fixed;
+            background-position: center right;
         }
 
         section.about {
