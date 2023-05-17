@@ -5,20 +5,20 @@ image: angular-rxjs.jpg
 categories: angular,rxjs
 tags: rxjs,angular,forms
 ---
-> This post was also published to the official 
+> This post was also published to the official
 > [HeroDevs blog on medium](https://medium.com/herodevs/building-conditional-validators-in-reactive-forms-c2f4a9242c0a).
 > If you prefer a video explanation, this content was based on a lightning talk
 > that I gave at the [Angular Community Meetup](https://angularcommunity.net/home).
 > [The video can be found here.](https://www.youtube.com/watch?v=E9RDS7lcQns&t=3m25s)
 
-Reactive forms in Angular provide a powerful way to validate your user’s 
-inputs in a declarative style. But what happens when the validation rules 
-depend on another form control’s value? Here’s an example problem that 
+Reactive forms in Angular provide a powerful way to validate your user’s
+inputs in a declarative style. But what happens when the validation rules
+depend on another form control’s value? Here’s an example problem that
 we will use to learn how to write conditional validators in reactive forms.
 
-Let’s say we have a form to register for a website. One of the fields asks 
-for the user’s age. We have a requirement that any user under the age of 13 
-must also provide a parent’s email address. In this instance, we could create 
+Let’s say we have a form to register for a website. One of the fields asks
+for the user’s age. We have a requirement that any user under the age of 13
+must also provide a parent’s email address. In this instance, we could create
 a class to hold all of the requirements of this form.
 
 **login.form.ts**
@@ -41,13 +41,13 @@ export default class LoginForm {
 }
 ```
 
-This **LoginForm** class has two properties, the Form Group and a 
-number property to hold the minimum age for our site. Our constructor will 
+This **LoginForm** class has two properties, the Form Group and a
+number property to hold the minimum age for our site. Our constructor will
 set up the Form Group and assign validators to each field.
 
-Next, we need a presentational component to display our login form. The 
-component simply injects the **LoginForm** class that we created above. 
-The template is using [Angular Material](https://material.angular.io/) for 
+Next, we need a presentational component to display our login form. The
+component simply injects the **LoginForm** class that we created above.
+The template is using [Angular Material](https://material.angular.io/) for
 some added styling.
 
 **login.component.html**
@@ -100,34 +100,34 @@ export default class LoginComponent {
 }
 ```
 
-We have three form fields, **email address**, **age**, and **parent’s email address**. 
+We have three form fields, **email address**, **age**, and **parent’s email address**.
 The third form is _dependent_ on the value of the **age** field.
 
-We have an `*ngIfdirective` that will handle showing and hiding the 
-**parent’s email address** field depending on the **age** (it is shown if the 
-user is not at least the minimum age requirement, as specified in our 
+We have an `*ngIfdirective` that will handle showing and hiding the
+**parent’s email address** field depending on the **age** (it is shown if the
+user is not at least the minimum age requirement, as specified in our
 **LoginForm** class).
 
 ## What's the Problem?
 
-So, if the form control in question (**parent’s email address**) is being 
-shown only when needed, what is the problem with our site? Let’s try 
+So, if the form control in question (**parent’s email address**) is being
+shown only when needed, what is the problem with our site? Let’s try
 logging in with a user that is older than the required 13 years of age.
 
 ![Logging in with a user under the age of 13](/images/dynamic-form-validator-1.png)
 
-We’ve added a debug line to display the validity of our form. The form 
-is invalid here because even though we do not display the 
-**parent’s email address** form field, it still has _validators_ 
-associated with it within our **LoginForm** class. This is an instance where 
+We’ve added a debug line to display the validity of our form. The form
+is invalid here because even though we do not display the
+**parent’s email address** form field, it still has _validators_
+associated with it within our **LoginForm** class. This is an instance where
 we need to use conditional validators.
 
 ## How to Add Conditional Validators to Our Form Definition
 
 We want to keep all of our login associated with the form within our
-**LoginForm** class, and not have logic in both the **LoginForm** and our 
-presentational component. We can use reactive programming to add in 
-our conditional validation logic by hooking into the _valueChanges_ 
+**LoginForm** class, and not have logic in both the **LoginForm** and our
+presentational component. We can use reactive programming to add in
+our conditional validation logic by hooking into the _valueChanges_
 event on our **age** form control.
 
 Here is an updated version of our **LoginForm** class:
@@ -168,30 +168,30 @@ export default class LoginForm {
 }
 ```
 
-We’ve added a `valueChanged$` property to the class and assigned it to 
+We’ve added a `valueChanged$` property to the class and assigned it to
 the `valueChanges` observable that is provided by Angular’s reactive forms. We can then add our functionality to this event, by piping in our validation logic.
 
-I used the `tap` operator, as we are performing a side-effect. In this 
-case, when the **age** is changed, we want to update the validation 
+I used the `tap` operator, as we are performing a side-effect. In this
+case, when the **age** is changed, we want to update the validation
 rules for the **parent email** control.
 
 Line 21 grabs the control from our form group.
 
 Lines 23–27 perform a simple check, and based on the age, sets the appropriate validators, or clears them.
 
-Finally, on line 29, we perform `updateValueAndValidity()`. This is an 
-important step to let Angular know that the value or the validation rules 
-have changed on our control, and we want the **parent email** control to 
+Finally, on line 29, we perform `updateValueAndValidity()`. This is an
+important step to let Angular know that the value or the validation rules
+have changed on our control, and we want the **parent email** control to
 be re-evaluated.
 
 ## Don't Forget to Subscribe!
 
-In order for any observable to actually do anything, it needs to be 
-subscribed to. We could subscribe within the **LoginForm** class, but then we 
-will need to remember to unsubscribe when we are no longer using this 
-form. A great solution for handling this is to use the _async_ pipe provided 
-by Angular. This pipe will handle subscribing and unsubscribing for us. We 
-can utilize this by adding a single line to our presentational component. 
+In order for any observable to actually do anything, it needs to be
+subscribed to. We could subscribe within the **LoginForm** class, but then we
+will need to remember to unsubscribe when we are no longer using this
+form. A great solution for handling this is to use the _async_ pipe provided
+by Angular. This pipe will handle subscribing and unsubscribing for us. We
+can utilize this by adding a single line to our presentational component.
 You can see this in line 1 in the gist below:
 
 ```html
@@ -230,10 +230,10 @@ You can see this in line 1 in the gist below:
 </form>
 ```
 
-With this simple change, the `valueChanged$` observable we created will 
-be subscribed to, allowing it to update the validation rules on our 
+With this simple change, the `valueChanged$` observable we created will
+be subscribed to, allowing it to update the validation rules on our
 **parent email** control whenever the age is updated.
 
-If you’d like to view the complete source code, you can check out this 
-repository I created using Nx: 
+If you’d like to view the complete source code, you can check out this
+repository I created using Nx:
 [https://github.com/BaronVonPerko/acm-demos](https://github.com/BaronVonPerko/acm-demos).
