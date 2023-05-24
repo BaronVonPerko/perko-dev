@@ -20,10 +20,22 @@ import {CommonModule} from '@angular/common';
           header {
               background-color: var(--color-primary);
               display: flex;
+              flex-direction: row;
               justify-content: space-between;
               align-items: center;
               max-width: var(--max-page-width);
               margin: 0 auto;
+          }
+
+          @media (max-width: 800px) {
+              header {
+                  flex-direction: column;
+              }
+              
+              header ul {
+                  width: 100%;
+                  justify-content: center;
+              }
           }
 
           img {
@@ -33,6 +45,7 @@ import {CommonModule} from '@angular/common';
           ul {
               list-style: none;
               display: flex;
+              padding: 0;
           }
 
           li {

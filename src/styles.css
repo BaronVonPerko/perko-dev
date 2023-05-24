@@ -2,6 +2,13 @@
 @import 'prismjs/plugins/toolbar/prism-toolbar.css';
 @import 'prismjs/themes/prism-okaidia.css';
 
+/**
+ Breakpoints
+ -----------
+ sm: 800px
+ md: 1400px
+ */
+
 :root {
     --color-primary: #1e141f;
     --color-primary-opaque: rgba(30, 20, 31, 0.8);
