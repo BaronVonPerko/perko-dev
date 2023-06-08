@@ -11,7 +11,14 @@ export class TalkSubtitlePipe implements PipeTransform {
 
   transform(value: ContentFile<TalkAttributes>): string {
     const date = new DatePipe('en-US').transform(value.attributes.date);
-    return `${date} | ${value.attributes.conference} | ${value.attributes.location}`;
+
+    let retstr = `${date} | ${value.attributes.conference}`;
+
+    if (value.attributes.location) {
+      retstr += ` | ${value.attributes.location}`;
+    }
+
+    return retstr;
   }
 
 }

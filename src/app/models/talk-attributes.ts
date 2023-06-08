@@ -3,6 +3,6 @@ export interface TalkAttributes {
     title: string;
     image: string;
     conference: string;
-    location: string;
+    location?: string;
     abstract: string;
 }

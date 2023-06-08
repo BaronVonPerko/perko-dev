@@ -3,7 +3,8 @@ date: 2022-07-27
 title: Building Conditional Validators in Reactive Forms
 image: angular-rxjs.jpg
 categories: angular,rxjs
-tags: rxjs,angular,forms
+tags: rxjs,angular,forms,
+conference: Angular Community Meetup
 ---
 > This post was also published to the official
 > [HeroDevs blog on medium](https://medium.com/herodevs/building-conditional-validators-in-reactive-forms-c2f4a9242c0a).
