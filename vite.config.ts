@@ -13,7 +13,15 @@ export default defineConfig(({ mode }) => ({
     mainFields: ['module'],
   },
   plugins: [analog({
-    static: true
+    static: true,
+    prerender: {
+      routes: async() => [
+          '/',
+          '/blog',
+          '/talks',
+          '/portfolio'
+      ]
+    }
   })],
   test: {
     globals: true,
