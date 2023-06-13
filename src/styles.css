@@ -131,3 +131,7 @@ em {
     padding-left: 16px;
     margin-left: 0;
 }
+
+.analog-markdown li {
+    margin: 16px 0;
+}
