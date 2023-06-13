@@ -8,6 +8,6 @@ abstract: Are you tired of trying to figure out complex RxJS pipes? Having troub
 ---
 
 - [Creating Custom Operators in RxJS by Netanel Basal](https://netbasal.com/creating-custom-operators-in-rxjs-32f052d69457)
-- [RxJS Docs - Creating Custom Operators](https://netbasal.com/creating-custom-operators-in-rxjs-32f052d69457)
+- [RxJS Docs - Creating Custom Operators](https://rxjs.dev/guide/operators#creating-custom-operators)
 - [PokeTeamBuilder App](https://poketeambuilder.perko.dev)
 - [PokeTeamBuilder Source Code](https://github.com/baronvonperko/poke-team-builder)
