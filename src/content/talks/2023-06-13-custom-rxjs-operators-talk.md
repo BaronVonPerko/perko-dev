@@ -11,3 +11,4 @@ abstract: Are you tired of trying to figure out complex RxJS pipes? Having troub
 - [RxJS Docs - Creating Custom Operators](https://rxjs.dev/guide/operators#creating-custom-operators)
 - [PokeTeamBuilder App](https://poketeambuilder.perko.dev)
 - [PokeTeamBuilder Source Code](https://github.com/baronvonperko/poke-team-builder)
+- [Slides](https://docs.google.com/presentation/d/178FtqdHI6efCTTyolvQPz7NqsfLeOo-iup9m_y1P2lc/edit?usp=sharing)
