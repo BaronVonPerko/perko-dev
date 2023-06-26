@@ -84,9 +84,9 @@ One way, for this particular example, to get around this is to use the **ngIfEls
 
 However, depending on how complex your template is, this may not always be ideal.
 
-## Using switchMap
+## Using Map
 
-Another solution, is to use *switchMap*, which is a really cool rxjs operator.  [switchMap](https://rxjs.dev/api/operators/switchMap) allows you to manipulate the result from an observable, changing it into a different observable.
+Another solution, is to use *map*, which is a really cool rxjs operator.  [map](https://rxjs.dev/api/operators/map) allows you to manipulate the result from an observable, mapping it into a different value.
 
 So how could we use this to solve our problem?
 
@@ -100,12 +100,12 @@ active$!: Observable<boolean>;
 active$!: Observable<{value: boolean}>;
 ```
 
-Now, we can use *switchMap* to transform the result we get from our service into the format that we need.
+Now, we can use *map* to transform the result we get from our service into the format that we need.
 
 ```typescript
 ngOnInit() {
     this.active$ = this._service.GetUserActiveState('chris').pipe(
-        switchMap(active => of({value: active}))
+        map(active => ({value: active}))
     );
 }
 ```
@@ -115,7 +115,7 @@ Lastly, we just need to update our template to use the new *value* property on t
 ```typescript
 import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import UserActiveService from './user-active.service';
 
 @Component({
@@ -132,10 +132,24 @@ export class UserInfoComponent implements OnInit {
 
   ngOnInit() {
     this.active$ = this._service.GetUserActiveState('chris').pipe(
-      switchMap(active => of({value: active}))
+      map(active => ({value: active}))
     );
   }
 }
 ```
+
+## Update the Object in the Template
+
+Here is my favorite solution for this problem.  Instead of using RxJS operators to modify the value to be an object, we can simply do it within the template itself.  Here's an example:
+
+```html
+<p *ngIf="{value: active$ | async}; let content;">
+  User active state: {{content.value}}
+</p>
+```
+
+Within our *ngIf*, we are creating an object with a property of *value*, and assigning it the result of our observable.  We then use the *content* variable that is created to access the *value* property.  This solution makes our component code much simpler, with not a lot of change to the template code!
+
+## Check out an Example!
 
 [I've also created a StackBlitz example for you to review and play with as well.](https://stackblitz.com/edit/perko-async-pipe-boolean)  Happy coding!
