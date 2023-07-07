@@ -5336,6 +5336,11 @@ giget@^1.1.2:
     pathe "^1.1.0"
     tar "^6.1.13"
 
+github-slugger@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/github-slugger/-/github-slugger-2.0.0.tgz#52cf2f9279a21eb6c59dd385b410f0c0adda8f1a"
+  integrity sha512-IaOQ9puYtjrkq7Y0Ygl9KDZnrf/aiUJYUpVf89y8kyaxbRG7Y1SrX/jaumrv81vc61+kiMempujsM3Yw7w5qcw==
+
 glob-parent@^5.1.2, glob-parent@~5.1.2:
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/glob-parent/-/glob-parent-5.1.2.tgz#869832c58034fe68a4093c17dc15e8340d8401c4"
@@ -6790,10 +6795,22 @@ makeerror@1.0.12:
   dependencies:
     tmpl "1.0.5"
 
-marked@^4.2.12:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/marked/-/marked-4.3.0.tgz#796362821b019f734054582038b116481b456cf3"
-  integrity sha512-PRsaiG84bK+AMvxziE/lCFss8juXjNaWzVbN5tXAm4XjeaS9NAHhop+PjQxz2A9h8Q4M/xGmzP8vqNwy6JeK0A==
+marked-gfm-heading-id@^3.0.4:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/marked-gfm-heading-id/-/marked-gfm-heading-id-3.0.4.tgz#cc54976b6c1e507f2abf7067208e5d135ef5c792"
+  integrity sha512-k22f+k8B449kRVXbi3OYxahI6t8HywKIF0wn0L0atzYhFHYRcJynLDekh+lcxcZkNnkEGRZOHuRfTcpjMjLqDw==
+  dependencies:
+    github-slugger "^2.0.0"
+
+marked-highlight@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/marked-highlight/-/marked-highlight-2.0.1.tgz#a2b48533df77ea73bec3895be98bae6160dceec3"
+  integrity sha512-LDUfR/zDvD+dJ+lQOWHkxvBLNxiXcaN8pBtwJ/i4pI0bkDC/Ef6Mz1qUrAuHXfnpdr2rabdMpVFhqFuU+5Mskg==
+
+marked@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-5.1.0.tgz#cf51f03ba04dfb3469774029fd0106d258658767"
+  integrity sha512-z3/nBe7aTI8JDszlYLk7dDVNpngjw0o1ZJtrA9kIfkkHcIF+xH7mO23aISl4WxP83elU+MFROgahqdpd05lMEQ==
 
 md5-hex@^3.0.1:
   version "3.0.1"
