@@ -16,7 +16,10 @@ export default defineConfig(({ mode }) => ({
   plugins: [analog({
     static: true,
     prerender: {
-      routes: extractRoutesToPrerender()
+      routes: extractRoutesToPrerender(),
+      sitemap: {
+        host: 'https://perko.dev',
+      },
     }
   })],
   test: {
