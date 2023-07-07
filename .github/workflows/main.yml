@@ -38,7 +38,7 @@ jobs:
         uses: Reggionick/s3-deploy@v1.1.2
         with:
           # Directory to deploy
-          folder: ./dist/client/
+          folder: ./dist/analog/public/
           # S3 Bucket
           bucket: ${{ secrets.S3_BUCKET }}
           # AWS CloudFront distribution ID
