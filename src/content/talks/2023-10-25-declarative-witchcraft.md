@@ -8,6 +8,7 @@ abstract: Imperative code may be haunting your projects, but there exists powerf
 ---
 
 - [Slides](https://www.canva.com/design/DAFxi-wbrJ8/ULjyXW45Khp7QSErsjw-0w/edit?utm_content=DAFxi-wbrJ8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+- [Demo Source Code](https://github.com/BaronVonPerko/contecttech2023)
 - [RxJS Docs](https://rxjs.dev/)
 - [NGRX Component-Store Docs](https://ngrx.io/guide/component-store)
 - [Angular Signals Docs](https://angular.io/guide/signals)
