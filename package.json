@@ -25,7 +25,7 @@
     "@angular/platform-browser-dynamic": "^16.0.0",
     "@angular/platform-server": "^16.0.0",
     "@angular/router": "^16.0.0",
-    "@nx/angular": "^16.0.0",
+    "@nx/angular": "^17.0.3",
     "front-matter": "^4.0.2",
     "marked": "^5.1.0",
     "marked-gfm-heading-id": "^3.0.4",
