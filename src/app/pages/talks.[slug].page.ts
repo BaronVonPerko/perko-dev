@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {AsyncPipe, NgIf} from '@angular/common';
 import {injectContent, MarkdownComponent} from '@analogjs/content';
-import {PostAttributes, TalkAttributes} from '../models';
+import {TalkAttributes} from '../models';
 
 @Component({
     standalone: true,
