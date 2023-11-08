@@ -1,16 +1,16 @@
 import {Component} from '@angular/core';
 import {AsyncPipe, NgIf} from '@angular/common';
 import {injectContent, MarkdownComponent} from '@analogjs/content';
-import {PostAttributes, TalkAttributes} from '../models';
+import {TalkAttributes} from '../models';
 
 @Component({
     standalone: true,
     template: `
-        <ng-container *ngIf="talk$ | async as post">
-            <h2>{{ post.attributes.title }}</h2>
-            <img src="images/{{post.attributes.image}}"/>
-            <analog-markdown [content]="post.content"></analog-markdown>
-        </ng-container>
+        @if (talk$ | async;as talk) {
+            <h2>{{ talk.attributes.title }}</h2>
+            <img src="images/{{talk.attributes.image}}"/>
+            <analog-markdown [content]="talk.content"></analog-markdown>
+        }
     `,
     imports: [
         AsyncPipe,
