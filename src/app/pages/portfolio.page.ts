@@ -12,13 +12,17 @@ import {PillComponent} from '../ui/pill.component';
     imports: [PageHeaderComponent, AsyncPipe, NgForOf, NgIf, PreviewCardComponent, ImagePipe, PillComponent],
     template: `
         <app-page-header>Portfolio</app-page-header>
-        <app-preview-card *ngFor="let portfolio of portfolios$ | async"
-                          [title]="portfolio.attributes.title"
-                          [imageUrl]="portfolio.attributes.image | image">
-            <app-pill>{{portfolio.attributes.type}}</app-pill>
-            <p>{{portfolio.attributes.description}}</p>
-            <a class="linkbtn" *ngIf="portfolio.attributes.url" href="{{portfolio.attributes.url}}" target="_blank">View Project</a>
-        </app-preview-card>
+        @for (portfolio of portfolios$ | async; track portfolio.attributes.title) {
+            <app-preview-card [title]="portfolio.attributes.title"
+                              [imageUrl]="portfolio.attributes.image | image">
+                <app-pill>{{portfolio.attributes.type}}</app-pill>
+                <p>{{portfolio.attributes.description}}</p>
+                
+                @if (portfolio.attributes.url) {
+                    <a class="linkbtn" href="{{portfolio.attributes.url}}" target="_blank">View Project</a>
+                }
+            </app-preview-card>
+        }
     `,
     styles: [`
     app-pill { display: block; margin: 20px 0;}

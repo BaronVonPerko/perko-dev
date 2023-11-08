@@ -8,11 +8,11 @@ import {MarkdownComponent} from '@analogjs/content';
     standalone: true,
     imports: [AsyncPipe, NgIf, MarkdownComponent],
     template: `
-        <ng-container *ngIf="post$ | async as post">
+        @if (post$ | async; as post) {
             <h2>{{ post.attributes.title }}</h2>
             <img src="images/{{post.attributes.image}}"/>
             <analog-markdown [content]="post.content"></analog-markdown>
-        </ng-container>
+        }
     `,
     styles: [
         `

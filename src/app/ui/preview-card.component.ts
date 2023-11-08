@@ -14,14 +14,22 @@ import {ImagePipe} from '../pipes/image.pipe';
             <div class="overlay"></div>
             <div class="content">
                 <app-control-buttons/>
-                <p *ngIf="date">{{date | date }}</p>
-                <h3 *ngIf="linkUrl; else titleOnly">
-                    <a href="{{linkUrl}}">{{title}}</a>
-                </h3>
-                <ng-template #titleOnly>
+                
+                @if (date) {
+                    <p>{{date | date }}</p>
+                }
+                
+                @if (linkUrl) {
+                    <h3>
+                        <a href="{{linkUrl}}">{{title}}</a>
+                    </h3>
+                } @else {
                     <h3>{{title}}</h3>
-                </ng-template>
-                <h4 *ngIf="subtitle">{{subtitle}}</h4>
+                }
+
+                @if (subtitle) {
+                    <h4>{{subtitle}}</h4>
+                }
                 <p>
                     <ng-content></ng-content>
                 </p>

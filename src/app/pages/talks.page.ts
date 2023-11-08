@@ -14,13 +14,14 @@ import {TalkSlugPipe} from '../pipes/talk-slug.pipe';
     imports: [PageHeaderComponent, AsyncPipe, NgForOf, PreviewCardComponent, DatePipe, ImagePipe, TalkSubtitlePipe, TalkSlugPipe],
     template: `
         <app-page-header>Talks</app-page-header>
-        <app-preview-card *ngFor="let talk of talks$ | async"
-                          [title]="talk.attributes.title"
-                          [subtitle]="talk | talkSubtitle"
-                          [imageUrl]="talk.attributes.image | image"
-                          [linkUrl]="talk.slug | talkSlug">
-            {{talk.attributes.abstract}}
-        </app-preview-card>
+        @for (talk of talks$ | async; track talk.attributes.title) {
+            <app-preview-card [title]="talk.attributes.title"
+                              [subtitle]="talk | talkSubtitle"
+                              [imageUrl]="talk.attributes.image | image"
+                              [linkUrl]="talk.slug | talkSlug">
+                {{talk.attributes.abstract}}
+            </app-preview-card>
+        }
     `,
 })
 export default class TalksComponent {
