@@ -7363,10 +7363,10 @@ makeerror@1.0.12:
   dependencies:
     tmpl "1.0.5"
 
-marked-gfm-heading-id@^3.0.4:
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/marked-gfm-heading-id/-/marked-gfm-heading-id-3.0.4.tgz#cc54976b6c1e507f2abf7067208e5d135ef5c792"
-  integrity sha512-k22f+k8B449kRVXbi3OYxahI6t8HywKIF0wn0L0atzYhFHYRcJynLDekh+lcxcZkNnkEGRZOHuRfTcpjMjLqDw==
+marked-gfm-heading-id@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/marked-gfm-heading-id/-/marked-gfm-heading-id-3.1.0.tgz#f414c987a6d1cac4078829089a8cb01e9a07c005"
+  integrity sha512-PYgLXDbL64Ga6kCpvVuKVoIVsV6MKUtkOXnR8mIqyjiycAeKNhQxcGpO0mHEogOTzyY8A8TcK49k5VwYMUCCbg==
   dependencies:
     github-slugger "^2.0.0"
 
