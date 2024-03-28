@@ -5,12 +5,12 @@
   "projects": {
     "my-app": {
       "projectType": "application",
-      "root": "",
+      "root": ".",
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@nx/vite:build",
+          "builder": "@analogjs/platform:vite",
           "options": {
             "configFile": "vite.config.ts",
             "outputPath": "dist/client"
@@ -27,7 +27,7 @@
           }
         },
         "serve": {
-          "builder": "@nx/vite:dev-server",
+          "builder": "@analogjs/platform:vite-dev-server",
           "defaultConfiguration": "development",
           "options": {
             "buildTarget": "my-app:build",
@@ -44,9 +44,12 @@
           }
         },
         "test": {
-          "builder": "@nx/vite:test"
+          "builder": "@analogjs/platform:vitest"
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
