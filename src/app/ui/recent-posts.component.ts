@@ -16,6 +16,7 @@ import {BlogSlugPipe} from '../pipes/blog-slug.pipe';
     @for (post of posts$ | async; track post.attributes.title) {
         <app-preview-card [title]="post.attributes.title"
                           [imageUrl]="post.attributes.image | image"
+                          [avatarUrl]="post.attributes.avatar | image"
                           [subtitle]="post.attributes.date | date"
                           [linkUrl]="post.slug | blogSlug">
             @if (post.attributes.tags) {

@@ -2,6 +2,7 @@
 date: 2023-07-19
 title: Reactively Refactoring to NgRX Component Store
 image: ngrx.webp
+avatar: RxJS.png
 categories: angular
 tags: angular,ngrx,component-store
 ---
