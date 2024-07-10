@@ -15,6 +15,9 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [analog({
     static: true,
+    vite: {
+      inlineStylesExtension: 'scss',
+    },
     prerender: {
       routes: extractRoutesToPrerender(),
       sitemap: {
