@@ -14,15 +14,25 @@ import {TalkSlugPipe} from '../pipes/talk-slug.pipe';
     imports: [PageHeaderComponent, AsyncPipe, NgForOf, PreviewCardComponent, DatePipe, ImagePipe, TalkSubtitlePipe, TalkSlugPipe],
     template: `
         <app-page-header>Talks</app-page-header>
-        @for (talk of talks$ | async; track talk.attributes.title) {
-            <app-preview-card [title]="talk.attributes.title"
-                              [subtitle]="talk | talkSubtitle"
-                              [imageUrl]="talk.attributes.image | image"
-                              [linkUrl]="talk.slug | talkSlug">
-                {{talk.attributes.abstract}}
-            </app-preview-card>
-        }
+        <section class="talks">
+            @for (talk of talks$ | async; track talk.attributes.title) {
+                <app-preview-card [title]="talk.attributes.title"
+                                  [subtitle]="talk | talkSubtitle"
+                                  [imageUrl]="talk.attributes.image | image"
+                                  [avatarUrl]="talk.attributes.avatar | image"
+                                  [linkUrl]="talk.slug | talkSlug">
+                    {{ talk.attributes.abstract }}
+                </app-preview-card>
+            }
+        </section>
     `,
+    styles: `
+        section.talks {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-gap: 8px;
+        }
+    `
 })
 export default class TalksComponent {
     private content = inject(ContentService);
