@@ -4,7 +4,7 @@
 @import 'prismjs/plugins/toolbar/prism-toolbar.css';
 @import 'prismjs/themes/prism-okaidia.css';
 
-$theme: mat.define-theme((
+$light-theme: mat.define-theme((
   color: (
     theme-type: light,
     primary: mat.$azure-palette,
@@ -12,140 +12,24 @@ $theme: mat.define-theme((
   ),
 ));
 
-/**
- Breakpoints
- -----------
- sm: 800px
- md: 1400px
- */
-
-:root {
-  --color-primary: #1e141f;
-  --color-primary-opaque: rgba(30, 20, 31, 0.8);
-  --color-secondary: #87fdfe;
-  --color-accent: #900fa0;
-  --article-width: 95%;
-  --max-page-width: 95%;
-}
-
-@media (min-width: 800px) {
-  :root {
-    --article-width: 700px;
-    --max-page-width: 700px;
-  }
-}
-
-@media (min-width: 1400px) {
-  :root {
-    --max-page-width: 1200px;
-  }
-}
-
-* {
-  font-family: "Roboto Mono", serif;
-  font-weight: 300;
-}
+$dark-theme: mat.define-theme((
+  color: (
+    theme-type: dark,
+    primary: mat.$azure-palette,
+    tertiary: mat.$blue-palette,
+  ),
+));
 
 body {
-  @include mat.all-component-themes($theme);
-  background-color: var(--color-primary);
-  color: var(--color-secondary);
   margin: 0;
   padding: 0;
 }
 
+main.light-theme {
+  @include mat.all-component-themes($light-theme);
+}
+main.dark-theme {
+  @include mat.all-component-themes($dark-theme);
+}
+
 @include mat.core();
-@include mat.color-variants-backwards-compatibility($theme);
-
-a {
-  color: var(--color-secondary);
-  text-decoration: none;
-  border-bottom: 2px solid var(--color-accent);
-}
-
-a:hover {
-  border-bottom: 2px solid var(--color-accent);
-}
-
-a.linkbtn {
-  border: 2px solid var(--color-accent);
-  padding: 8px 16px;
-  border-radius: 4px;
-  transition: all 0.2s ease-in-out;
-  font-weight: 500;
-}
-
-a.linkbtn:hover {
-  background-color: var(--color-accent);
-  color: white;
-}
-
-h1 {
-  font-size: 4rem;
-}
-
-h2 {
-  font-size: 3rem;
-}
-
-h3,
-h3 a {
-  font-size: 2rem;
-  font-weight: 500;
-  line-height: 3.5rem;
-}
-
-h1,
-h2 {
-  text-shadow: 0 2px 3px var(--color-secondary);
-  margin: 5px 0;
-  font-weight: 700;
-}
-
-h4 {
-  margin: 0;
-}
-
-p,
-em {
-  font-size: 1.3rem;
-  font-weight: 300;
-  line-height: 2.3rem;
-  font-family: "Roboto", serif;
-}
-
-.analog-markdown {
-  max-width: var(--article-width);
-  margin: 0 auto;
-}
-
-.analog-markdown img {
-  max-width: 100%;
-}
-
-.analog-markdown p {
-  margin: 40px 0;
-  line-height: 2.5rem;
-}
-
-.analog-markdown h1,
-.analog-markdown h2 {
-  margin: 80px 0 20px;
-  border-bottom: 4px solid var(--color-accent);
-  padding-bottom: 16px;
-}
-
-.analog-markdown p code {
-  padding: 0 8px;
-  background-color: black;
-}
-
-.analog-markdown blockquote {
-  border-left: 4px solid var(--color-accent);
-  padding-left: 16px;
-  margin-left: 0;
-}
-
-.analog-markdown li {
-  margin: 16px 0;
-}
