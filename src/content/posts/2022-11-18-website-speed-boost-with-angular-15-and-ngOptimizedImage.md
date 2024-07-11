@@ -2,6 +2,7 @@
 date: 2022-11-18
 title: Website Speed Boost with Angular 15 and NgOptimizedImage
 image: google-lighthouse.jpg
+avatar: angular-logo.png
 categories: angular
 tags: angular,scully,speed
 ---

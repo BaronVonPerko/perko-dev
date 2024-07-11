@@ -3,6 +3,7 @@ date: 2017-07-07
 title: AngularJS - Unknown Provider 'eProvider' | SOLVED
 image: angular-shield.png
 categories: angularjs
+avatar: angular-logo.png
 tags: angularjs,bug,unknown provider
 ---
 

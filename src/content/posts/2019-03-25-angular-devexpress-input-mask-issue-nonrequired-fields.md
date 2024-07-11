@@ -2,6 +2,7 @@
 date: 2019-03-25
 title: Angular / DevExpress Input Mask Issue with Non-Required Fields
 image: devexpress.png
+avatar: angular-logo.png
 categories:
 tags: devexpress,angular
 ---

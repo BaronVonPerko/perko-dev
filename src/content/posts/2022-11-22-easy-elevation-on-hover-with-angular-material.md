@@ -2,6 +2,7 @@
 date: 2022-11-22
 title: Easy Elevation Change on Hover with Angular Material
 image: angular-material-elevation-on-hover.png
+avatar: angular-logo.png
 categories: angular
 tags: angular,material
 ---

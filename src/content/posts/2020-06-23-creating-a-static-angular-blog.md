@@ -2,6 +2,7 @@
 date: 2020-06-23
 title: Creating a Static Angular Blog
 image: angular-shield.png
+avatar: angular-logo.png
 categories: angular
 tags: static,angular,aws,post-mortem
 ---
