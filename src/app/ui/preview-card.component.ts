@@ -28,11 +28,6 @@ import { RouterLink } from "@angular/router";
         </mat-card-actions>
       </mat-card>
     `,
-    styles: `
-    :host mat-card {
-        max-width: 400px;
-    }
-    `
 })
 export class PreviewCardComponent {
     @Input() linkUrl: string | undefined;

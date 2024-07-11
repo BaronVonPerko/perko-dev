@@ -10,17 +10,9 @@ import {SocialIconLinksComponent} from './social-icon-links.component';
   template: `
     <footer>
       <p>&copy; {{year}} Perko.DEV</p>
-      <app-social-icon-links />
+<!--      <app-social-icon-links />-->
     </footer>
   `,
-  styles: [`
-    footer {
-      margin-top: 40px;
-      border-top: 4px solid var(--color-secondary);
-      text-align: center;
-    }
-  `
-  ]
 })
 export class FooterComponent {
   year = new Date().getFullYear();

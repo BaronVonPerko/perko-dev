@@ -2,10 +2,12 @@ import { Component } from "@angular/core";
 import { ControlButtonsComponent } from "../ui/control-buttons.component";
 import { RecentPostsComponent } from "../ui/recent-posts.component";
 import { SocialIconLinksComponent } from "../ui/social-icon-links.component";
-import { MatCard, MatCardContent, MatCardHeader, MatCardTitle } from "@angular/material/card";
+import { MatCard, MatCardContent, MatCardHeader, MatCardModule, MatCardTitle } from "@angular/material/card";
 import { MatFabAnchor, MatIconAnchor, MatIconButton } from "@angular/material/button";
-import { MatIcon } from "@angular/material/icon";
+import { MatIcon, MatIconModule } from "@angular/material/icon";
 import { RouterLink } from "@angular/router";
+import { ImagePipe } from "../pipes/image.pipe";
+import { MatTooltipModule } from "@angular/material/tooltip";
 
 @Component({
   selector: "app-home",
@@ -14,17 +16,15 @@ import { RouterLink } from "@angular/router";
     ControlButtonsComponent,
     RecentPostsComponent,
     SocialIconLinksComponent,
-    MatCard,
-    MatCardTitle,
-    MatCardHeader,
-    MatCardContent,
-    MatIconButton,
-    MatIcon,
-    MatIconAnchor,
+    MatCardModule,
+    MatIconModule,
     MatFabAnchor,
-    RouterLink
+    RouterLink,
+    ImagePipe,
+    MatTooltipModule,
   ],
   template: `
+    <section class="cards">
     <mat-card>
       <mat-card-header>
         <mat-card-title>Hello! 👋🏻</mat-card-title>
@@ -37,6 +37,25 @@ import { RouterLink } from "@angular/router";
         various events.
       </mat-card-content>
     </mat-card>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Skills</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <ul class="skills">
+          <li>
+            <img [src]="'angular-logo.png' | image" matTooltip="Angular" alt="Angular Logo">
+          </li>
+          <li>
+            <img [src]="'material-logo.png' | image" matTooltip="Angular Material" alt="Angular Material Logo">
+          </li>
+          <li><img [src]="'rxjs-logo.png' | image" matTooltip="RxJS" alt="RxJS Logo"></li>
+          <li><img [src]="'ngrx-logo.png' | image" matTooltip="NGRX" alt="NGRX Logo"></li>
+          <li><img [src]="'typescript-logo.png' | image" matTooltip="TypeScript" alt="TypeScript Logo"></li>
+        </ul>
+      </mat-card-content>
+    </mat-card>
+    </section>
     
     <h2>Latest Post</h2>
 
@@ -51,6 +70,11 @@ import { RouterLink } from "@angular/router";
       h2 {
           text-align: center;
       }
+      section.cards {
+          display: grid;
+          grid-template-columns: 2fr 1fr;
+          grid-gap: 8px;
+      }
       section.posts {
           display: flex;
           align-items: center;
@@ -58,6 +82,28 @@ import { RouterLink } from "@angular/router";
 
           a {
               margin-left: 8px;
+          }
+          
+          app-recent-posts {
+              max-width: 400px;
+              width: 100%;
+          }
+      }
+      ul.skills {
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+          grid-gap: 8px;
+          
+          img {
+              width: 60px;
+              height: 60px;
+              transition: transform 0.2s;
+              &:hover {
+                  transform: rotate(10deg);
+              }
           }
       }
   `

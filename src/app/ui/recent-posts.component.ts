@@ -27,8 +27,6 @@ import {BlogSlugPipe} from '../pipes/blog-slug.pipe';
         </app-preview-card>
     }
   `,
-  styles: [
-  ]
 })
 export class RecentPostsComponent implements OnInit {
   @Input() count = 0;

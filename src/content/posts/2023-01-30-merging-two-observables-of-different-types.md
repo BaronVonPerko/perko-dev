@@ -2,7 +2,7 @@
 date: 2023-01-30
 title: Merging Two Observables of Different Types
 image: RxJS.png
-avatar: RxJS.png
+avatar: rxjs-logo.png
 categories: rxjs
 tags: rxjs
 ---
