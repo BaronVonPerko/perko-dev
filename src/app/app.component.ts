@@ -4,11 +4,12 @@ import { FooterComponent } from "./ui/footer.component";
 import { MatIcon } from "@angular/material/icon";
 import { MatAnchor, MatIconButton } from "@angular/material/button";
 import { MatToolbar, MatToolbarRow } from "@angular/material/toolbar";
+import { SocialIconLinksComponent } from "./ui/social-icon-links.component";
 
 @Component({
     selector: 'app-root',
     standalone: true,
-    imports: [RouterOutlet, FooterComponent, MatIcon, MatIconButton, MatToolbar, MatToolbarRow, MatAnchor, RouterLink],
+    imports: [RouterOutlet, FooterComponent, MatIcon, MatIconButton, MatToolbar, MatToolbarRow, MatAnchor, RouterLink, SocialIconLinksComponent],
     template: `
       <main [class.light-theme]="theme() === 'light'" [class.dark-theme]="theme() === 'dark'"
             class="mat-app-background">
@@ -16,6 +17,7 @@ import { MatToolbar, MatToolbarRow } from "@angular/material/toolbar";
           <mat-toolbar-row>
             <span>perko.dev</span>
             <span class="spacer"></span>
+              <app-social-icon-links />
             <button mat-icon-button (click)="toggleTheme()">
               @if (theme() === 'light') {
                 <mat-icon>dark_mode</mat-icon>

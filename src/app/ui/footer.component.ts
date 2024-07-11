@@ -10,7 +10,7 @@ import {SocialIconLinksComponent} from './social-icon-links.component';
   template: `
     <footer>
       <p>&copy; {{year}} Perko.DEV</p>
-<!--      <app-social-icon-links />-->
+      <app-social-icon-links />
     </footer>
   `,
 })
