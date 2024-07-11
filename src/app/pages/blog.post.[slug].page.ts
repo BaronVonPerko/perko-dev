@@ -14,20 +14,20 @@ import {MarkdownComponent} from '@analogjs/content';
             <analog-markdown [content]="post.content"></analog-markdown>
         }
     `,
-    styles: [
-        `
-            h2 {
-                max-width: var(--article-width);
-                margin: 160px auto 40px;
-                border-bottom: 8px solid var(--color-accent);
-                padding-bottom: 20px;
-            }
-            img {
-                max-width: var(--article-width);
-                margin: 0 auto 40px;
-                display: block;
-            }
-        `],
+    styles: `
+    :host {
+        display: block;
+        max-width: var(--post-width);
+        padding: 0 16px;
+        margin: 0 auto;
+        
+        img {
+            max-width: 100%;
+            margin: 0 auto;
+            display: block;
+        }
+    }
+    `
 })
 export default class PostPageComponent {
     readonly post$ = injectContent<PostAttributes>({

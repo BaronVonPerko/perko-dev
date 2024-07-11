@@ -4,6 +4,11 @@
 @import 'prismjs/plugins/toolbar/prism-toolbar.css';
 @import 'prismjs/themes/prism-okaidia.css';
 
+:root {
+  --page-width: 1400px;
+  --post-width: 800px;
+}
+
 $light-theme: mat.define-theme((
   color: (
     theme-type: light,

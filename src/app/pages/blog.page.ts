@@ -14,7 +14,7 @@ import {RecentPostsComponent} from '../ui/recent-posts.component';
     `,
     styles: `
     app-recent-posts {
-        max-width: 1400px;
+        max-width: var(--page-width);
         padding: 0 16px;
         margin: 0 auto;
     }
