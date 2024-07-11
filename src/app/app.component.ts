@@ -5,37 +5,46 @@ import { MatIcon } from "@angular/material/icon";
 import { MatAnchor, MatIconButton } from "@angular/material/button";
 import { MatToolbar, MatToolbarRow } from "@angular/material/toolbar";
 import { SocialIconLinksComponent } from "./ui/social-icon-links.component";
+import { MatPrefix } from "@angular/material/form-field";
 
 @Component({
     selector: 'app-root',
     standalone: true,
-    imports: [RouterOutlet, FooterComponent, MatIcon, MatIconButton, MatToolbar, MatToolbarRow, MatAnchor, RouterLink, SocialIconLinksComponent],
+    imports: [RouterOutlet, FooterComponent, MatIcon, MatIconButton, MatToolbar, MatToolbarRow, MatAnchor, RouterLink, SocialIconLinksComponent, MatPrefix],
     template: `
-      <main [class.light-theme]="theme() === 'light'" [class.dark-theme]="theme() === 'dark'"
-            class="mat-app-background">
-        <mat-toolbar>
-          <mat-toolbar-row>
-            <span>perko.dev</span>
-            <span class="spacer"></span>
-              <app-social-icon-links />
-            <button mat-icon-button (click)="toggleTheme()">
-              @if (theme() === 'light') {
-                <mat-icon>dark_mode</mat-icon>
-              } @else {
-                <mat-icon>light_mode</mat-icon>
-              }
-            </button>
-          </mat-toolbar-row>
-          <mat-toolbar-row>
-            <a mat-raised-button routerLink="/">Home</a>
-            <a mat-raised-button routerLink="/blog">Blog</a>
-            <a mat-raised-button routerLink="/talks">Talks</a>
-            <a mat-raised-button routerLink="/portfolio">Portfolio</a>
-          </mat-toolbar-row>
-        </mat-toolbar>
-        <router-outlet></router-outlet>
-        <app-footer />
-      </main>
+        <main [class.light-theme]="theme() === 'light'" [class.dark-theme]="theme() === 'dark'"
+              class="mat-app-background">
+            <mat-toolbar>
+                <mat-toolbar-row>
+                    <span>perko.dev</span>
+                    <span class="spacer"></span>
+                    <app-social-icon-links />
+                    <button mat-icon-button (click)="toggleTheme()">
+                        @if (theme() === 'light') {
+                            <mat-icon>dark_mode</mat-icon>
+                        } @else {
+                            <mat-icon>light_mode</mat-icon>
+                        }
+                    </button>
+                </mat-toolbar-row>
+                <mat-toolbar-row>
+                    <a mat-raised-button routerLink="/">
+                        <mat-icon matIconPrefix>home</mat-icon>
+                        Home</a>
+                    <a mat-raised-button routerLink="/blog">
+                        <mat-icon matIconPrefix>article</mat-icon>
+                        Blog</a>
+                    <a mat-raised-button routerLink="/talks">
+                        <mat-icon matIconPrefix>microphone</mat-icon>
+                        Talks</a>
+                    <a mat-raised-button routerLink="/portfolio">
+                        <mat-icon matIconPrefix>work</mat-icon>
+                        Portfolio</a>
+                </mat-toolbar-row>
+            </mat-toolbar>
+            <router-outlet></router-outlet>
+            <app-footer />
+        </main>
     `,
     styles: `
         .spacer {
