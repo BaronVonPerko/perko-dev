@@ -1,21 +1,16 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatToolbar } from "@angular/material/toolbar";
 
 @Component({
   selector: 'app-page-header',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatToolbar],
   template: `
-    <h1><ng-content /></h1>
+    <mat-toolbar>
+    <ng-content />
+    </mat-toolbar>
   `,
-  styles: [
-      `
-          h1 {
-              max-width: var(--max-page-width);
-              margin: 40px auto 80px;
-          }
-      `
-  ]
 })
 export class PageHeaderComponent {
 

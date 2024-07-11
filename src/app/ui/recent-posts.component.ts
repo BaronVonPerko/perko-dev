@@ -27,6 +27,13 @@ import {BlogSlugPipe} from '../pipes/blog-slug.pipe';
         </app-preview-card>
     }
   `,
+  styles: `
+      :host {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          grid-gap: 16px;
+      }
+  `
 })
 export class RecentPostsComponent implements OnInit {
   @Input() count = 0;
