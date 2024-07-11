@@ -38,6 +38,10 @@ main.dark-theme {
 
 @include mat.core();
 
-.mdc-button.button-nav-active {
+.light-theme .mdc-button.button-nav-active {
   background-color: mat.get-theme-color($light-theme, primary, 90);
+}
+
+.dark-theme .mdc-button.button-nav-active {
+  background-color: mat.get-theme-color($dark-theme, primary, 20);
 }
