@@ -12,7 +12,7 @@ import { RouterLink } from "@angular/router";
     standalone: true,
     imports: [CommonModule, BlogSlugPipe, ControlButtonsComponent, ImagePipe, MatCardModule, MatButton, MatAnchor, RouterLink],
     template: `
-      <mat-card>
+      <mat-card appearance="outlined">
         <mat-card-header>
           <mat-card-title>{{ title }}</mat-card-title>
           @if (subtitle) {
