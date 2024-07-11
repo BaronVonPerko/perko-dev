@@ -31,7 +31,7 @@ $modal.open({
 
 Again, it works fine locally, yet angular is telling me that the **$injector** could not resolve dependencies.  The dependencies it is referring to are the *widgets* and *chartName*, which are both set up in the resolve object, and passed into the controller function.
 
-## The Simple Fix
+### The Simple Fix
 
 The solution: change the **controller** declaration to be an array, passing in the items to be injected, and having the last item be the function declaration:
 

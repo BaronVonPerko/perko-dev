@@ -17,7 +17,7 @@ Once the data is loaded, this little element should disappear. However, it would
 
 I tested this with both *ngIf* and *ngShow*, no change. I also wrapped the JavaScript that loads the value in a $timeout function, to make sure that the Angular digest was picking up the changes correctly.
 
-## The Problem and Solution
+### The Problem and Solution
 
 So what was causing this? Was it because we were using *before* and *after* pseudo-elements on the .metric-loader* div? Or, was it the animations?
 

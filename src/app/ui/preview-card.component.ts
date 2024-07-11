@@ -13,7 +13,7 @@ import { MatChip, MatChipSet } from "@angular/material/chips";
     standalone: true,
     imports: [CommonModule, BlogSlugPipe, ControlButtonsComponent, ImagePipe, MatCardModule, MatButton, MatAnchor, RouterLink, MatChip, MatChipSet],
     template: `
-      <mat-card appearance="outlined">
+      <mat-card>
         <mat-card-header>
           <mat-card-title>{{ title }}</mat-card-title>
           @if (subtitle) {

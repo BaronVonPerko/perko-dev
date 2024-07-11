@@ -34,6 +34,10 @@ body {
 
 main.dark-theme {
   @include mat.all-component-themes($dark-theme);
+
+  a:hover {
+    color: mat.get-theme-color($light-theme, primary, 90);
+  }
 }
 
 @include mat.core();
@@ -44,4 +48,28 @@ main.dark-theme {
 
 .dark-theme .mdc-button.button-nav-active {
   background-color: mat.get-theme-color($dark-theme, primary, 20);
+}
+
+.analog-markdown {
+  blockquote {
+    @include mat.elevation(3);
+    border-left: 4px solid mat.get-theme-color($light-theme, primary, 60);
+    padding: 1em;
+  }
+
+  pre {
+    @include mat.elevation(3);
+  }
+}
+
+a {
+  color: mat.get-theme-color($light-theme, primary, 60);
+
+  &:hover {
+    color: mat.get-theme-color($light-theme, primary, 30);
+  }
+
+  &:visited {
+    color: mat.get-theme-color($light-theme, primary, 60);
+  }
 }

@@ -1,5 +1,4 @@
 import {Component, inject} from '@angular/core';
-import {PageHeaderComponent} from '../ui/page-header.component';
 import {of} from 'rxjs';
 import {ContentService} from '../services/content.service';
 import {AsyncPipe, NgForOf, NgIf} from '@angular/common';
@@ -9,9 +8,8 @@ import {PillComponent} from '../ui/pill.component';
 
 @Component({
     standalone: true,
-    imports: [PageHeaderComponent, AsyncPipe, NgForOf, NgIf, PreviewCardComponent, ImagePipe, PillComponent],
+    imports: [AsyncPipe, NgForOf, NgIf, PreviewCardComponent, ImagePipe, PillComponent],
     template: `
-        <app-page-header>Portfolio</app-page-header>
         @for (portfolio of portfolios$ | async; track portfolio.attributes.title) {
             <app-preview-card [title]="portfolio.attributes.title"
                               [imageUrl]="portfolio.attributes.image | image">

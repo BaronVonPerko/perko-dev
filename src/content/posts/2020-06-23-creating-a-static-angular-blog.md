@@ -8,7 +8,7 @@ tags: static,angular,aws,post-mortem
 ---
 If you hadn't noticed, I recently launched my new blog site.  My site had been on WordPress for many years, and I wanted to try something new.  I wanted to go static, with Angular being my weapon of choice, hosted on an AWS S3 bucket.  I also really like [Tailwind](https://tailwindcss.com/), so using [TailwindUI](https://tailwindui.com/) made it easy to design my site.
 
-## But... Why?
+### But... Why?
 
 Static sites are super fast because they are "serverless" (there's still a server, just not one that the developer has to maintain).  There are no requests to an API, or any calls to a database.
 
@@ -16,7 +16,7 @@ There are a lot of options of serving static sites for free, such as with [Netli
 
 Then there was the choice to go with [Angular](https://angular.io).  I could have used a static site generator like [Jigsaw](https://jigsaw.tighten.co/), which I have used in the past for a client's website.  However, I wanted a challenge of a side-project to help me really understand everything that goes into a blog (spoiler alert: it's not just about serving content!).
 
-## Building with Angular
+### Building with Angular
 
 I really ♥ Angular.  It may seem quite overwhelming to a new developer, as there are just tons of features baked in (it's considered a framework, unlike React which is a small UI library).  Typescript is a joy to work with, especially if you come from a type-safe language such as C#.  Having routing baked into a new project makes it so easy to just get right into coding your app without needing to worry about configuration.
 
@@ -63,7 +63,7 @@ node ./scripts/createNewPost my-post
 
 And it will generate the file with metadata and the current date.
 
-## Other Features
+### Other Features
 
 What about search?  What about sitemaps and SEO?  What about the menus?  These are all little features that you don't really have to think about when working with WordPress.  This all has to be taken into consideration.  
 
@@ -71,7 +71,7 @@ I had to write a script that builds **json** files in order for my search featur
 
 Scripts are also written to generate sitemaps.  These have to be run each time a new post or page is created.  
 
-## Would I Do It Again?
+### Would I Do It Again?
 
 The short answer is **no**.  This was a great exercise, and I still have lots to do (such as auto sizing images, or setting up Github actions to automatically update S3).  Building a custom blog was a lot of fun and I have something completely custom for myself, but the time cost was quite huge.  Tools such as WordPress really make it easy to just start writing your posts, and you can easily change the look later.  Plugins make SEO and many other tasks a breeze.  Sharing on social media means that you have to make sure that the featured images are setup correctly in the HTML for the parsers to find.
 

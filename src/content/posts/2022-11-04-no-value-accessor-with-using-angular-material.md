@@ -19,7 +19,7 @@ However, one case that always gets me is in running unit tests, particularly whe
 using [Angular Material](https://material.angular.io/).  This short post will show
 you an example of something to check for that very well may solve your issue.
 
-## Fix for Angular Material
+### Fix for Angular Material
 
 When using Angular Material, we often use many different form control elements.  Usually,
 it is a simple `input`, but other times we may be using something like a `select` instead.
