@@ -1,5 +1,5 @@
 import { Component, signal } from "@angular/core";
-import { RouterLink, RouterOutlet } from "@angular/router";
+import { RouterLink, RouterLinkActive, RouterOutlet } from "@angular/router";
 import { FooterComponent } from "./ui/footer.component";
 import { MatIcon } from "@angular/material/icon";
 import { MatAnchor, MatIconButton } from "@angular/material/button";
@@ -10,13 +10,22 @@ import { MatPrefix } from "@angular/material/form-field";
 @Component({
     selector: 'app-root',
     standalone: true,
-    imports: [RouterOutlet, FooterComponent, MatIcon, MatIconButton, MatToolbar, MatToolbarRow, MatAnchor, RouterLink, SocialIconLinksComponent, MatPrefix],
+    imports: [RouterOutlet, FooterComponent, MatIcon, MatIconButton, MatToolbar, MatToolbarRow, MatAnchor, RouterLink, SocialIconLinksComponent, MatPrefix, RouterLinkActive],
     template: `
         <main [class.light-theme]="theme() === 'light'" [class.dark-theme]="theme() === 'dark'"
               class="mat-app-background">
             <mat-toolbar>
                 <mat-toolbar-row>
                     <span>perko.dev</span>
+                    <a mat-button routerLink="/blog" routerLinkActive="button-nav-active">
+                        <mat-icon matIconPrefix>article</mat-icon>
+                        Blog</a>
+                    <a mat-button routerLink="/talks" routerLinkActive="button-nav-active">
+                        <mat-icon matIconPrefix>microphone</mat-icon>
+                        Talks</a>
+                    <a mat-button routerLink="/portfolio" routerLinkActive="button-nav-active">
+                        <mat-icon matIconPrefix>work</mat-icon>
+                        Portfolio</a>
                     <span class="spacer"></span>
                     <app-social-icon-links />
                     <button mat-icon-button (click)="toggleTheme()">
@@ -26,20 +35,6 @@ import { MatPrefix } from "@angular/material/form-field";
                             <mat-icon>light_mode</mat-icon>
                         }
                     </button>
-                </mat-toolbar-row>
-                <mat-toolbar-row>
-                    <a mat-raised-button routerLink="/">
-                        <mat-icon matIconPrefix>home</mat-icon>
-                        Home</a>
-                    <a mat-raised-button routerLink="/blog">
-                        <mat-icon matIconPrefix>article</mat-icon>
-                        Blog</a>
-                    <a mat-raised-button routerLink="/talks">
-                        <mat-icon matIconPrefix>microphone</mat-icon>
-                        Talks</a>
-                    <a mat-raised-button routerLink="/portfolio">
-                        <mat-icon matIconPrefix>work</mat-icon>
-                        Portfolio</a>
                 </mat-toolbar-row>
             </mat-toolbar>
             <router-outlet></router-outlet>
