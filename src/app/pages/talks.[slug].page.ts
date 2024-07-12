@@ -1,14 +1,28 @@
 import {Component} from '@angular/core';
-import {AsyncPipe, NgIf} from '@angular/common';
+import { AsyncPipe, DatePipe, NgIf } from "@angular/common";
 import {injectContent, MarkdownComponent} from '@analogjs/content';
 import {TalkAttributes} from '../models';
+import {
+    MatCard,
+    MatCardAvatar,
+    MatCardHeader,
+    MatCardImage,
+    MatCardSubtitle,
+    MatCardTitle
+} from "@angular/material/card";
 
 @Component({
     standalone: true,
     template: `
         @if (talk$ | async;as talk) {
-            <h2>{{ talk.attributes.title }}</h2>
-            <img src="images/{{talk.attributes.image}}"/>
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>{{talk.attributes.title}}</mat-card-title>
+                    <mat-card-subtitle>{{talk.attributes.date | date}}</mat-card-subtitle>
+                    <img matCardAvatar [src]="'images/' + talk.attributes.avatar" />
+                </mat-card-header>
+                <img mat-card-image [src]="'images/' + talk.attributes.image" />
+            </mat-card>
             <analog-markdown [content]="talk.content"></analog-markdown>
         }
     `,
@@ -16,23 +30,22 @@ import {TalkAttributes} from '../models';
         AsyncPipe,
         NgIf,
         MarkdownComponent,
+        DatePipe,
+        MatCard,
+        MatCardAvatar,
+        MatCardHeader,
+        MatCardImage,
+        MatCardSubtitle,
+        MatCardTitle
     ],
-    styles: [
-        `
-            h2 {
-                max-width: var(--article-width);
-                margin: 160px auto 40px;
-                border-bottom: 8px solid var(--color-accent);
-                padding-bottom: 20px;
-            }
-
-            img {
-                max-width: var(--article-width);
-                margin: 0 auto 40px;
-                display: block;
-            }
-        `
-    ]
+    styles: `
+        :host {
+            display: block;
+            max-width: var(--post-width);
+            padding: 0 16px;
+            margin: 0 auto;
+        }
+    `
 })
 export default class SingleTalkComponent {
     readonly talk$ = injectContent<TalkAttributes>({

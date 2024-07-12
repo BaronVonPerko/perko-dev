@@ -28,9 +28,6 @@ import { MatCardModule } from "@angular/material/card";
         padding: 0 16px;
         margin: 0 auto;
     }
-    analog-markdown {
-        line-height: 1.5;
-    }
     `
 })
 export default class PostPageComponent {
