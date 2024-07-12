@@ -21,21 +21,23 @@ import { animate, style, transition, trigger } from "@angular/animations";
         ]),
     ],
     template: `
-      <mat-card @enterLeave>
-        <mat-card-header>
-          <mat-card-title>{{ title }}</mat-card-title>
-          @if (subtitle) {
-            <mat-card-subtitle>{{ subtitle }}</mat-card-subtitle>
-          }
-          @if (avatarUrl) {
-            <img mat-card-avatar [src]="avatarUrl" />
-          }
-        </mat-card-header>
-        <img mat-card-image [src]="imageUrl" />
-        <mat-card-actions>
-          <a mat-raised-button [routerLink]="linkUrl">Read More</a>
-        </mat-card-actions>
-      </mat-card>
+        <mat-card @enterLeave>
+            <mat-card-header>
+                <mat-card-title>{{ title }}</mat-card-title>
+                @if (subtitle) {
+                    <mat-card-subtitle>{{ subtitle }}</mat-card-subtitle>
+                }
+                @if (avatarUrl) {
+                    <img mat-card-avatar [src]="avatarUrl" />
+                }
+            </mat-card-header>
+            <img mat-card-image [src]="imageUrl" />
+            @if (linkUrl) {
+                <mat-card-actions>
+                    <a mat-raised-button [routerLink]="linkUrl">{{ linkText }}</a>
+                </mat-card-actions>
+            }
+        </mat-card>
     `,
     styles: `
     mat-card {
@@ -46,6 +48,7 @@ import { animate, style, transition, trigger } from "@angular/animations";
 })
 export class PreviewCardComponent {
     @Input() linkUrl: string | undefined;
+    @Input() linkText = 'Read More';
     @Input({required: true}) imageUrl: string | undefined;
     @Input({required: true}) title: string | undefined;
     @Input() subtitle: string | undefined | null;

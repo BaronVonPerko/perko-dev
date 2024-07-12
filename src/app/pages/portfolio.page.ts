@@ -10,21 +10,23 @@ import {PillComponent} from '../ui/pill.component';
     standalone: true,
     imports: [AsyncPipe, NgForOf, NgIf, PreviewCardComponent, ImagePipe, PillComponent],
     template: `
+        <section class="cards">
         @for (portfolio of portfolios$ | async; track portfolio.attributes.title) {
             <app-preview-card [title]="portfolio.attributes.title"
+                              [linkUrl]="portfolio.attributes.url"
+                              linkText="View Project"
                               [imageUrl]="portfolio.attributes.image | image">
-                <app-pill>{{portfolio.attributes.type}}</app-pill>
-                <p>{{portfolio.attributes.description}}</p>
-                
-                @if (portfolio.attributes.url) {
-                    <a class="linkbtn" href="{{portfolio.attributes.url}}" target="_blank">View Project</a>
-                }
             </app-preview-card>
         }
+        </section>
     `,
-    styles: [`
-    app-pill { display: block; margin: 20px 0;}
-    `],
+    styles: `
+        section.cards {
+            grid-template-columns: 2fr 1fr;
+            grid-gap: 8px;
+            margin-bottom: 16px;
+        }
+    `
 })
 export default class PortfolioComponent {
     private content = inject(ContentService);
