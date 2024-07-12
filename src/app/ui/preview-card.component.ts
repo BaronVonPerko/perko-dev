@@ -7,13 +7,22 @@ import { MatCardModule } from "@angular/material/card";
 import { MatAnchor, MatButton } from "@angular/material/button";
 import { RouterLink } from "@angular/router";
 import { MatChip, MatChipSet } from "@angular/material/chips";
+import { animate, style, transition, trigger } from "@angular/animations";
 
 @Component({
     selector: 'app-preview-card',
     standalone: true,
     imports: [CommonModule, BlogSlugPipe, ControlButtonsComponent, ImagePipe, MatCardModule, MatButton, MatAnchor, RouterLink, MatChip, MatChipSet],
+    animations: [
+        trigger('enterLeave', [
+            transition(':enter', [
+                style({opacity: 0, transform: 'translateY(50px)'}),
+                animate('500ms ease-in', style({opacity: 1, transform: 'translateY(0)'})),
+            ]),
+        ]),
+    ],
     template: `
-      <mat-card>
+      <mat-card @enterLeave>
         <mat-card-header>
           <mat-card-title>{{ title }}</mat-card-title>
           @if (subtitle) {
