@@ -1,4 +1,4 @@
-import { Component, signal } from "@angular/core";
+import { Component, effect, OnInit, signal } from "@angular/core";
 import { RouterLink, RouterLinkActive, RouterOutlet } from "@angular/router";
 import { MatIcon } from "@angular/material/icon";
 import { MatAnchor, MatIconButton } from "@angular/material/button";
@@ -15,6 +15,7 @@ import { MAT_CARD_CONFIG } from "@angular/material/card";
        provide:  MAT_CARD_CONFIG, useValue: {appearance: 'outlined'}
     }],
     template: `
+        @if (theme() !== null) {
         <main [class.light-theme]="theme() === 'light'" [class.dark-theme]="theme() === 'dark'"
               class="mat-app-background">
             <mat-toolbar>
@@ -50,6 +51,7 @@ import { MAT_CARD_CONFIG } from "@angular/material/card";
                 </mat-toolbar>
             </footer>
         </main>
+        }
     `,
     styles: `
         .spacer {
@@ -73,8 +75,16 @@ import { MAT_CARD_CONFIG } from "@angular/material/card";
         }
     `
 })
-export class AppComponent {
-    protected readonly theme = signal<'light' | 'dark'>('light');
+export class AppComponent implements OnInit {
+    protected readonly theme = signal<'light' | 'dark' | null>(null);
     protected toggleTheme = () => this.theme.set(this.theme() === 'light' ? 'dark' : 'light');
     protected currentYear = new Date().getFullYear();
+
+    themeUpdated = effect(() => {
+        localStorage.setItem('theme', this.theme() ?? '');
+    });
+
+    ngOnInit() {
+        this.theme.set(localStorage.getItem('theme') as 'light' | 'dark' || 'light');
+    }
 }
