@@ -6,13 +6,12 @@ import { ImagePipe } from "../pipes/image.pipe";
 import { MatCardModule } from "@angular/material/card";
 import { MatAnchor, MatButton } from "@angular/material/button";
 import { RouterLink } from "@angular/router";
-import { MatChip, MatChipSet } from "@angular/material/chips";
 import { animate, style, transition, trigger } from "@angular/animations";
 
 @Component({
     selector: 'app-preview-card',
     standalone: true,
-    imports: [CommonModule, BlogSlugPipe, ControlButtonsComponent, ImagePipe, MatCardModule, MatButton, MatAnchor, RouterLink, MatChip, MatChipSet],
+    imports: [CommonModule, BlogSlugPipe, ControlButtonsComponent, ImagePipe, MatCardModule, MatButton, MatAnchor, RouterLink],
     animations: [
         trigger('enterLeave', [
             transition(':enter', [
@@ -33,13 +32,6 @@ import { animate, style, transition, trigger } from "@angular/animations";
           }
         </mat-card-header>
         <img mat-card-image [src]="imageUrl" />
-          <mat-card-content>
-              <mat-chip-set>
-              @for (tag of tags; track $index) {
-                  <mat-chip>{{tag}}</mat-chip>
-              }
-              </mat-chip-set>
-          </mat-card-content>
         <mat-card-actions>
           <a mat-raised-button [routerLink]="linkUrl">Read More</a>
         </mat-card-actions>
@@ -59,5 +51,4 @@ export class PreviewCardComponent {
     @Input() subtitle: string | undefined | null;
     @Input() date: string | undefined;
     @Input() avatarUrl: string | undefined;
-    @Input() tags: string[] = [];
 }

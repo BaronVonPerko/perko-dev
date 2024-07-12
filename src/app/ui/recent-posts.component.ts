@@ -18,7 +18,6 @@ import {BlogSlugPipe} from '../pipes/blog-slug.pipe';
                           [imageUrl]="post.attributes.image | image"
                           [avatarUrl]="post.attributes.avatar ?? '2023_headshot.jpg' | image"
                           [subtitle]="post.attributes.date | date"
-                          [tags]="post.attributes.tags?.split(',') ?? []"
                           [linkUrl]="post.slug | blogSlug">
             @if (post.attributes.tags) {
                 @for (tag of post.attributes.tags.split(','); track tag) {
