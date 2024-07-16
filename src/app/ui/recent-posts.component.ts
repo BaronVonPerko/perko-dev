@@ -30,8 +30,8 @@ import {BlogSlugPipe} from '../pipes/blog-slug.pipe';
   styles: `
       :host {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-          grid-gap: 16px;
+          grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+          grid-gap: 2rem;
       }
   `
 })

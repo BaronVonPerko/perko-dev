@@ -54,13 +54,12 @@ import { MatTooltip } from "@angular/material/tooltip";
         section.cards {
             display: grid;
             grid-template-columns: 1fr;
-            grid-gap: 8px;
+            grid-gap: 2rem;
             margin-bottom: 4rem;
         }
         @media(min-width: 768px) {
             section.cards {
                 grid-template-columns: 2fr 1fr;
-                grid-gap: 8px;
             }
         }
         ul.skills {

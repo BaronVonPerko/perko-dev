@@ -28,7 +28,7 @@ import { TalkSlugPipe } from "../pipes/talk-slug.pipe";
         section.talks {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            grid-gap: 8px;
+            grid-gap: 2rem;
         }
     `
 })
