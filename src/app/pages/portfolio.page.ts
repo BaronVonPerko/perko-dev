@@ -22,9 +22,9 @@ import {PillComponent} from '../ui/pill.component';
     `,
     styles: `
         section.cards {
-            grid-template-columns: 2fr 1fr;
-            grid-gap: 8px;
-            margin-bottom: 16px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-gap: 2rem;
         }
     `
 })
