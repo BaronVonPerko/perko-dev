@@ -24,7 +24,7 @@ import {PillComponent} from '../ui/pill.component';
         section.cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            grid-gap: 2rem;
+            grid-gap: 1rem;
         }
     `
 })

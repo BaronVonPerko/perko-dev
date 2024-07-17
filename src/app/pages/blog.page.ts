@@ -54,8 +54,8 @@ import { MatTooltip } from "@angular/material/tooltip";
         section.cards {
             display: grid;
             grid-template-columns: 1fr;
-            grid-gap: 2rem;
-            margin-bottom: 4rem;
+            grid-gap: 1rem;
+            margin-bottom: 2rem;
         }
         @media(min-width: 768px) {
             section.cards {
