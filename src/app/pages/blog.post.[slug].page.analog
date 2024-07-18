@@ -1,0 +1,39 @@
+<template>
+  @if (post$ | async; as post) {
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ post.attributes.title }}</mat-card-title>
+        <mat-card-subtitle>{{ post.attributes.date | date }}</mat-card-subtitle>
+        <img matCardAvatar [src]="'images/' + post.attributes.avatar" />
+      </mat-card-header>
+      <img mat-card-image [src]="'images/' + post.attributes.image" />
+    </mat-card>
+
+    <analog-markdown [content]="post.content"></analog-markdown>
+  }
+</template>
+
+<script lang="ts">
+
+  import { injectContent, MarkdownComponent } from "@analogjs/content";
+  import { PostAttributes } from "../models";
+  import { AsyncPipe, DatePipe, NgIf } from "@angular/common";
+  import { MatCardModule } from "@angular/material/card";
+
+  defineMetadata({
+    imports: [AsyncPipe, NgIf, MarkdownComponent, MatCardModule, DatePipe]
+  });
+  const post$ = injectContent<PostAttributes>({
+    param: "slug",
+    subdirectory: "posts"
+  });
+</script>
+
+<style>
+    :host {
+        display: block;
+        max-width: var(--post-width);
+        padding: 0 16px;
+        margin: 0 auto;
+    }
+</style>
