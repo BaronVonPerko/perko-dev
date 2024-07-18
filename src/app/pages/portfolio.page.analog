@@ -18,10 +18,9 @@
     import { AsyncPipe, NgForOf, NgIf } from "@angular/common";
     import { PreviewCardComponent } from "../ui/preview-card.component";
     import { ImagePipe } from "../pipes/image.pipe";
-    import { PillComponent } from "../ui/pill.component";
 
     defineMetadata({
-    imports: [AsyncPipe, NgForOf, NgIf, PreviewCardComponent, ImagePipe, PillComponent],
+    imports: [AsyncPipe, NgForOf, NgIf, PreviewCardComponent, ImagePipe],
 })
     const portfolios$ = of(inject(ContentService).portfolio);
 </script>

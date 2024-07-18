@@ -1,7 +1,6 @@
 import { Component, Input } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { BlogSlugPipe } from "../pipes/blog-slug.pipe";
-import { ControlButtonsComponent } from "./control-buttons.component";
 import { ImagePipe } from "../pipes/image.pipe";
 import { MatCardModule } from "@angular/material/card";
 import { MatAnchor, MatButton } from "@angular/material/button";
@@ -11,7 +10,7 @@ import { animate, style, transition, trigger } from "@angular/animations";
 @Component({
     selector: 'app-preview-card',
     standalone: true,
-    imports: [CommonModule, BlogSlugPipe, ControlButtonsComponent, ImagePipe, MatCardModule, MatButton, MatAnchor, RouterLink],
+    imports: [CommonModule, BlogSlugPipe, ImagePipe, MatCardModule, MatButton, MatAnchor, RouterLink],
     animations: [
         trigger('enterLeave', [
             transition(':enter', [
