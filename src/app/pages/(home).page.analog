@@ -2,10 +2,11 @@
   import { MatCardModule } from "@angular/material/card";
   import { ImagePipe } from "../pipes/image.pipe";
   import { MatTooltipModule } from "@angular/material/tooltip";
+  import { MatIcon } from "@angular/material/icon";
 
   defineMetadata({
-    imports: [MatCardModule, ImagePipe, MatTooltipModule],
-  })
+    imports: [MatCardModule, ImagePipe, MatTooltipModule]
+  });
 </script>
 
 <template>
@@ -40,6 +41,22 @@
         </ul>
       </mat-card-content>
     </mat-card>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>About This Site</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        This site was built on:
+        <ul class="site">
+          <li>
+            <img [src]="'analog-logo.svg' | image" matTooltip="AnalogJS" alt="AnalogJS Logo">AnalogJS v1.6
+          </li>
+          <li>
+            <img [src]="'material-logo.png' | image" matTooltip="Angular Material" alt="Angular Material Logo">Angular Material v18 (m3)
+          </li>
+        </ul>
+      </mat-card-content>
+    </mat-card>
   </section>
 </template>
 
@@ -50,11 +67,13 @@
         grid-gap: 1rem;
         margin-bottom: 2rem;
     }
-    @media(min-width: 768px) {
+
+    @media (min-width: 768px) {
         section.cards {
             grid-template-columns: 2fr 1fr;
         }
     }
+
     ul.skills {
         list-style-type: none;
         padding: 0;
@@ -66,8 +85,30 @@
             width: 60px;
             height: 60px;
             transition: transform 0.2s;
+
             &:hover {
                 transform: rotate(10deg);
+            }
+        }
+    }
+
+    ul.site {
+        list-style-type: none;
+        padding: 0;
+
+        li {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            align-items: center;
+        }
+
+        img {
+            width: 60px;
+            height: 60px;
+            transition: transform 0.2s;
+
+            &:hover {
+                transform: scale(1.1);
             }
         }
     }
