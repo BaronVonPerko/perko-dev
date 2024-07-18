@@ -6,11 +6,12 @@ import { MatToolbar, MatToolbarRow } from "@angular/material/toolbar";
 import { SocialIconLinksComponent } from "./ui/social-icon-links.component";
 import { MatPrefix } from "@angular/material/form-field";
 import { MAT_CARD_CONFIG } from "@angular/material/card";
+import { MainIconComponent } from "./ui/app-icon.component";
 
 @Component({
     selector: 'app-root',
     standalone: true,
-    imports: [RouterOutlet, MatIcon, MatIconButton, MatToolbar, MatToolbarRow, MatAnchor, RouterLink, SocialIconLinksComponent, MatPrefix, RouterLinkActive],
+    imports: [RouterOutlet, MatIcon, MatIconButton, MatToolbar, MatToolbarRow, MatAnchor, RouterLink, SocialIconLinksComponent, MatPrefix, RouterLinkActive, MainIconComponent],
     providers: [{
        provide:  MAT_CARD_CONFIG, useValue: {appearance: 'outlined'}
     }],
@@ -20,7 +21,7 @@ import { MAT_CARD_CONFIG } from "@angular/material/card";
               class="mat-app-background">
             <mat-toolbar>
                 <mat-toolbar-row>
-                    <span>perko.dev</span>
+                    <app-main-icon />
                     <a mat-button routerLink="/blog" routerLinkActive="button-nav-active">
                         <mat-icon matIconPrefix>article</mat-icon>
                         Blog</a>
@@ -31,7 +32,6 @@ import { MAT_CARD_CONFIG } from "@angular/material/card";
                         <mat-icon matIconPrefix>work</mat-icon>
                         Portfolio</a>
                     <span class="spacer"></span>
-                    <app-social-icon-links />
                     <button mat-icon-button (click)="toggleTheme()">
                         @if (theme() === 'light') {
                             <mat-icon>dark_mode</mat-icon>
@@ -39,6 +39,7 @@ import { MAT_CARD_CONFIG } from "@angular/material/card";
                             <mat-icon>light_mode</mat-icon>
                         }
                     </button>
+                    <app-social-icon-links />
                 </mat-toolbar-row>
             </mat-toolbar>
             <div class="content">

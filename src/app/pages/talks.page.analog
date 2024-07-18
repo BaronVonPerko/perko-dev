@@ -1,4 +1,14 @@
 <template>
+  <mat-card class="info-card">
+    <mat-card-header>
+      <mat-card-title>My Talks</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="'perko-brooke-ng-conf.jpg' | image" alt="Chris Perko speaking at a conference.">
+    <mat-card-content>
+      <p>Here are some of the talks I've given at various conferences and meetups.</p>
+      <p>Each one has links to resources, including the slides, and any code samples!</p>
+    </mat-card-content>
+  </mat-card>
   <section class="talks">
     @for (talk of talks$ | async; track talk.attributes.title) {
       <app-preview-card [title]="talk.attributes.title"
@@ -22,9 +32,10 @@
   import { TalkSubtitlePipe } from "../pipes/talk-subtitle.pipe";
   import { sortTalksByDate } from "../operators";
   import { TalkSlugPipe } from "../pipes/talk-slug.pipe";
+  import { MatCardModule } from "@angular/material/card";
 
   defineMetadata({
-    imports: [AsyncPipe, NgForOf, PreviewCardComponent, DatePipe, ImagePipe, TalkSubtitlePipe, TalkSlugPipe]
+    imports: [AsyncPipe, NgForOf, PreviewCardComponent, DatePipe, ImagePipe, TalkSubtitlePipe, TalkSlugPipe, MatCardModule]
   });
   const talks$ = of(inject(ContentService).talks).pipe(
     sortTalksByDate()
@@ -36,5 +47,10 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
         grid-gap: 1rem;
+    }
+
+    .info-card {
+        max-width: 400px;
+        margin-bottom: 2rem;
     }
 </style>
