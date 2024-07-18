@@ -17,6 +17,9 @@ export default defineConfig(({ mode }) => ({
     static: true,
     vite: {
       inlineStylesExtension: 'scss',
+      experimental: {
+        supportAnalogFormat: true,
+      }
     },
     prerender: {
       routes: extractRoutesToPrerender(),
