@@ -46,7 +46,6 @@
         <mat-card-title><h3>About This Site</h3></mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        This site was built with:
         <ul class="site">
           <li>
             <img [src]="'analog-logo.svg' | image" matTooltip="AnalogJS" alt="AnalogJS Logo">AnalogJS v1.6

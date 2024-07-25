@@ -28,9 +28,6 @@ import { MainIconComponent } from "./ui/app-icon.component";
                     <a mat-button routerLink="/talks" routerLinkActive="button-nav-active">
                         <mat-icon matIconPrefix>microphone</mat-icon>
                         Talks</a>
-                    <a mat-button routerLink="/portfolio" routerLinkActive="button-nav-active">
-                        <mat-icon matIconPrefix>work</mat-icon>
-                        Portfolio</a>
                     <span class="spacer"></span>
                     <button mat-icon-button (click)="toggleTheme()">
                         @if (theme() === 'light') {
@@ -66,7 +63,7 @@ import { MainIconComponent } from "./ui/app-icon.component";
         .content {
             display: block;
             max-width: var(--perko-page-width);
-            padding: 0 16px;
+            padding: 2rem;
             margin: 0 auto;
             min-height: 100vh;
         }

@@ -34,7 +34,7 @@ import { animate, style, transition, trigger } from "@angular/animations";
             <img mat-card-image [src]="imageUrl" />
             @if (linkUrl) {
                 <mat-card-actions>
-                    <a mat-raised-button [routerLink]="linkUrl">{{ linkText }}</a>
+                    <a mat-flat-button [routerLink]="linkUrl">{{ linkText }}</a>
                 </mat-card-actions>
             }
         </mat-card>
@@ -44,8 +44,6 @@ import { animate, style, transition, trigger } from "@angular/animations";
         height: 100%;
         justify-content: space-between;
         mat-card-title a {
-            text-decoration: none;
-            
             h4 {
                 margin-top: 0;
                 margin-bottom: 1rem;

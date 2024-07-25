@@ -9,7 +9,9 @@
       <img mat-card-image [src]="'images/' + post.attributes.image" />
     </mat-card>
 
-    <analog-markdown [content]="post.content"></analog-markdown>
+    <article>
+      <analog-markdown [content]="post.content"></analog-markdown>
+    </article>
   }
 </template>
 
