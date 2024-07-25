@@ -1,7 +1,7 @@
 <template>
   <mat-card class="info-card">
     <mat-card-header>
-      <mat-card-title>My Talks</mat-card-title>
+      <mat-card-title><h3>My Talks</h3></mat-card-title>
     </mat-card-header>
     <img mat-card-image [src]="'perko-brooke-ng-conf.jpg' | image" alt="Chris Perko speaking at a conference.">
     <mat-card-content>
@@ -43,6 +43,10 @@
 </script>
 
 <style>
+
+    mat-card-title h3 {
+        margin: 0 0 1rem 0;
+    }
 
     section.talks {
         display: grid;
