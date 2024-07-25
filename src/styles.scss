@@ -5,8 +5,9 @@
 @import 'prismjs/themes/prism-okaidia.css';
 
 :root {
-  --page-width: 1400px;
-  --post-width: 800px;
+  --perko-page-width: 1400px;
+  --perko-post-width: 800px;
+  --perko-card-subtitle-align: left;
 }
 
 $light-theme: mat.define-theme((

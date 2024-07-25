@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, inject, Input } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { BlogSlugPipe } from "../pipes/blog-slug.pipe";
 import { ImagePipe } from "../pipes/image.pipe";
@@ -22,7 +22,8 @@ import { animate, style, transition, trigger } from "@angular/animations";
     template: `
         <mat-card @enterLeave>
             <mat-card-header>
-                <mat-card-title>{{ title }}</mat-card-title>
+                <mat-card-title>
+                    <a [routerLink]="linkUrl"><h4>{{ title }}</h4></a></mat-card-title>
                 @if (subtitle) {
                     <mat-card-subtitle>{{ subtitle }}</mat-card-subtitle>
                 }
@@ -42,6 +43,18 @@ import { animate, style, transition, trigger } from "@angular/animations";
     mat-card {
         height: 100%;
         justify-content: space-between;
+        mat-card-title a {
+            text-decoration: none;
+            
+            h4 {
+                margin-top: 0;
+                margin-bottom: 1rem;
+            }
+        }
+        mat-card-subtitle {
+            margin-bottom: 1rem;
+            text-align: var(--perko-card-subtitle-align, left);
+        }
     }
     `
 })

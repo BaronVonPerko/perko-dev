@@ -2,10 +2,10 @@
   import { MatCardModule } from "@angular/material/card";
   import { ImagePipe } from "../pipes/image.pipe";
   import { MatTooltipModule } from "@angular/material/tooltip";
-  import { MatIcon } from "@angular/material/icon";
+  import { RecentPostsComponent } from "../ui/recent-posts.component";
 
   defineMetadata({
-    imports: [MatCardModule, ImagePipe, MatTooltipModule]
+    imports: [MatCardModule, ImagePipe, MatTooltipModule, RecentPostsComponent]
   });
 </script>
 
@@ -13,7 +13,7 @@
   <section class="cards">
     <mat-card>
       <mat-card-header>
-        <mat-card-title>Hello! 👋🏻</mat-card-title>
+        <mat-card-title><h1>Hello! 👋🏻</h1></mat-card-title>
       </mat-card-header>
       <mat-card-content>
         <p>I'm Chris Perko, a senior engineer at <a href="https://hero.dev" target="_blank">HeroDevs</a> and
@@ -25,7 +25,7 @@
     </mat-card>
     <mat-card>
       <mat-card-header>
-        <mat-card-title>Skills</mat-card-title>
+        <mat-card-title><h3>Skills</h3></mat-card-title>
       </mat-card-header>
       <mat-card-content>
         <ul class="skills">
@@ -43,10 +43,10 @@
     </mat-card>
     <mat-card>
       <mat-card-header>
-        <mat-card-title>About This Site</mat-card-title>
+        <mat-card-title><h3>About This Site</h3></mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        This site was built on:
+        This site was built with:
         <ul class="site">
           <li>
             <img [src]="'analog-logo.svg' | image" matTooltip="AnalogJS" alt="AnalogJS Logo">AnalogJS v1.6
@@ -54,9 +54,19 @@
           <li>
             <img [src]="'material-logo.png' | image" matTooltip="Angular Material" alt="Angular Material Logo">Angular Material v18 (m3)
           </li>
+          <li>
+            <a href="https://github.com/baronVonPerko/perko-dev" target="_blank">
+              <img [src]="'github-logo.svg' | image" matTooltip="Source Code" alt="GitHub Logo">Source Code
+            </a>
+          </li>
         </ul>
       </mat-card-content>
     </mat-card>
+  </section>
+
+  <section class="posts">
+    <h2>Recent Posts</h2>
+    <app-recent-posts [count]="3" />
   </section>
 </template>
 
@@ -64,7 +74,7 @@
     section.cards {
         display: grid;
         grid-template-columns: 1fr;
-        grid-gap: 1rem;
+        grid-gap: 0.5rem;
         margin-bottom: 2rem;
     }
 
@@ -97,9 +107,16 @@
         padding: 0;
 
         li {
+            margin: 1rem 0;
+        }
+
+        li, li a {
             display: grid;
             grid-template-columns: auto 1fr;
             align-items: center;
+            img {
+                margin-right: 1rem;
+            }
         }
 
         img {

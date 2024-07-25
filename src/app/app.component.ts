@@ -65,9 +65,10 @@ import { MainIconComponent } from "./ui/app-icon.component";
 
         .content {
             display: block;
-            max-width: var(--page-width);
+            max-width: var(--perko-page-width);
             padding: 0 16px;
             margin: 0 auto;
+            min-height: 100vh;
         }
         
         footer mat-toolbar {

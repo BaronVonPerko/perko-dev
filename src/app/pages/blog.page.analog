@@ -13,6 +13,9 @@
 </script>
 
 <style>
+    :host {
+        --perko-card-subtitle-align: right;
+    }
     img {
         width: 60px;
         height: 60px;

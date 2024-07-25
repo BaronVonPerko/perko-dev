@@ -11,7 +11,6 @@ export const appConfig: ApplicationConfig = {
         provideFileRouter(),
         provideHttpClient(),
         provideAnimations(),
-        // provideClientHydration(),
         provideContent(withMarkdownRenderer(), withPrismHighlighter())
     ],
 };
