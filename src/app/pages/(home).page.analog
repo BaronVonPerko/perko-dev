@@ -2,12 +2,11 @@
   import { MatCardModule } from "@angular/material/card";
   import { ImagePipe } from "../pipes/image.pipe";
   import { MatTooltipModule } from "@angular/material/tooltip";
-  import { RecentPostsComponent } from "../ui/recent-posts.component";
   import { RouterLink } from "@angular/router";
   import { MatAnchor } from "@angular/material/button";
 
   defineMetadata({
-    imports: [MatCardModule, ImagePipe, MatTooltipModule, RecentPostsComponent, RouterLink, MatAnchor]
+    imports: [MatCardModule, ImagePipe, MatTooltipModule, RouterLink, MatAnchor]
   });
 </script>
 
@@ -70,7 +69,7 @@
     </mat-card>
   </section>
 
-  <section class="cards">
+  <section class="cards-1-2">
     <mat-card>
       <mat-card-header>
         <mat-card-title><h3>About This Site</h3></mat-card-title>
@@ -92,11 +91,17 @@
         </ul>
       </mat-card-content>
     </mat-card>
-  </section>
 
-  <section class="posts">
-    <h2>Recent Posts</h2>
-    <app-recent-posts [count]="3" />
+    <mat-card>
+      <img mat-card-image [src]="'angular-community-meetup-logo.png' | image" alt="Angular Community Meetup logo">
+      <mat-card-content>
+        <h3>Angular Community Meetup</h3>
+        <p>Join us monthly for live events!</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <a mat-button href="https://angularcommunity.net/" target="_blank">Join Us</a>
+      </mat-card-actions>
+    </mat-card>
   </section>
 </template>
 
@@ -105,7 +110,7 @@
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 0.5rem;
-        margin-bottom: 2rem;
+        margin-bottom: 0.5rem;
     }
 
     @media (min-width: 768px) {
@@ -114,11 +119,26 @@
         }
     }
 
+    section.cards-1-2 {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 0.5rem;
+        margin-bottom: 0.5rem;
+
+        @media(min-width: 768px) {
+            grid-template-columns: 2fr 3fr;
+        }
+
+        .mdc-card__media {
+            object-fit: contain;
+        }
+    }
+
     section.cards-half {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 0.5rem;
-        margin-bottom: 2rem;
+        margin-bottom: 0.5rem;
 
         img {
             max-width: 100%;
