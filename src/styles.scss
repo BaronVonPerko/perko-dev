@@ -8,6 +8,7 @@
   --perko-page-width: 1400px;
   --perko-post-width: 800px;
   --perko-card-subtitle-align: left;
+   --mdc-outlined-card-container-color: mat.get-theme-color($light-theme, primary, 50);
 }
 
 $light-theme: mat.define-theme((
@@ -79,3 +80,10 @@ a {
 analog-markdown, p {
   line-height: 1.5;
 }
+
+@mixin color($theme) {
+  .bg-primary {
+    background-color: mat.get-theme-color($theme, primary, 50);
+  }
+}
+@include color($light-theme);

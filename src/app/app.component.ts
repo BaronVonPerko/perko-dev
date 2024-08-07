@@ -40,7 +40,7 @@ import { MainIconComponent } from "./ui/app-icon.component";
                 </mat-toolbar-row>
             </mat-toolbar>
             <div class="content">
-            <router-outlet></router-outlet>
+            <router-outlet />
             </div>
             
             <footer>
