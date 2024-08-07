@@ -27,6 +27,11 @@ $dark-theme: mat.define-theme((
   ),
 ));
 
+
+html {
+  background-color: mat.get-theme-color($light-theme, primary, 50);
+}
+
 body {
   margin: 0;
   padding: 0;
