@@ -36,11 +36,20 @@ body {
   margin: 0;
   padding: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
-  @include mat.all-component-themes($light-theme);
+
+  @include mat.core-theme($light-theme);
+  @include mat.button-theme($light-theme);
+  @include mat.card-theme($light-theme);
+  @include mat.toolbar-theme($light-theme);
+  @include mat.tooltip-theme($light-theme);
 }
 
 main.dark-theme {
-  @include mat.all-component-themes($dark-theme);
+  @include mat.core-theme($dark-theme);
+  @include mat.button-theme($dark-theme);
+  @include mat.card-theme($dark-theme);
+  @include mat.toolbar-theme($dark-theme);
+  @include mat.tooltip-theme($dark-theme);
 
   a:hover {
     color: mat.get-theme-color($light-theme, primary, 90);
