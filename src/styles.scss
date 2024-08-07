@@ -50,10 +50,6 @@ main.dark-theme {
   @include mat.card-theme($dark-theme);
   @include mat.toolbar-theme($dark-theme);
   @include mat.tooltip-theme($dark-theme);
-
-  a:hover {
-    color: mat.get-theme-color($light-theme, primary, 90);
-  }
 }
 
 @include mat.core();
