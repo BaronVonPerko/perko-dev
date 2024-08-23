@@ -2,7 +2,6 @@
 date: 2023-03-07
 title: "Angular Pipes: Pure vs Impure"
 image: pipes.jpg
-avatar: angular-logo.png
 categories: angular
 tags: angular
 ---
@@ -44,7 +43,7 @@ And it can be used in our template like this:
 
 > Notice that the pipe's name (myPipe) is the same as the name listed in the Pipe decorator.
 
-### Pure vs Impure Pipes
+## Pure vs Impure Pipes
 
 By default, a Pipe is marked as pure.  This can be changed by setting it in the Pipe decorator like this:
 
@@ -94,7 +93,7 @@ export class PersonNamePipe implements PipeTransform {
 
 This is not a pure function because it depends on an external factor, the `LoginService`.  This means that the output will change depending on the current state of the `LoginService`.  This is not a pure function, and will be updated for every change detection cycle.
 
-### When to Use Pure vs Impure Pipes
+## When to Use Pure vs Impure Pipes
 
 Pure pipes are more performant, but they are limited in what they can do.  If you need to transform data based on external factors, you will need to use an impure pipe.  However, if you can transform the data without depending on external factors, you should use a pure pipe.  
 

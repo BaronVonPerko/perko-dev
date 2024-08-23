@@ -2,7 +2,6 @@
 date: 2017-09-01
 title: "Initializing AngularJS Controllers - NgIf vs NgShow"
 image: switch.jpg
-avatar: angular-logo.png
 categories: Angular
 tags: angularjs,bug,controller,ngif,ngshow
 ---

@@ -27,7 +27,7 @@ After doing some experimenting, I learned a lot, and I think that I can provide
 a concise and easy way of understanding what you're actually developing
 when you are creating a custom block.
 
-### Separation of Two Presentations
+## Separation of Two Presentations
 
 It's kind of strange to think about, but you really have two different 
 presentations.  One is for the block editor itself, and one is for what
@@ -46,7 +46,7 @@ editor and on the front-end.
 > When I say "front-end", I am specifically referring to what the reader
 > on the site would see.
 
-### A Simple Example
+## A Simple Example
 
 I've created a simple block using the [Create Block](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-create-block/)
 package provided by WordPress.  Let's take a look at the *edit* function:
@@ -114,7 +114,7 @@ what is saved in the database.
 
 
 
-### Saving Content Data with Attributes
+## Saving Content Data with Attributes
 
 So you have your *edit* and *save* functions created, but you want
 to allow the user to actually input something.  How is this data
@@ -211,7 +211,7 @@ If you reload the editor in your browser, you'll see that your text
 remains.  It works by pulling this text off of the attributes object.
 Pretty cool, huh?
 
-### Displaying Attribute Data on the Front-End
+## Displaying Attribute Data on the Front-End
 
 Let's revisit our *save* function and update it so that it will now
 display to readers the text that we allowed our editor to add to it.

@@ -8,7 +8,7 @@ tags: animation,css,style,transformation,transition
 
 I use transitions and transformations a lot in CSS. They are really useful tools that can help make a site look and feel really good. However, there is something I can never remember, so I am putting it in writing here for myself, and for anyone else that runs into this problem.
 
-### Tricky Tricky
+## Tricky Tricky
 
 There is a very small difference in the syntax between transitioning multiple properties versus transforming multiple properties on an element. In transitions, you separate the different transitions by a comma, but transformations omit this comma.
 

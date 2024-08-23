@@ -2,7 +2,6 @@
 date: 2023-01-30
 title: Merging Two Observables of Different Types
 image: RxJS.png
-avatar: rxjs-logo.png
 categories: rxjs
 tags: rxjs
 ---
@@ -37,7 +36,7 @@ However, there is a typescript error here.  The value that is passed to the `swi
 `Sort | PageEvent`.  The problem is that `Sort` doesn't have `pageIndex` or `pageSize`, and
 inversely, `PageEvent` doesn't have `direction` or `active` properties.
 
-### How Can we Merge with Different Observable Types?
+## How Can we Merge with Different Observable Types?
 
 Let's make a simpler example, with two streams of people and pets.  People and pets both have
 a name, but a person will have an occupation, and a pet will have a species.

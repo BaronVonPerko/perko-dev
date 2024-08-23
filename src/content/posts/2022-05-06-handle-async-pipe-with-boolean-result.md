@@ -10,7 +10,7 @@ The [async pipe](https://seedpro-dv.corteva.com/#/permField/addPermField?pchsId=
 
 It's best, if possible, to never subscribe to observables, and use the **async pipe** instead.  This is not always possible, but it's a good goal to strive for.
 
-### The Problem with Boolean Results
+## The Problem with Boolean Results
 
 You may have a scenario where the observable you are subscribing to returns a *boolean* result.  When returning an array of results, we usually use the **async pipe** within an **ngFor** directive.  However, when we're dealing with an object (or in this case a boolean), we use the **ngIf** directive.
 
@@ -69,7 +69,7 @@ Currently, we are passing in the username of 'chris', which returns true, and th
 
 However, if we change the username to something like 'bob', the entire text disappears.  We would rather it say "User active state: false".  How do we accomplish this?  When the observable passes back *false*, the **ngIf** directive remove the DOM element from the page.
 
-### Using ngIfElse 
+## Using ngIfElse 
 
 One way, for this particular example, to get around this is to use the **ngIfElse** directive.  We can update our template as follows:
 
@@ -84,7 +84,7 @@ One way, for this particular example, to get around this is to use the **ngIfEls
 
 However, depending on how complex your template is, this may not always be ideal.
 
-### Using Map
+## Using Map
 
 Another solution, is to use *map*, which is a really cool rxjs operator.  [map](https://rxjs.dev/api/operators/map) allows you to manipulate the result from an observable, mapping it into a different value.
 
@@ -138,7 +138,7 @@ export class UserInfoComponent implements OnInit {
 }
 ```
 
-### Update the Object in the Template
+## Update the Object in the Template
 
 Here is my favorite solution for this problem.  Instead of using RxJS operators to modify the value to be an object, we can simply do it within the template itself.  Here's an example:
 
@@ -150,6 +150,6 @@ Here is my favorite solution for this problem.  Instead of using RxJS operators 
 
 Within our *ngIf*, we are creating an object with a property of *value*, and assigning it the result of our observable.  We then use the *content* variable that is created to access the *value* property.  This solution makes our component code much simpler, with not a lot of change to the template code!
 
-### Check out an Example!
+## Check out an Example!
 
 [I've also created a StackBlitz example for you to review and play with as well.](https://stackblitz.com/edit/perko-async-pipe-boolean)  Happy coding!
