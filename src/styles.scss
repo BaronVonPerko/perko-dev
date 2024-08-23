@@ -91,6 +91,10 @@ analog-markdown, p {
   line-height: 1.5;
 }
 
+mat-card img {
+  border-radius: var(--mdc-outlined-card-container-shape);
+}
+
 @mixin color($theme) {
   .bg-primary {
     background-color: mat.get-theme-color($theme, primary, 50);

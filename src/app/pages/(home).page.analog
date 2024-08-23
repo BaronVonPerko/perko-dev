@@ -80,6 +80,9 @@
             <img [src]="'analog-logo.svg' | image" matTooltip="AnalogJS" alt="AnalogJS Logo">AnalogJS v1.6
           </li>
           <li>
+            <img [src]="'angular-logo.png' | image" matTooltip="Angular" alt="Angular Logo">Angular v18
+          </li>
+          <li>
             <img [src]="'material-logo.png' | image" matTooltip="Angular Material" alt="Angular Material Logo">Angular
             Material v18 (m3)
           </li>
