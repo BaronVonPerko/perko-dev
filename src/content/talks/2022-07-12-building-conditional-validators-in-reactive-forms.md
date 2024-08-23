@@ -2,7 +2,6 @@
 date: 2022-07-27
 title: Building Conditional Validators in Reactive Forms
 image: angular-rxjs.jpg
-avatar: angular-logo.png
 categories: angular,rxjs
 tags: rxjs,angular,forms,
 conference: Angular Community Meetup
@@ -110,7 +109,7 @@ We have an `*ngIfdirective` that will handle showing and hiding the
 user is not at least the minimum age requirement, as specified in our
 **LoginForm** class).
 
-### What's the Problem?
+## What's the Problem?
 
 So, if the form control in question (**parent’s email address**) is being
 shown only when needed, what is the problem with our site? Let’s try
@@ -124,7 +123,7 @@ is invalid here because even though we do not display the
 associated with it within our **LoginForm** class. This is an instance where
 we need to use conditional validators.
 
-### How to Add Conditional Validators to Our Form Definition
+## How to Add Conditional Validators to Our Form Definition
 
 We want to keep all of our login associated with the form within our
 **LoginForm** class, and not have logic in both the **LoginForm** and our
@@ -186,7 +185,7 @@ important step to let Angular know that the value or the validation rules
 have changed on our control, and we want the **parent email** control to
 be re-evaluated.
 
-### Don't Forget to Subscribe!
+## Don't Forget to Subscribe!
 
 In order for any observable to actually do anything, it needs to be
 subscribed to. We could subscribe within the **LoginForm** class, but then we

@@ -2,7 +2,6 @@
 date: 2022-11-22
 title: Easy Elevation Change on Hover with Angular Material
 image: angular-material-elevation-on-hover.png
-avatar: angular-logo.png
 categories: angular
 tags: angular,material
 ---
@@ -22,7 +21,7 @@ over the profile card.  This would give the illusion of the card coming up off
 of the screen a bit, by increasing the size of the shadow and changing the opacity.
 I'm not a shadow expert, so I let the library handle that for me.
 
-### Changing the Elevation Class in Angular on Hover
+## Changing the Elevation Class in Angular on Hover
 
 I started thinking about how I would implement this.  As I stated before, I would
 normally reach for `:hover`, but the class is applied in the HTML and not a custom
@@ -40,7 +39,7 @@ property.  I would then need to use `ngClass` to set the correct elevation level
 
 This seemed a bit much to handle this little hover effect.
 
-### Angular Material Helpers
+## Angular Material Helpers
 
 Luckily, the smart people at Google have already thought about this and have created
 a solution for us.  Angular Material has a 

@@ -2,7 +2,6 @@
 date: 2022-11-18
 title: Website Speed Boost with Angular 15 and NgOptimizedImage
 image: google-lighthouse.jpg
-avatar: angular-logo.png
 categories: angular
 tags: angular,scully,speed
 ---
@@ -19,7 +18,7 @@ each of them.
 
 ![Latest Posts on perko.dev](/images/perkodev-blog-archive.jpeg)
 
-### Before Performance
+## Before Performance
 
 My site is already quite fast, thanks to the power of the Angular static site generator, [Scully.](https://scully.io/)
 I also host my site using Amazon S3, which has been super reliable and fast.  So, starting out with my Angular 14 build
@@ -31,7 +30,7 @@ And here are some details on the performance metrics:
 
 ![Lighthouse performance metrics, Angular 14](/images/LighthouseMetrics-Angular14.png)
 
-### Simple Changes
+## Simple Changes
 
 So how do we implement the [NgOptimizedImage directive.](https://angular.io/api/common/NgOptimizedImage) directive? 
 Well, it's quite simple!  All we need to do is import `NgOptimizedImage` into our standalone component (or module
@@ -59,7 +58,7 @@ import { CommonModule, NgOptimizedImage } from '@angular/common';
 })
 ```
 
-### After Performance
+## After Performance
 
 Once this was done, I simply committed my code and allowed Github Actions to deploy to S3.  Then, I re-ran the same
 lighthouse test on the production site to see the improvements:

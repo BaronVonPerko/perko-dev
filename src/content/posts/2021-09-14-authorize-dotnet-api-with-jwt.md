@@ -6,7 +6,7 @@ categories: DotNet Core
 tags: dotnet,jwt,core
 ---
 
-### Getting Started
+## Getting Started
 
 Let's first start by creating an empty WebAPI project.
 
@@ -35,7 +35,7 @@ When we try to get the weather forecast again, we now get a **401 Unauthorized**
 
 ![Unauthorized Response from WebAPI](/images/jwt-postman-weather-unauthorized.png)
 
-### Setup JWT
+## Setup JWT
 
 Microsoft adds a very handy package to assist in setting up JWTs for your WebAPI.  You will need to install the following package from nuGet:
 
@@ -127,7 +127,7 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 }
 ```
 
-### Create a Login Endpoint
+## Create a Login Endpoint
 
 As I stated earlier, we won't be building out any authentication logic.  We simply need to create an API endpoint that can take a given username (which we will not be checking if it exists), and pass back a valid JWT token for this user.  The user can then use that JWT token to get their weather forecast.
 

@@ -6,7 +6,7 @@ categories: FitBit Development
 tags: bug,fitbit,web development
 ---
 
-### New CLI For FitBit!
+## New CLI For FitBit!
 
 Yesterday, FitBit released a [brand new CLI](https://dev.fitbit.com/blog/2018-08-23-cli-tools/) for developers. This is huge news that brings development to the local machine, and doesn't rely on the use of their web-based studio.
 
@@ -18,7 +18,7 @@ When I was testing the new CLI, I ran into an issue that is simple to solve, but
 Install failed: App was built for meson, but connected device only supports higgs applications.
 ```
 
-### The Solution
+## The Solution
 
 Silly me... My app is only built to work on Versa devices. The simulator first launched as an Ionic device. So naturally, the app will not install to Ionic. You can change this from within your **package.json** file.
 

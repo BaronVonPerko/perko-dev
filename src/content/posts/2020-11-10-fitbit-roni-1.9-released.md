@@ -6,7 +6,7 @@ categories: fitbit
 tags: fitbit
 ---
 
-### Roni Watchface 1.9 Released!
+## Roni Watchface 1.9 Released!
 
 I'm proud to announce the final release of v1 of Roni has been released today 
 on the Fitbit gallery.  [You can install the watch face here.](https://gallery.fitbit.com/details/19a118e0-3070-4f00-b76b-345d02853c70)
@@ -15,7 +15,7 @@ available health metrics (steps, heart rate, calories).  I may add more in the f
 
 ![Roni metric settings](/images/roni-metric-settings.jpg)
 
-### What's in v2?
+## What's in v2?
 
 With the recent release of the Fitbit Versa 3 and Fitbit Sense devices, 
 [a new SDK](https://dev.fitbit.com/blog/2020-09-24-announcing-fitbit-os-sdk-5.0) 

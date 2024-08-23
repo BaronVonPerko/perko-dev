@@ -8,7 +8,7 @@ tags: css,design,theme,web development,wordpress
 
 I have been planning a custom theme for my personal site here at [ChrisPerko.NET](https://chrisperko.net). Currently, the site is running a child theme of Hestia, developed by [ThemeIsle.com](https://themeisle.com/). It's a great theme, and I've had it for over a year, but I want something custom! I had a choice to make; which starter theme to use? It is very useful to create a theme completely from scratch in order to understand what all is being done behind the scenes. Alecaddd has a great YouTube series called [Create a Premium WordPress Theme](https://www.youtube.com/playlist?list=PLriKzYyLb28kpEnFFi9_vJWPf5-_7d3rX), and it is a great place to start if you've never built a theme from scratch.
 
-### _Underscores
+## _Underscores
 
 ![Underscores Logo](/images/underscores.png)
 
@@ -16,7 +16,7 @@ I have been planning a custom theme for my personal site here at [ChrisPerko.NET
 
 [The WordPress CLI](https://wp-cli.org/) (Command Line Interface) comes baked with a command to generate a brand new _Underscores theme for you in an existing WordPress installation. This feature allows a rapid setup of your environment; in minutes you can have a fresh install of WordPress running locally, with a brand new theme ready for styling!
 
-### Sage
+## Sage
 
 ![Sage Logo](/images/sage.png)
 
@@ -28,7 +28,7 @@ My main concern with Sage is how drastically different it is to a regular theme.
 
 My last gripe with Sage really just comes down to this: What if I build a theme for a client and later on they decide to hire another developer to make some changes? That developer will most likely have never used Sage, and the huge difference in file structure alone versus a standard theme will probably completely confuse that developer. Using Sage would also be a huge learning curve for an inexperienced developer, so if you are new to the world of web development, I highly suggest using either of the other two starter themes on this post.
 
-### AWPS
+## AWPS
 
 ![AWPS Logo](/images/awps.png)
 
@@ -38,7 +38,7 @@ This theme has an advantage in my book over _Underscores in that the back-end is
 
 Want a fast setup? No worries, there is a [CLI](https://github.com/Alecaddd/awps-cli) for that! A new feature of the CLI allows you to even give the theme a custom namespace for all of the class files. Want a more in-depth look at it in a video format? Alessandro has even created a [YouTube series on AWPS](https://www.youtube.com/watch?v=NKRheNMczlM) to get you familiar with it quickly.
 
-### Conclusion
+## Conclusion
 
 In conclusion, for my new theme, I have decided to go with AWPS. Although it doesn't use Blade templates, which I originally wanted, it is very easy to use. Packed with all the features I loved about _Underscores, AWPS really brings the starter theme up to modern day coding standards.
 

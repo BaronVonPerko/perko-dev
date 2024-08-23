@@ -2,7 +2,6 @@
 date: 2023-10-14
 title: Custom RxJS Operators are Standing By!  Act Now! (Live Coding Version)
 image: custom-rxjs-operators-talk.png
-avatar: angular-logo.png
 conference: DevFest Central Florida 2023
 location: Orlando, FL, USA
 abstract: Are you tired of trying to figure out complex RxJS pipes? Having trouble unit testing those same pipes? Worry no more! With custom operators, you can write more maintainable, testable, reusable, and readable code! But act now, because this offer won't last!
