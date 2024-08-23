@@ -7,7 +7,7 @@ tags: css,laravel,tailwind
 ---
 Last week, I wrote about my initial views of TailwindCSS.  I had a lot of interest from readers on Twitter to continue the post to cover the components aspect of Tailwind.  The Tailwind docs do contain a page on [how to extract components](https://tailwindcss.com/docs/extracting-components/#app) already, so I want to take this time to cover my workflow and thought process on extracting components in an app.  In this article, I will be using the starter Laravel app, along with Laravel mix.  If you are unfamiliar with Laravel, that is okay, we will be mostly covering the HTML/CSS, and using Laravel as a jumping off point.  The source code for this project can be [found on github](https://github.com/BaronVonPerko/tailwind-components).
 
-## Project Setup
+### Project Setup
 
 To get things started, I used the Laravel installer to scaffold out a blank application:
 
@@ -82,7 +82,7 @@ For this example, we are going to leave the generated **tailwind.js** config fil
 @tailwind utilities;
 ```
 
-## Setting up the Navigation Bar
+### Setting up the Navigation Bar
 
 Let's build a basic navigation bar using the Tailwind utilities.  We just need a bar with a title, we can always add links later if we choose.
 
@@ -100,7 +100,7 @@ Let's build a basic navigation bar using the Tailwind utilities.  We just need a
 
 Now we must think about if this could make use of turning all of those classes into a component or not.  Since we are using a layout file that all of our pages will inherit, I do not think it is worth it to make a component for the navbar.  This is easy enough to update here in the HTML if we ever want to change the styles.
 
-## Application Buttons
+### Application Buttons
 
 We know that our app will need to use buttons.  Let's style one up using the Tailwind utilities, and then create a component for them.  For this example, we will be putting all of our code in the **welcome.blade.php** file, inside of the **@section('content')**.  I'll first wrap all of these buttons that we will create into a container and center it, just to make it look a little nicer.
 
@@ -185,7 +185,7 @@ That's it!  We have just a few lines of code that completely define how we want 
 
 ![Tailwind Buttons](/images/tailwind-buttons.png)
 
-## Building Some Forms
+### Building Some Forms
 
 Forms are also an important part of any application.  Let's steal an example form from the [Tailwind examples](https://tailwindcss.com/docs/examples/forms).  We are going to use the first login form example.  Our app needs to have a login form, but also a registration form.  It would be nice if they looked the same.  We may need other forms in the future, so having components for each of these inputs would be nice.
 
@@ -370,7 +370,7 @@ We can now easily create a registration form, and have it look similar to the si
 ![Tailwind Login](/images/login.png)
 ![Tailwind Register](/images/tailwind-register.png)
 
-## Conclusion
+### Conclusion
 
 In closing, I hope that this article has made it clear how easy it is to create components out of the Tailwind utility classes, and how easy it is to read and modify these components. I personally like to build out these components using the utility classes in the HTML. Only when I start to see patterns of re-usability do I think it is a good idea to refactor the classes out into a single component. Using the @apply directive allows us to have small, concise CSS that is easy to modify.
 

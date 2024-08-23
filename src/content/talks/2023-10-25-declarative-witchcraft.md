@@ -2,6 +2,7 @@
 date: 2023-10-25
 title: 'Declarative Witchcraft: Casting Spells on Imperative Angular'
 image: declarative-witchcraft.png
+avatar: angular-logo.png
 conference: Connect.Tech 2023
 location: Atlanta, GA, USA
 abstract: Imperative code may be haunting your projects, but there exists powerful techniques that can transform the chaos into order. In this enchanting Halloween-themed talk, we will unveil three magical recipes for turning your imperative Angular code into beautiful declarative code. Prepare to learn about Observable Magic, the NGRX Component-Store Incantation, and finally, the Spellbinding Signal Technique.

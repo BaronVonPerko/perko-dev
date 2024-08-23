@@ -2,6 +2,7 @@
 date: 2023-08-31
 title: Quickly Setup Drupal on Windows with Laragon
 image: drupal.jpg
+avatar: drupal-logo.webp
 categories: drupal
 tags: drupal,drush
 ---

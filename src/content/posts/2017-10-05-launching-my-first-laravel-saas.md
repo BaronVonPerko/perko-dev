@@ -6,13 +6,13 @@ categories: General
 tags: laravel,saas,side project
 ---
 
-## About eListings SaaS
+### About eListings SaaS
 
 As I talked about in an earlier post, e-Listings is a simple Laravel SaaS (Software as a Service) for Real Estate professionals as well as for sale by owners.  I originally started building the app earlier in the year when I had accepted a job offer for a job that was primarily in Laravel.  This app was a learning tool for me to learn the ins and outs of the framework, and to build something useful for my mom, who is a real estate agent.
 
 As I worked on the project, I decided to try and monetize and market the app, to see if I could earn a small income on the side.  This proved very difficult for many reasons, but I have learned a lot.
 
-## Social Media Marketing
+### Social Media Marketing
 
 I had never used social media outside of my personal Facebook page, or just skimming over posts on Twitter.  How do I get noticed? How do I get people to see my posts and get interested in my product?
 
@@ -20,7 +20,7 @@ My first thought was to just pay for it.  I ran a few small ad campaigns on Face
 
 Twitter seemed a little easier to get people to follow me.  I did some research and started following some tips I found on the internet; I followed real estate professionals, retweeted hot real estate posts, and commented on a few things.  Showing interest in real estate got a few followers, but nothing to write home about, but it did give me a small audience to try to pitch my product to.
 
-## Launching the Product
+### Launching the Product
 
 eListings is currently in BETA, and I decided last night that I would launch this morning.  Launching was easy.  I use [Laravel Forge](https://forge.laravel.com/) to publish updates to the production site.  Development work is done on a *dev* branch, and anytime I want to deploy, I just merge it into *master*, and Forge handles the rest.
 

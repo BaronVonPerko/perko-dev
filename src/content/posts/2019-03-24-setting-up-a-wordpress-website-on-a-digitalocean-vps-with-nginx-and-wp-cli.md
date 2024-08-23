@@ -9,7 +9,7 @@ To a lot of developers, making the switch from a one-click shared host to a cust
 
 If you don't already have an account with [DigitalOcean](https://www.digitalocean.com) and want to get started for free, head on over to the [Promotions](/promotions) page. There, you will find a promotional link for free DigitalOcean credit! At the time of writing this post, you will receive $100 in credit to use in your first 60 days on DigitalOcean!
 
-## Setting Up a new Server
+### Setting Up a new Server
 
 On DigitalOcean, servers are referred to as droplets. Each droplet is your own personal server. This means that, compared to a shared host, you don't have to worry about someone running an app that completely crashes your site. If they mess up their droplet, yours is perfectly fine!
 
@@ -37,7 +37,7 @@ Now all you have to do to create your droplet is to finalize it. Give it a name 
 
 ![Finalize your droplet](assets/images/finalize-droplet.png)
 
-## Setting Up the WordPress Website
+### Setting Up the WordPress Website
 
 Once your droplet has been created, you will be emailed the IP address and password for the root access to the droplet. Let's SSH into the droplet, update the root password, and create our user account!
 
@@ -65,7 +65,7 @@ exit
 ssh cperko@134.209.40.220
 ```
 
-## Installing the WP-CLI
+### Installing the WP-CLI
 
 The [WordPress Command Line Interface](https://wp-cli.org/) will be used to install WordPress. It can do a ton of other helpful things, such as re-saving all images if you add new sizes to an existing site. The WP-CLI website mentions in detail how to setup the CLI. Here is a condensed version of what you will type into your shell:
 
@@ -78,7 +78,7 @@ chmod +x wp-cli.phar
 sudo mv wp-cli.phar /usr/local/bin/wp
 ```
 
-## Creating a New WordPress Website
+### Creating a New WordPress Website
 
 Now that the CLI is installed on our droplet, let's use it to create all of the necessary WordPress files. Navigate to where your site will live **/var/www** and create a new directory for your website. We will run a couple of commands to give nginx permissions over the website, and allow us to create files in the directory. Then, use the WP-CLI to generate your files.
 
@@ -98,7 +98,7 @@ All of the core WordPress files have now been downloaded. Pretty neat, right?
 
 ![WordPress has been downloaded](assets/images/wp-downloaded.png)
 
-## Setup the Database
+### Setup the Database
 
 Now before we can start setting up the WordPress config, we need to create a database for our site. DigitalOcean has already installed MySQL.
 
@@ -124,7 +124,7 @@ create user 'mynewsiteuser'@'localhost' identified by 'secretpassword';
 grant all privileges on mynewsitedb.* to 'mynewsiteuser'@'localhost';
 ```
 
-## Setup the WordPress Config
+### Setup the WordPress Config
 
 Let's go back to our WordPress installation if you're not already there, and create a copy of the sample configuration file to give us a starting point on our config.
 
@@ -138,7 +138,7 @@ Update the *wp-config.php* file with your database credentials.
 
 ![Update the wp-config.php](assets/images/wp-config.png)
 
-## Setup NginX
+### Setup NginX
 
 Lastly, we will update NginX to know about our new site. This will allow incoming traffic for this site to be routed to the correct installation of WordPress. If you are hosting multiple sites, this is how you will set up each site separately. Let's navigate to the NginX *sites_available* directory. Copy the digitalocean file to a new one, called mynewsite. Open the file up to edit a few lines (I'm using vim here to edit my file).
 

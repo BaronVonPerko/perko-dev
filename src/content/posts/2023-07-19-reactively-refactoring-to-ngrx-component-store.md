@@ -2,6 +2,7 @@
 date: 2023-07-19
 title: Reactively Refactoring to NgRX Component Store
 image: ngrx.webp
+avatar: rxjs-logo.png
 categories: angular
 tags: angular,ngrx,component-store
 ---
@@ -9,7 +10,7 @@ Handling state within your Angular components can be a challenge.  There are man
 different ways to handle state, and each has its own pros and cons.  In this 
 article, we'll look at how to refactor a component to use NgRX Component Store.
 
-## Example Component
+### Example Component
 
 Let's start with a simple component that displays a list of items for a grocery
 list.  The component has a few responsibilities:
@@ -89,7 +90,7 @@ The component starts off with three items: bread, eggs, and chicken.  The
 items that have been marked as complete.  The `complete` method toggles the
 complete flag for an item.
 
-## Imperitively Checking if the List is Complete
+### Imperitively Checking if the List is Complete
 
 We'd like to add a feature that will display a message stating that the list
 is complete if all items have been marked as complete.  We'll start by adding
@@ -147,7 +148,7 @@ complete.
 > maintenance nightmare, and it's easy to forget to call the method from a new
 > method.
 
-## Reactively Checking if the List is Complete
+### Reactively Checking if the List is Complete
 
 We could refactor the component to use a reactive approach with RxJS.  To
 do this, we would need to create a new Subject to contain the list, and an
@@ -159,7 +160,7 @@ This is quite a lot of changes to make, and it's not very readable.  This will
 make the component harder for a new developer to understand.  It's also
 difficult to maintain, and it's easy to introduce bugs.
 
-## NgRX Component Store to the Rescue
+### NgRX Component Store to the Rescue
 
 NgRX Component Store is a library that provides a reactive way to handle state
 within a component.  It's much simpler than the RxJS approach, and it's
@@ -233,7 +234,7 @@ readonly clear = this.updater(state => ({
 }));
 ```
 
-## Using Our Store in the Component
+### Using Our Store in the Component
 
 So, now that we have our store managing the state of our component, what would our
 component look like?  Let's inject the new store into our component and update our
@@ -283,7 +284,7 @@ Now, we simply update our template:
 <em *ngIf="store.listComplete$ | async">List Complete!</em>
 ```
 
-## Summary
+### Summary
 
 NgRX Component Store is a great way to manage state within a component.  It's much easier to
 read and maintain than the RxJS approach, and it's much more powerful than the imperative

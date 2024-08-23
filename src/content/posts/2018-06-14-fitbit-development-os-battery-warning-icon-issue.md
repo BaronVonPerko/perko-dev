@@ -12,7 +12,7 @@ When developing my first FitBit Versa watch face, I ran into an issue when my wi
 
 Now the OS battery icon is in almost the same exact place, so it looks really weird to have them overlapping each other.  From what I have found on the developer's forum, there is no way to suppress the OS's icon.
 
-## Solution
+### Solution
 
 According to the Versa user manual, the OS displays the icon when the device is within 24 hours of running out of power, and starts flashing when it gets to a critical level.  The only solution that I have come up with at this time is to just hide my custom icon when it gets near that level. Hopefully in the future, the power API will be able to tell us when this actually happens, as it can be different for different devices. Here is a simplified version of the JavaScript that handles this for us:
 
