@@ -1,12 +1,19 @@
 <script lang="ts">
-  import { MatCardModule } from "@angular/material/card";
+  import {
+    MatCard,
+    MatCardActions,
+    MatCardContent,
+    MatCardHeader,
+    MatCardImage,
+    MatCardTitle
+  } from "@angular/material/card";
   import { ImagePipe } from "../pipes/image.pipe";
-  import { MatTooltipModule } from "@angular/material/tooltip";
+  import { MatTooltip } from "@angular/material/tooltip";
   import { RouterLink } from "@angular/router";
   import { MatAnchor } from "@angular/material/button";
 
   defineMetadata({
-    imports: [MatCardModule, ImagePipe, MatTooltipModule, RouterLink, MatAnchor]
+    imports: [MatCard, MatCardTitle, MatCardContent, MatCardHeader, MatCardImage, MatTooltip, ImagePipe, RouterLink, MatAnchor, MatCardActions]
   });
 </script>
 

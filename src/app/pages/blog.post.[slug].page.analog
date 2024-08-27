@@ -20,10 +20,10 @@
   import { injectContent, MarkdownComponent } from "@analogjs/content";
   import { PostAttributes } from "../models";
   import { AsyncPipe, DatePipe, NgIf } from "@angular/common";
-  import { MatCardModule } from "@angular/material/card";
+  import { MatCard, MatCardHeader, MatCardImage, MatCardSubtitle, MatCardTitle } from "@angular/material/card";
 
   defineMetadata({
-    imports: [AsyncPipe, NgIf, MarkdownComponent, MatCardModule, DatePipe]
+    imports: [AsyncPipe, NgIf, MarkdownComponent, MatCard, MatCardHeader, MatCardTitle, MatCardSubtitle, MatCardImage, DatePipe]
   });
   const post$ = injectContent<PostAttributes>({
     param: "slug",

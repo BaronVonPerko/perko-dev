@@ -32,10 +32,10 @@
   import { TalkSubtitlePipe } from "../pipes/talk-subtitle.pipe";
   import { sortTalksByDate } from "../operators";
   import { TalkSlugPipe } from "../pipes/talk-slug.pipe";
-  import { MatCardModule } from "@angular/material/card";
+  import { MatCard, MatCardContent, MatCardHeader, MatCardImage } from "@angular/material/card";
 
   defineMetadata({
-    imports: [AsyncPipe, NgForOf, PreviewCardComponent, DatePipe, ImagePipe, TalkSubtitlePipe, TalkSlugPipe, MatCardModule]
+    imports: [AsyncPipe, NgForOf, PreviewCardComponent, DatePipe, ImagePipe, TalkSubtitlePipe, TalkSlugPipe, MatCard, MatCardHeader, MatCardContent, MatCardImage]
   });
   const talks$ = of(inject(ContentService).talks).pipe(
     sortTalksByDate()

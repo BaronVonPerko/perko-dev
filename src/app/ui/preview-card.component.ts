@@ -1,16 +1,23 @@
-import { Component, inject, Input } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { BlogSlugPipe } from "../pipes/blog-slug.pipe";
 import { ImagePipe } from "../pipes/image.pipe";
-import { MatCardModule } from "@angular/material/card";
 import { MatAnchor, MatButton } from "@angular/material/button";
 import { RouterLink } from "@angular/router";
 import { animate, style, transition, trigger } from "@angular/animations";
+import {
+    MatCard, MatCardActions,
+    MatCardAvatar,
+    MatCardHeader,
+    MatCardImage,
+    MatCardSubtitle,
+    MatCardTitle
+} from "@angular/material/card";
 
 @Component({
     selector: 'app-preview-card',
     standalone: true,
-    imports: [CommonModule, BlogSlugPipe, ImagePipe, MatCardModule, MatButton, MatAnchor, RouterLink],
+    imports: [CommonModule, BlogSlugPipe, ImagePipe, MatButton, MatAnchor, RouterLink, MatCard, MatCardHeader, MatCardTitle, MatCardSubtitle, MatCardAvatar, MatCardImage, MatCardActions],
     animations: [
         trigger('enterLeave', [
             transition(':enter', [
