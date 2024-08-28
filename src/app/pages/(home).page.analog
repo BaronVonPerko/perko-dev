@@ -84,7 +84,7 @@
       <mat-card-content>
         <ul class="site">
           <li>
-            <img [src]="'analog-logo.svg' | image" matTooltip="AnalogJS" alt="AnalogJS Logo">AnalogJS v1.6
+            <img [src]="'analog-logo.svg' | image" matTooltip="AnalogJS" alt="AnalogJS Logo">AnalogJS v1.7
           </li>
           <li>
             <img [src]="'angular-logo.png' | image" matTooltip="Angular" alt="Angular Logo">Angular v18
