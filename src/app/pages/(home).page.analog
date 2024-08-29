@@ -147,9 +147,13 @@
 
     section.cards-half {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         grid-gap: 0.5rem;
         margin-bottom: 0.5rem;
+
+        @media(min-width: 768px) {
+            grid-template-columns: 1fr 1fr;
+        }
 
         img {
             max-width: 100%;

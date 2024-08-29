@@ -24,6 +24,9 @@ const ANGULAR_ICON = `<svg x="0px" y="0px" width="960px" height="960px" viewBox=
   styles: `
   a {
       margin-right: 2rem;
+      @media (max-width: 600px) {
+          margin-right: 0;
+      }
   }
   `
 })
