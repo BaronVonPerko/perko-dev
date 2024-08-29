@@ -11,9 +11,10 @@
   import { MatTooltip } from "@angular/material/tooltip";
   import { RouterLink } from "@angular/router";
   import { MatAnchor } from "@angular/material/button";
+  import { NgOptimizedImage } from "@angular/common";
 
   defineMetadata({
-    imports: [MatCard, MatCardTitle, MatCardContent, MatCardHeader, MatCardImage, MatTooltip, ImagePipe, RouterLink, MatAnchor, MatCardActions]
+    imports: [MatCard, MatCardTitle, MatCardContent, MatCardHeader, MatCardImage, MatTooltip, ImagePipe, RouterLink, MatAnchor, MatCardActions, NgOptimizedImage]
   });
 </script>
 
@@ -38,14 +39,14 @@
       <mat-card-content>
         <ul class="skills">
           <li>
-            <img [src]="'angular-logo.png' | image" matTooltip="Angular" alt="Angular Logo">
+            <img [ngSrc]="'angular-logo.png' | image" width="283" height="300" matTooltip="Angular" alt="Angular Logo">
           </li>
           <li>
-            <img [src]="'material-logo.png' | image" matTooltip="Angular Material" alt="Angular Material Logo">
+            <img [ngSrc]="'material-logo.png' | image" width="217" height="233" matTooltip="Angular Material" alt="Angular Material Logo">
           </li>
-          <li><img [src]="'rxjs-logo.png' | image" matTooltip="RxJS" alt="RxJS Logo"></li>
-          <li><img [src]="'ngrx-logo.png' | image" matTooltip="NGRX" alt="NGRX Logo"></li>
-          <li><img [src]="'typescript-logo.png' | image" matTooltip="TypeScript" alt="TypeScript Logo"></li>
+          <li><img [ngSrc]="'rxjs-logo.png' | image" width="415" height="408" matTooltip="RxJS" alt="RxJS Logo"></li>
+          <li><img [ngSrc]="'ngrx-logo.png' | image" width="400" height="435" matTooltip="NGRX" alt="NGRX Logo"></li>
+          <li><img [ngSrc]="'typescript-logo.png' | image" width="400" height="400" matTooltip="TypeScript" alt="TypeScript Logo"></li>
         </ul>
       </mat-card-content>
     </mat-card>
@@ -53,7 +54,7 @@
 
   <section class="cards-half">
     <mat-card style="max-width: 100%">
-      <img mat-card-image [src]="'perko-brooke-ng-conf.jpg' | image"
+      <img mat-card-image [ngSrc]="'perko-brooke-ng-conf.jpg' | image" width="600" height="450"
            alt="Chris Perko and Brooke Avery on stage at NG-Conf">
       <mat-card-content>
         <h3>Talks</h3>
@@ -65,7 +66,7 @@
     </mat-card>
 
     <mat-card>
-      <img mat-card-image [src]="'epic-angular.png' | image" alt="Angular logo in brightly colored clouds">
+      <img mat-card-image [ngSrc]="'epic-angular.png' | image" height="600" width="337" alt="Angular logo in brightly colored clouds">
       <mat-card-content>
         <h3>Blog</h3>
         <p>Check out my tutorials and other posts about solutions to problems that I've encountered in my coding career!</p>
@@ -87,10 +88,10 @@
             <img [src]="'analog-logo.svg' | image" matTooltip="AnalogJS" alt="AnalogJS Logo">AnalogJS v1.7
           </li>
           <li>
-            <img [src]="'angular-logo.png' | image" matTooltip="Angular" alt="Angular Logo">Angular v18
+            <img [ngSrc]="'angular-logo.png' | image" width="283" height="300" matTooltip="Angular" alt="Angular Logo">Angular v18
           </li>
           <li>
-            <img [src]="'material-logo.png' | image" matTooltip="Angular Material" alt="Angular Material Logo">Angular
+            <img [ngSrc]="'material-logo.png' | image" width="217" height="233" matTooltip="Angular Material" alt="Angular Material Logo">Angular
             Material v18 (m3)
           </li>
           <li>
@@ -103,7 +104,7 @@
     </mat-card>
 
     <mat-card>
-      <img mat-card-image [src]="'angular-community-meetup-logo.png' | image" alt="Angular Community Meetup logo">
+      <img mat-card-image [ngSrc]="'angular-community-meetup-logo.png' | image" alt="Angular Community Meetup logo" width="600" height="330">
       <mat-card-content>
         <h3>Angular Community Meetup</h3>
         <p>Join us monthly for live events!</p>
