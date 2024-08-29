@@ -35,7 +35,7 @@ import {
                     <mat-card-subtitle>{{ subtitle }}</mat-card-subtitle>
                 }
                 @if (avatarUrl) {
-                    <img mat-card-avatar [src]="avatarUrl" />
+                    <img mat-card-avatar [ngSrc]="avatarUrl" fill />
                 }
             </mat-card-header>
             <img mat-card-image [src]="imageUrl" />

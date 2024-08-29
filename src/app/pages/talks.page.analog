@@ -3,7 +3,7 @@
     <mat-card-header>
       <mat-card-title><h3>My Talks</h3></mat-card-title>
     </mat-card-header>
-    <img mat-card-image [src]="'perko-brooke-ng-conf.jpg' | image" alt="Chris Perko speaking at a conference.">
+    <img mat-card-image [ngSrc]="'perko-brooke-ng-conf.jpg' | image" width="600" height="450" alt="Chris Perko speaking at a conference.">
     <mat-card-content>
       <p>Here are some of the talks I've given at various conferences and meetups.</p>
       <p>Each one has links to resources, including the slides, and any code samples!</p>
