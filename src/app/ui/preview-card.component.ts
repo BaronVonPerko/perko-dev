@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { CommonModule } from "@angular/common";
+import { CommonModule, NgOptimizedImage } from "@angular/common";
 import { BlogSlugPipe } from "../pipes/blog-slug.pipe";
 import { ImagePipe } from "../pipes/image.pipe";
 import { MatAnchor, MatButton } from "@angular/material/button";
@@ -17,7 +17,7 @@ import {
 @Component({
     selector: 'app-preview-card',
     standalone: true,
-    imports: [CommonModule, BlogSlugPipe, ImagePipe, MatButton, MatAnchor, RouterLink, MatCard, MatCardHeader, MatCardTitle, MatCardSubtitle, MatCardAvatar, MatCardImage, MatCardActions],
+    imports: [CommonModule, BlogSlugPipe, ImagePipe, MatButton, MatAnchor, RouterLink, MatCard, MatCardHeader, MatCardTitle, MatCardSubtitle, MatCardAvatar, MatCardImage, MatCardActions, NgOptimizedImage],
     animations: [
         trigger('enterLeave', [
             transition(':enter', [
@@ -30,12 +30,13 @@ import {
         <mat-card @enterLeave>
             <mat-card-header>
                 <mat-card-title>
-                    <a [routerLink]="linkUrl"><h4>{{ title }}</h4></a></mat-card-title>
+                    <a [routerLink]="linkUrl"><h4>{{ title }}</h4></a>
+                </mat-card-title>
                 @if (subtitle) {
                     <mat-card-subtitle>{{ subtitle }}</mat-card-subtitle>
                 }
                 @if (avatarUrl) {
-                    <img mat-card-avatar [ngSrc]="avatarUrl" fill />
+                    <img mat-card-avatar [ngSrc]="avatarUrl" width="20" height="20" />
                 }
             </mat-card-header>
             <img mat-card-image [src]="imageUrl" />
