@@ -2,6 +2,7 @@
 date: 2023-06-30
 title: "The Overlooked Rule that Breaks Angular 16’s Signal Effects"
 image: angular-16-signals.webp
+avatar: angular-logo.png
 categories: angular
 tags: angular,signals
 ---
@@ -16,7 +17,7 @@ However, there is a simple rule that many developers are not aware of, and this 
 into writing code that will simply not **always** run. It can be frustrating to try and debug code that _sometimes_ 
 works, so use this guide to help you navigate the new world of signals and effects in Angular.
 
-## Writing Effective Effects in Angular 16
+### Writing Effective Effects in Angular 16
 
 We can add an `effect` to our code quite easily. Here is an example provided by the Angular docs, which will 
 print the current count each time the count signal is updated:
@@ -79,7 +80,7 @@ that the `EFFECT` line will not be printed after the user clicks B.
 > B Clicked
 ```
 
-## RxJS Solution
+### RxJS Solution
 
 Signals are new, and you may be more familiar, or comfortable, using RxJS. In this example, you’d probably want to 
 reach for `merge`. Angular now provides a `toObservable` function, which can be used to convert a signal into an 
@@ -95,7 +96,7 @@ merge(toObservable(this.a), toObservable(this.b)).subscribe((val) => {
 });
 ```
 
-## Fixing our Effect
+### Fixing our Effect
 
 [You can play with this example here.](https://stackblitz.com/edit/angular-signals-not-working)
 

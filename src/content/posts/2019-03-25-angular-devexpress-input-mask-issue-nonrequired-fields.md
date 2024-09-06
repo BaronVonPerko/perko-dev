@@ -2,12 +2,13 @@
 date: 2019-03-25
 title: Angular / DevExpress Input Mask Issue with Non-Required Fields
 image: devexpress.png
+avatar: angular-logo.png
 categories:
 tags: devexpress,angular
 ---
 I'm working on a new project that is utilizing [DevExpress](https://www.devexpress.com/) components with Angular (v7). These components allow you to quickly setup forms that work with your API, and save you a lot of manual coding. However, I've come across a problematic issue with the text inputs and masks.
 
-## The Problem
+### The Problem
 
 The problem is this: we have inputs for phone numbers on these forms. Not all of these inputs are required (such as mobile and fax numbers). Here is an example of one of our fields that has a mask:
 
@@ -22,7 +23,7 @@ There is nothing in this code requiring the user to fill out this form. With a n
 
 The validation error occurs because after clearing the input, the value of the component is not null, it is actually " - -". Strange, right?
 
-## A Simple Solution
+### A Simple Solution
 
 The quick solution here is to fire an event when the *blur* event happens on the input element. To do this, we need to just add the *onFocusOut* attribute to our *editorOptions* on the dxi-item element.
 

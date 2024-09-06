@@ -1,95 +1,75 @@
-import {Component, Input} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {BlogSlugPipe} from '../pipes/blog-slug.pipe';
-import {ControlButtonsComponent} from './control-buttons.component';
-import {ImagePipe} from '../pipes/image.pipe';
+import { Component, Input } from "@angular/core";
+import { CommonModule, NgOptimizedImage } from "@angular/common";
+import { BlogSlugPipe } from "../pipes/blog-slug.pipe";
+import { ImagePipe } from "../pipes/image.pipe";
+import { MatAnchor, MatButton } from "@angular/material/button";
+import { RouterLink } from "@angular/router";
+import { animate, style, transition, trigger } from "@angular/animations";
+import {
+    MatCard, MatCardActions,
+    MatCardAvatar,
+    MatCardHeader,
+    MatCardImage,
+    MatCardSubtitle,
+    MatCardTitle
+} from "@angular/material/card";
 
 @Component({
     selector: 'app-preview-card',
     standalone: true,
-    imports: [CommonModule, BlogSlugPipe, ControlButtonsComponent, ImagePipe],
+    imports: [CommonModule, BlogSlugPipe, ImagePipe, MatButton, MatAnchor, RouterLink, MatCard, MatCardHeader, MatCardTitle, MatCardSubtitle, MatCardAvatar, MatCardImage, MatCardActions, NgOptimizedImage],
+    animations: [
+        trigger('enterLeave', [
+            transition(':enter', [
+                style({opacity: 0, transform: 'translateY(50px)'}),
+                animate('500ms ease-in', style({opacity: 1, transform: 'translateY(0)'})),
+            ]),
+        ]),
+    ],
     template: `
-        <div class="wrapper"
-             style="background-image: url({{imageUrl}});">
-            <div class="overlay"></div>
-            <div class="content">
-                <app-control-buttons/>
-                
-                @if (date) {
-                    <p>{{date | date }}</p>
-                }
-                
-                @if (linkUrl) {
-                    <h3>
-                        <a href="{{linkUrl}}">{{title}}</a>
-                    </h3>
-                } @else {
-                    <h3>{{title}}</h3>
-                }
-
+        <mat-card @enterLeave>
+            <mat-card-header>
+                <mat-card-title>
+                    <a [routerLink]="linkUrl"><h4>{{ title }}</h4></a>
+                </mat-card-title>
                 @if (subtitle) {
-                    <h4>{{subtitle}}</h4>
+                    <mat-card-subtitle>{{ subtitle }}</mat-card-subtitle>
                 }
-                <p>
-                    <ng-content></ng-content>
-                </p>
-            </div>
-        </div>
+                @if (avatarUrl) {
+                    <img mat-card-avatar [ngSrc]="avatarUrl" width="20" height="20" />
+                }
+            </mat-card-header>
+            <img mat-card-image [src]="imageUrl" />
+            @if (linkUrl) {
+                <mat-card-actions>
+                    <a mat-flat-button [routerLink]="linkUrl">{{ linkText }}</a>
+                </mat-card-actions>
+            }
+        </mat-card>
     `,
-    styles: [`
-        :host {
-            display: block;
-            max-width: var(--max-page-width);
-            margin: 60px auto 0;
+    styles: `
+    mat-card {
+        height: 100%;
+        justify-content: space-between;
+        mat-card-title a {
+            h4 {
+                margin-top: 0;
+                margin-bottom: 1rem;
+            }
         }
-
-        .wrapper {
-            padding: 0 20px 160px;
-            max-width: 600px;
-            border: 4px solid var(--color-secondary);
-            position: relative;
-            background-position: center;
-            background-size: cover;
+        mat-card-subtitle {
+            margin-bottom: 1rem;
+            text-align: var(--perko-card-subtitle-align, left);
         }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            background-color: var(--color-primary-opaque);
-            z-index: 10;
-        }
-
-        .content {
-            position: relative;
-            z-index: 20;
-            text-shadow: 0 0 4px black;
-        }
-
-        img {
-            width: 100%;
-        }
-
-        p {
-            margin: 0;
-        }
-        
-        h3 {
-            margin-bottom: 10px;
-        }
-        
-        h4 {
-            margin-bottom: 40px;
-        }
+    }
     `
-    ]
 })
 export class PreviewCardComponent {
     @Input() linkUrl: string | undefined;
+    @Input() linkText = 'Read More';
     @Input({required: true}) imageUrl: string | undefined;
     @Input({required: true}) title: string | undefined;
     @Input() subtitle: string | undefined | null;
     @Input() date: string | undefined;
+    @Input() avatarUrl: string | undefined;
 }

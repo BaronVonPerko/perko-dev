@@ -6,11 +6,11 @@ categories: Front-End Development
 tags: browsersync,gulp,help
 ---
 
-## What is BrowserSync Anyway?
+### What is BrowserSync Anyway?
 
 If you found this page from searching Google, you probably are already aware of what it is.  If not, BrowserSync allows the developer to instantly see changes in the browser when developing a site or app.  It is extremely useful and has been a nice productivity booster for my own development work.  [Click here to learn more](https://browsersync.io/).
 
-## The Problem
+### The Problem
 
 Part of my workflow when developing sites and apps is to use BrowserSync.  BrowserSync allows me to code away, and update the browser without me having to change my focus and refresh the page.  Stylesheet changes are injected automagically, and changes to javascript or html files refresh right away.
 
@@ -39,7 +39,7 @@ gulp.task('browser-sync', ['sass'], function() {
 
 I spent a long time staring at this code trying to figure out WHY nothing was happening when I changed a file.  The task was running, and there were no errors....
 
-## Solution #1
+### Solution #1
 
 The answer was simple!  I forgot to add the browsersync.js file into my html:
 
@@ -50,7 +50,7 @@ The answer was simple!  I forgot to add the browsersync.js file into my html:
 
 So, next time you start a new project and your automated syncing is just not working, remember to check and see if you included the javascript file needed for the sync to work.
 
-## Solution #2
+### Solution #2
 Still not working?  Browsersync also has a little trick up it's sleeve.  It will inject some other scripts into the page that it needs to do its magic.  The following shows the scripts that are in the html when running in the browser:
 
 ![Browsersync loading scripts](/images/browsersync.png)

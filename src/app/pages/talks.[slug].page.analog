@@ -1,0 +1,55 @@
+<template>
+  @if (talk$ | async; as talk) {
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ talk.attributes.title }}</mat-card-title>
+        <mat-card-subtitle>{{ talk.attributes.date | date }}</mat-card-subtitle>
+        <img matCardAvatar [src]="'images/' + talk.attributes.avatar" />
+      </mat-card-header>
+      <img mat-card-image [src]="'images/' + talk.attributes.image" />
+    </mat-card>
+    <analog-markdown [content]="talk.content"></analog-markdown>
+  }
+</template>
+
+<script lang="ts">
+  import { Component } from "@angular/core";
+  import { AsyncPipe, DatePipe, NgIf } from "@angular/common";
+  import { injectContent, MarkdownComponent } from "@analogjs/content";
+  import { TalkAttributes } from "../models";
+  import {
+    MatCard,
+    MatCardAvatar,
+    MatCardHeader,
+    MatCardImage,
+    MatCardSubtitle,
+    MatCardTitle
+  } from "@angular/material/card";
+
+  defineMetadata({
+    imports: [
+      AsyncPipe,
+      NgIf,
+      MarkdownComponent,
+      DatePipe,
+      MatCard,
+      MatCardAvatar,
+      MatCardHeader,
+      MatCardImage,
+      MatCardSubtitle,
+      MatCardTitle
+    ]
+  });
+  const talk$ = injectContent<TalkAttributes>({
+    param: "slug",
+    subdirectory: "talks"
+  });
+</script>
+
+<style>
+    :host {
+        display: block;
+        max-width: var(--perko-post-width);
+        margin: 0 auto;
+    }
+</style>

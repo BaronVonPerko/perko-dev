@@ -8,13 +8,13 @@ tags:
 
 Last year, I wrote my first reflections post about how I felt I did in 2016, and what I hoped to accomplish this year. I plan to make this an annual post in which I hope to push myself each year to do better.
 
-## Learning and Growing
+### Learning and Growing
 
 This year I changed jobs, and moved into new technology. I went from working in .NET and AngularJS to working in a Laravel shop, but still using AngularJS on the front-end. I had many good reasons for leaving my previous job, which I cannot express in this post. However, learning a new framework and jumping into a Senior level role was daunting. Luckily, there is a great Laravel resource called [Laracasts](http://laracasts.com/), hosted by [Jeffrey Way](https://twitter.com/jeffrey_way). Jeffrey is a great teacher, and I really have enjoyed watching his videos. I would not have been able to pick up Laravel and start working at my new position as fast without this online training.
 
 In my spare time, I have been interested in learning WordPress development. My favorite resource I've used this year is [Alessandro Castellani's Youtube Channel](https://www.youtube.com/channel/UCbmBY_XYZqCa2G0XmFA7ZWg). If you're interested in learning to develop for WordPress, I highly recommend his channel. I've used the knowledge he has taught to modify the Hestia theme that is currently running on this blog (as a child theme of course!). Learning WordPress alongside learning Laravel has helped grow my PHP skillset.
 
-## Personal Projects
+### Personal Projects
 
 In last year's post, I talked about my lack of completed personal projects, and reasons why it took me so long to get work done in my spare time. I made a goal for myself to code every day, even if just for a few minutes, on side projects, but did not exactly succeed. I knew coding every day would almost be impossible. Family and down-time is also important, but it was a goal I wanted to strive for. Here is my Github commits for this year:
 
@@ -26,13 +26,13 @@ After feeling happy about completing and launching a side project, I quickly sta
 
 ![KickoffWP Home Page](/images/kickoffwp.png)
 
-## Starting my YouTube Channel
+### Starting my YouTube Channel
 
 One thing I have been wanting to do for a long time is to start my own YouTube channel. For Cyber Monday this year, I bought myself a Blue Snowball microphone. I chose it over the Yeti because I read that the Yeti can be very sensitive, and between dogs and street noise, I was afraid it would pick up too much. After setting up my microphone, I [started my YouTube channel](https://www.youtube.com/user/cp68966), and created my first series. The series is building a basic WordPress theme using TailwindCSS.
 
 I plan to grow the channel and incorporate vlogs talking about my experience in code and work, and hopefully help others that are experiencing situations that I have experienced in the past. The first vlog will be released during the first week in January. The current plan is to release atleast one vlog episode per month, and a tutorial video once per week.
 
-## 2018 Goals
+### 2018 Goals
 
 Next year, I have plenty of goals and plans for myself. I would really like to grow the YouTube channel and see where that takes me. I've enjoyed the few episodes I have recorded so far. Another goal of mine is to speak at atleast one conference. On January 1, the WordCamp Atlanta opens up for speaker submissions. This will be the first time I submit a talk for a conference, and I am hopeful to get to speak.
 

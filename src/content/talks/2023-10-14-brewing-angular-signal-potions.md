@@ -2,6 +2,7 @@
 date: 2023-10-14
 title: "Brewing Angular Signal Potions: A Developer's Guide to Halloween Magic"
 image: brewing-angular-signal-potions.png
+avatar: angular-logo.png
 conference: DevFest Central Florida 2023
 location: Orlando, FL, USA
 abstract: Let's brew up some fun with Angular Signals! We will use signals to refactor and add features to an existing app. This talk will give an overview of the new Angular reactive primitives that are currently in developer preview. We will also look at Signal Effects, and how they work. But watch out! There's an overlooked rule about how effects trigger that may leave you scratching your head trying to figure out why it's not working correctly! Bing your laptop and code along!

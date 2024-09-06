@@ -12,7 +12,7 @@ At the conference, I threw together a quick app that plotted where the user was 
 
 I did ask one of the developers that works on the GPS Track module at the conference about increasing the accuracy. He had said that the 'enableHighAccuracy' was turned on by default, and it was up to the device (more on this below).
 
-## Testing in Decatur
+### Testing in Decatur
 
 After getting back to Decatur, I decided to do some more testing. I don't live near skyscrapers or large venues, so I thought maybe the GPS would be much more consistent.
 
@@ -22,11 +22,11 @@ As you can see, the dots tracking my location were still a bit all over the plac
 
 We noticed when using a native app such as Google Maps, the accuracy was much better. Even after using Google Maps and switching back to our web app, the accuracy was great for a little bit, then went back to jumping all over the place.
 
-## Progressive Web  App
+### Progressive Web  App
 
 I then decided to try to package up the tracker as a PWA. I had little hopes that this would affect the accuracy, but wanted to rule out every possibility. It was as I expected. The PWA did not perform any better compared to running the app within a web browser. At this point, I was thinking of making a separate native app to track the location, and built the rest of this app as the separate PWA. Not ideal, but a possible plan B.
 
-## Faster Polling
+### Faster Polling
 
 What the developers at ESRI **did not** mention was the polling time of the default Track module. The way the GPS works on the device, is that it polls nearby cell towers and WiFi hotspots to try to triangulate your location. If you move a little, and poll again, it will get a more accurate reading.
 

@@ -13,7 +13,7 @@ are redirected to **/index.html**, which loads the full Angular project, and Ang
 and displays the content (for example, a blog post).  This is fine for regular users, and allows for fast navigation
 through the site, but it doesn't work well for bots.
 
-## Scully
+### Scully
 
 This is where [Scully](https://scully.io) comes in to play.  Scully takes any Angular application, and makes it static.
 What this means for my site is for example, when you visit *https://chrisperko.net/blog*, instead of Angular
@@ -25,7 +25,7 @@ The best part is that Angular is still there.  Click on the **Load More** button
 now get the best of both worlds.  To a user, everything still performs the same as a SPA, but to a web scraper, it
 works like a standard server-rendered website.
 
-## Social Media Meta Tags
+### Social Media Meta Tags
 
 Before adding Scully, I could not share a post from my new site to Facebook or Twitter and have it render
 correctly on those platforms.  Angular does have a [Meta service](https://angular.io/api/platform-browser/Meta#meta)
@@ -35,7 +35,7 @@ will not have the meta tags loaded when it reads the HTML on the site.
 Scully, however, will fully render each route before it creates the static files for each page.  This made it super
 easy to set the correct meta tags ahead of time for social media scrapers.
 
-## Simple Installation
+### Simple Installation
 
 This all sounds great, but how hard is it to install and setup?  For my site, I had built it prior to even deciding
 to use Scully.  There wasn't anything I needed to do in the planning and development of my site to make sure
@@ -52,7 +52,7 @@ in the background.  At this point, for most routes, you are done!  You can conti
 [documentation](https://scully.io/docs/learn/getting-started/building/) to see how to easily build the project,
 but I wanted to cover one more thing here.
 
-## Dynamic Routes
+### Dynamic Routes
 
 With any SPA, you will have **dynamic routes**.  As an example, let's pretend our site has a route for each
 Pokemon.  Each Pokemon has a unique ID.  Let's say a Pokemon has an ID of **1**.  The route for this Pokemon

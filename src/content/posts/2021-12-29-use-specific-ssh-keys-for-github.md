@@ -16,7 +16,7 @@ work laptop with you.  Here is a simple solution to quickly
 use a particular SSH key to clone a repository, and it will be
 saved for future pushes and pulls.
 
-## Create an SSH Key
+### Create an SSH Key
 
 First, you will need to generate an SSH key to use for your profile.
 Within your [SSH Settings](https://github.com/settings/keys) page
@@ -31,7 +31,7 @@ ssh-keygen -t ed25519 -C "your_email@example.com"
 Input the public key in your GitHub settings, give it a name, and
 save it.
 
-## Clone Your Repository With Your New Key
+### Clone Your Repository With Your New Key
 
 Now that you've given GitHub your new key, let's put it to use.
 The following code is thanks to [Wiston Coronell](https://stackoverflow.com/users/971565/wiston-coronell)

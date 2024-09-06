@@ -15,7 +15,7 @@ Utility-first CSS seemed to me like nothing better than writing inline styles.  
 
 Can you imagine if you wanted to have a bunch of images look the same, re-using the same massive group of classes?  Think of what would happen if management or your client came to you and said "Hey, let's make all the images not have that white border".  Now you will have to search through your files and find all of those classes scattered among your HTML (or JavaScript if you are using templates in a framework such as React, Vue, etc).
 
-## The Good Parts
+### The Good Parts
 
 Tailwind does allow you to make extremely quick mock-ups and proof of concepts.  I finally gave in to my grumpiness and read through the docs, and started playing with the code on [CodePen](https://codepen.io/ChrisPerko/).  The first thing I did was a recreation of a Twitter profile card, which actually landed on the front-page of Codepen.  [You can view the pen and the source code here](https://codepen.io/ChrisPerko/pen/XzMRQJ?editors=1000).
 
@@ -25,7 +25,7 @@ I also started playing with making my own set of alert boxes.  First, I started 
 
 ![Alert boxes built with Tailwind](/images/tailwind-alert-boxes.png)
 
-## I'm Not So Grumpy Anymore
+### I'm Not So Grumpy Anymore
 
 The ability to make these components is super simple with Tailwind.  But what about a real application?  I'm not talking about a TODO app or something you just bang out one afternoon; I'm talking a large application.  How do we manage all of these classes, and how do we manage large design changes on a project?  Here is the answer that changed my opinion of Tailwind: it is [component-friendly](https://tailwindcss.com/docs/what-is-tailwind/#component-friendly)!  This means that you can actually take those globs of classes that you want to use for every image, or button, or notification box, and create a component out of them.  This single feature is what really made me see the light.  You still get the ability to make awesome design components extremely quickly, and you can put those ideas to use into components that you can use throughout your project!
 
