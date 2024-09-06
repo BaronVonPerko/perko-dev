@@ -42,7 +42,6 @@
     :host {
         display: block;
         max-width: var(--perko-post-width);
-        padding: 0 16px;
         margin: 0 auto;
     }
 </style>
