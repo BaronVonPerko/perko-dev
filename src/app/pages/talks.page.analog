@@ -3,7 +3,7 @@
     <mat-card-header>
       <mat-card-title><h3>My Talks</h3></mat-card-title>
     </mat-card-header>
-    <img mat-card-image [ngSrc]="'perko-brooke-ng-conf.jpg' | image" width="600" height="450" alt="Chris Perko speaking at a conference.">
+    <img mat-card-image [ngSrc]="'perko-brooke-ng-conf.jpg' | image" priority width="600" height="450" alt="Chris Perko speaking at a conference.">
     <mat-card-content>
       <p>Here are some of the talks I've given at various conferences and meetups.</p>
       <p>Each one has links to resources, including the slides, and any code samples!</p>
@@ -24,7 +24,7 @@
 
 <script lang="ts">
   import { inject } from "@angular/core";
-  import { of } from "rxjs";
+  import { filter, map, of, tap } from "rxjs";
   import { ContentService } from "../services/content.service";
   import { AsyncPipe, DatePipe, NgForOf, NgOptimizedImage } from "@angular/common";
   import { PreviewCardComponent } from "../ui/preview-card.component";
@@ -38,7 +38,8 @@
     imports: [NgOptimizedImage, AsyncPipe, NgForOf, PreviewCardComponent, DatePipe, ImagePipe, TalkSubtitlePipe, TalkSlugPipe, MatCard, MatCardHeader, MatCardContent, MatCardImage]
   });
   const talks$ = of(inject(ContentService).talks).pipe(
-    sortTalksByDate()
+    sortTalksByDate(),
+    map(talks => talks.filter(talk => !talk.attributes.hidden)),
   );
 </script>
 

@@ -6,4 +6,5 @@ export interface TalkAttributes {
     conference: string;
     location?: string;
     abstract: string;
+    hidden?: boolean;
 }
