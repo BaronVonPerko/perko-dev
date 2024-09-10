@@ -15,7 +15,7 @@ const LINKED_IN_ICON = `<svg xmlns="http://www.w3.org/2000/svg" data-name="Layer
     <a mat-icon-button href="https://twitter.com/chrisjperko" target="_blank">
     <mat-icon svgIcon="twitter" aria-hidden="false" aria-label="Twitter logo"></mat-icon>
     </a>
-    <a mat-icon-button href="https://www.linkedin.com/in/chrisperko/" target="_blank">
+    <a mat-icon-button href="https://www.linkedin.com/in/chris-perko/" target="_blank">
     <mat-icon svgIcon="linkedin" aria-hidden="false" aria-label="LinkedIn logo"></mat-icon>
     </a>
   `,
