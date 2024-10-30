@@ -45,11 +45,11 @@ body {
 }
 
 main.dark-theme {
-  @include mat.core-theme($dark-theme);
-  @include mat.button-theme($dark-theme);
-  @include mat.card-theme($dark-theme);
-  @include mat.toolbar-theme($dark-theme);
-  @include mat.tooltip-theme($dark-theme);
+  @include mat.core-color($dark-theme);
+  @include mat.button-color($dark-theme);
+  @include mat.card-color($dark-theme);
+  @include mat.toolbar-color($dark-theme);
+  @include mat.tooltip-color($dark-theme);
 }
 
 @include mat.core();
