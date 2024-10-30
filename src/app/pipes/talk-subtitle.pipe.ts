@@ -10,7 +10,7 @@ import {DatePipe} from '@angular/common';
 export class TalkSubtitlePipe implements PipeTransform {
 
   transform(value: ContentFile<TalkAttributes>): string {
-    const date = new DatePipe('en-US').transform(value.attributes.date);
+    const date = new DatePipe('en-US', 'UTC').transform(value.attributes.date);
 
     let retstr = `${date} | ${value.attributes.conference}`;
 

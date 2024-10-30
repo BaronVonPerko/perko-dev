@@ -13,7 +13,6 @@
 </template>
 
 <script lang="ts">
-  import { Component } from "@angular/core";
   import { AsyncPipe, DatePipe, NgIf } from "@angular/common";
   import { injectContent, MarkdownComponent } from "@analogjs/content";
   import { TalkAttributes } from "../models";
@@ -38,7 +37,7 @@
       MatCardImage,
       MatCardSubtitle,
       MatCardTitle
-    ]
+    ],
   });
   const talk$ = injectContent<TalkAttributes>({
     param: "slug",
