@@ -111,10 +111,14 @@ export class AppComponent implements OnInit {
     protected isSmallScreen = inject(BreakpointObserver).observe('(max-width: 600px)').pipe(map(result => result.matches));
 
     themeUpdated = effect(() => {
-        localStorage.setItem('theme', this.theme() ?? '');
+        if (typeof window !== 'undefined' && 'localStorage' in window) {
+            localStorage.setItem('theme', this.theme() ?? '');
+        }
     });
 
     ngOnInit() {
-        this.theme.set(localStorage.getItem('theme') as 'light' | 'dark' || 'light');
+        if (typeof window !== 'undefined' && 'localStorage' in window) {
+            this.theme.set(localStorage.getItem('theme') as 'light' | 'dark' || 'light');
+        }
     }
 }
