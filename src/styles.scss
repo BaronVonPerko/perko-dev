@@ -73,6 +73,13 @@ main.dark-theme {
   pre {
     @include mat.elevation(3);
   }
+
+  p > img {
+    display: block;
+    min-width: 400px;
+    max-width: 100%;
+    margin: 1rem auto;
+  }
 }
 
 a {
@@ -100,6 +107,10 @@ mat-card img {
 @mixin color($theme) {
   .bg-primary {
     background-color: mat.get-theme-color($theme, primary, 50);
+  }
+  analog-markdown code {
+    font-size: 1rem;
+    color: mat.get-theme-color($theme, primary, 50);
   }
 }
 @include color($light-theme);

@@ -15,6 +15,13 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [analog({
     static: true,
+    content: {
+      prismOptions: {
+        additionalLangs: [
+          'scss'
+        ]
+      }
+    },
     vite: {
       inlineStylesExtension: 'scss',
       experimental: {
