@@ -32,6 +32,10 @@ import { AsyncPipe } from "@angular/common";
                         <a mat-button routerLink="/talks" routerLinkActive="button-nav-active">
                             <mat-icon matIconPrefix>microphone</mat-icon>
                             Talks</a>
+                        <a mat-button routerLink="/workshops" routerLinkActive="button-nav-active">
+                            <mat-icon matIconPrefix>laptop_mac</mat-icon>
+                            Workshops
+                        </a>
                         <span class="spacer"></span>
                         <button mat-icon-button (click)="toggleTheme()">
                             @if (theme() === 'light') {
@@ -62,6 +66,10 @@ import { AsyncPipe } from "@angular/common";
                             <a mat-button routerLink="/talks" routerLinkActive="button-nav-active">
                                 <mat-icon matIconPrefix>microphone</mat-icon>
                                 Talks</a>
+                            <a mat-button routerLink="/workshops" routerLinkActive="button-nav-active">
+                                <mat-icon matIconPrefix>laptop_mac</mat-icon>
+                                Workshops
+                            </a>
                         </mat-toolbar-row>
                     }
                 </mat-toolbar>
