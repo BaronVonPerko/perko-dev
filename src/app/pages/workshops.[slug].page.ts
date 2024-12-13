@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { injectContent, MarkdownComponent } from "@analogjs/content";
 import { WorkshopAttributes } from "../models/workshop-attributes";
 import { AsyncPipe } from "@angular/common";
-import { MatCardModule } from "@angular/material/card";
+import { MatCard, MatCardAvatar, MatCardHeader, MatCardImage, MatCardTitle } from "@angular/material/card";
 
 @Component({
   standalone: true,
@@ -21,7 +21,11 @@ import { MatCardModule } from "@angular/material/card";
   imports: [
     AsyncPipe,
     MarkdownComponent,
-    MatCardModule,
+    MatCard,
+    MatCardAvatar,
+    MatCardHeader,
+    MatCardImage,
+    MatCardTitle
   ]
 })
 export default class WorkshopPage {
