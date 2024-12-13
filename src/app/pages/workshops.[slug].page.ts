@@ -26,7 +26,14 @@ import { MatCard, MatCardAvatar, MatCardHeader, MatCardImage, MatCardTitle } fro
     MatCardHeader,
     MatCardImage,
     MatCardTitle
-  ]
+  ],
+  styles: `
+      :host {
+          display: block;
+          max-width: var(--perko-post-width);
+          margin: 0 auto;
+      }
+  `
 })
 export default class WorkshopPage {
   workshop$ = injectContent<WorkshopAttributes>({
