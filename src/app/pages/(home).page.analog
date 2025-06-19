@@ -25,11 +25,12 @@
         <mat-card-title><h1>Hello! 👋🏻</h1></mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <p>I'm Chris Perko, a senior engineer at <a href="https://hero.dev" target="_blank">HeroDevs</a> and
-          a Google Developer Expert in Angular! I love building cool stuff with Angular and sharing my knowledge
+        <p>I'm Chris Perko, a Google Developer Expert in Angular! 
+          I love building cool stuff with Angular and sharing my knowledge
           with the community. I'm also a co-organizer of the
           <a href="https://angularcommunity.net/" target="_blank">Angular Community Meetup</a> and a speaker at
           various events.</p>
+        <p>I'm also looking for my next opportunity! If you are hiring a front-end lead or principal engineer, reach out!</p>
       </mat-card-content>
     </mat-card>
     <mat-card>
