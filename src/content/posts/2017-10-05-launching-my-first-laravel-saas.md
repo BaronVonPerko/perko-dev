@@ -1,5 +1,6 @@
 ---
 date: 2017-10-05
+slug: 2017-10-05-launching-my-first-laravel-saas
 title: Launching My First Laravel SaaS
 image: elistings-responsive.png
 categories: General

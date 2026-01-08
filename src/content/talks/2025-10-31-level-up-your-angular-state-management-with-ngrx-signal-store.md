@@ -1,5 +1,6 @@
 ---
 date: 2025-10-31
+slug: 2025-10-31-level-up-your-angular-state-management-with-ngrx-signal-store
 title: 'Level Up Your Angular State Management with @ngrx/signals'
 avatar: angular-logo.png
 image: devfest-atl-2025.png

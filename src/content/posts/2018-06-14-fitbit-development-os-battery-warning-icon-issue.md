@@ -1,5 +1,6 @@
 ---
 date: 2018-06-14
+slug: 2018-06-14-fitbit-development-os-battery-warning-icon-issue
 title: FitBit Development - OS Battery Warning Icon Issue
 image: fitbit-roni-purple.jpg
 categories: FitBit Development

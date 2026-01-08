@@ -1,5 +1,6 @@
 ---
 date: 2024-09-28
+slug: 2024-09-28-state-management-with-angular-signals
 title: 'State Management with Angular Signals'
 avatar: angular-logo.png
 image: epic-angular.png

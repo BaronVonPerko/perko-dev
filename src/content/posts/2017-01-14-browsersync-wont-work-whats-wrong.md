@@ -1,5 +1,6 @@
 ---
 date: 2017-01-14
+slug: 2017-01-14-browsersync-wont-work-whats-wrong
 title: "BrowserSync Won't Work!  What's Wrong?"
 image: struggling-to-code.jpg
 categories: Front-End Development

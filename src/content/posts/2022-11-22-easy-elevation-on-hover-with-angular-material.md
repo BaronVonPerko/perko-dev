@@ -1,5 +1,6 @@
 ---
 date: 2022-11-22
+slug: 2022-11-22-easy-elevation-on-hover-with-angular-material
 title: Easy Elevation Change on Hover with Angular Material
 image: angular-material-elevation-on-hover.png
 avatar: angular-logo.png

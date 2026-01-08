@@ -1,5 +1,6 @@
 ---
 date: 2018-12-31
+slug: 2018-12-31-my-2018-year-end-review
 title: My 2018 Year End Review
 image: 2018-github.png
 categories: General

@@ -1,5 +1,6 @@
 ---
 date: 2019-03-24
+slug: 2019-03-24-setting-up-a-wordpress-website-on-a-digitalocean-vps-with-nginx-and-wp-cli
 title: Setting Up a WordPress Website on a DigitalOcean VPS with NGinX and WP-CLI
 image: digitalocean.png
 categories: WordPress

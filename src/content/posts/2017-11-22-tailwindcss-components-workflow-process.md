@@ -1,5 +1,6 @@
 ---
 date: 2017-11-22
+slug: 2017-11-22-tailwindcss-components-workflow-process
 title: TailwindCSS Components Workflow Process
 image: login.png
 categories: Front-End Development

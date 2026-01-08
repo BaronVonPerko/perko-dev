@@ -1,5 +1,6 @@
 ---
 date: 2023-10-14
+slug: 2023-10-14-brewing-angular-signal-potions
 title: "Brewing Angular Signal Potions: A Developer's Guide to Halloween Magic"
 image: brewing-angular-signal-potions.png
 avatar: angular-logo.png

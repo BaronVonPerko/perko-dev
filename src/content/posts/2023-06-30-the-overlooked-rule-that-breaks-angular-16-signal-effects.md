@@ -1,5 +1,6 @@
 ---
 date: 2023-06-30
+slug: 2023-06-30-the-overlooked-rule-that-breaks-angular-16-signal-effects
 title: "The Overlooked Rule that Breaks Angular 16’s Signal Effects"
 image: angular-16-signals.webp
 avatar: angular-logo.png

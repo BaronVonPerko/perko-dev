@@ -5,7 +5,6 @@ import {DatePipe} from '@angular/common';
 
 @Pipe({
   name: 'talkSubtitle',
-  standalone: true
 })
 export class TalkSubtitlePipe implements PipeTransform {
 

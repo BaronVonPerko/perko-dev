@@ -1,24 +1,22 @@
-<script lang="ts">
-  import {
-    MatCard,
-    MatCardActions,
-    MatCardContent,
-    MatCardHeader,
-    MatCardImage,
-    MatCardTitle
-  } from "@angular/material/card";
-  import { ImagePipe } from "../pipes/image.pipe";
-  import { MatTooltip } from "@angular/material/tooltip";
-  import { RouterLink } from "@angular/router";
-  import { MatAnchor } from "@angular/material/button";
-  import { NgOptimizedImage } from "@angular/common";
+import { Component } from '@angular/core';
+import {
+  MatCard,
+  MatCardActions,
+  MatCardContent,
+  MatCardHeader,
+  MatCardImage,
+  MatCardTitle
+} from "@angular/material/card";
+import { ImagePipe } from "../pipes/image.pipe";
+import { MatTooltip } from "@angular/material/tooltip";
+import { RouterLink } from "@angular/router";
+import { MatAnchor, MatButton } from "@angular/material/button";
+import { NgOptimizedImage } from "@angular/common";
 
-  defineMetadata({
-    imports: [MatCard, MatCardTitle, MatCardContent, MatCardHeader, MatCardImage, MatTooltip, ImagePipe, RouterLink, MatAnchor, MatCardActions, NgOptimizedImage]
-  });
-</script>
-
-<template>
+@Component({
+  selector: 'app-home',
+  imports: [MatCard, MatCardTitle, MatCardContent, MatCardHeader, MatCardImage, MatTooltip, ImagePipe, RouterLink, MatAnchor, MatButton, MatCardActions, NgOptimizedImage],
+  template: `
   <section class="cards">
     <mat-card>
       <mat-card-header>
@@ -87,14 +85,14 @@
       <mat-card-content>
         <ul class="site">
           <li>
-            <img [src]="'analog-logo.svg' | image" matTooltip="AnalogJS" alt="AnalogJS Logo">AnalogJS v1.7
+            <img [src]="'analog-logo.svg' | image" matTooltip="AnalogJS" alt="AnalogJS Logo">AnalogJS v2.2
           </li>
           <li>
-            <img [ngSrc]="'angular-logo.png' | image" width="283" height="300" matTooltip="Angular" alt="Angular Logo">Angular v18
+            <img [ngSrc]="'angular-logo.png' | image" width="283" height="300" matTooltip="Angular" alt="Angular Logo">Angular v21
           </li>
           <li>
             <img [ngSrc]="'material-logo.png' | image" width="217" height="233" matTooltip="Angular Material" alt="Angular Material Logo">Angular
-            Material v18 (m3)
+            Material v21
           </li>
           <li>
             <a href="https://github.com/baronVonPerko/perko-dev" target="_blank">
@@ -116,9 +114,8 @@
       </mat-card-actions>
     </mat-card>
   </section>
-</template>
-
-<style>
+  `,
+  styles: `
     section.cards {
         display: grid;
         grid-template-columns: 1fr;
@@ -162,7 +159,7 @@
         }
 
         mat-card-header {
-            background-color: get_theme_color('primary');
+            background-color: var(--mat-sys-primary);
         }
     }
 
@@ -217,4 +214,6 @@
         object-fit: cover;
         height: 240px;
     }
-</style>
+  `
+})
+export default class HomePageComponent {}

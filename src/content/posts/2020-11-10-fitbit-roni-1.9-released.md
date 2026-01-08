@@ -1,5 +1,6 @@
 ---
 date: 2020-11-10
+slug: 2020-11-10-fitbit-roni-1.9-released
 title: Fitbit Roni 1.9 Released
 image: roni.png
 categories: fitbit

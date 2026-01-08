@@ -1,5 +1,6 @@
 ---
 date: 2023-08-31
+slug: 2023-08-31-quickly-setup-drupal-on-windows-with-laragon
 title: Quickly Setup Drupal on Windows with Laragon
 image: drupal.jpg
 avatar: drupal-logo.webp

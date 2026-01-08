@@ -1,5 +1,6 @@
 ---
 date: 2017-04-23
+slug: 2017-04-23-singleton-services-in-angular
 title: Singleton Services in Angular
 image: angular-shield.png
 avatar: angular-logo.png

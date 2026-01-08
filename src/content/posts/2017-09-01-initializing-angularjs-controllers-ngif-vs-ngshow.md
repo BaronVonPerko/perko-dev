@@ -1,5 +1,6 @@
 ---
 date: 2017-09-01
+slug: 2017-09-01-initializing-angularjs-controllers-ngif-vs-ngshow
 title: "Initializing AngularJS Controllers - NgIf vs NgShow"
 image: switch.jpg
 avatar: angular-logo.png

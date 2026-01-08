@@ -1,5 +1,6 @@
 ---
 date: 2020-06-23
+slug: 2020-06-23-creating-a-static-angular-blog
 title: Creating a Static Angular Blog
 image: angular-shield.png
 avatar: angular-logo.png

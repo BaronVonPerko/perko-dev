@@ -1,5 +1,6 @@
 ---
 date: 2018-08-24
+slug: 2018-08-24-fitbit-cli-error-device-only-supports-higgs-applications
 title: "FitBit CLI Error: Device Only Supports Higgs Applications"
 image: fitbit-roni.jpg
 categories: FitBit Development

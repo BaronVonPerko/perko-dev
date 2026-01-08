@@ -1,5 +1,6 @@
 ---
 date: 2022-11-04
+slug: 2022-11-04-no-value-accessor-with-using-angular-material
 title: No Value Accessor Error With Angular Material
 image: angular-shield.png
 avatar: angular-logo.png

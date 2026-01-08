@@ -7,14 +7,13 @@ import { map, of } from "rxjs";
 import { ContentService } from "../services/content.service";
 
 @Component({
-  standalone: true,
   template: `
     <h1>Workshops</h1>
     <section class="workshops">
-      @for (workshop of workshops$ | async; track workshop.attributes.title) {
-        <app-preview-card [title]="workshop.attributes.title"
-                          [imageUrl]="workshop.attributes.image | image"
-                          [avatarUrl]="workshop.attributes.avatar | image"
+      @for (workshop of workshops$ | async; track workshop.attributes['title']) {
+        <app-preview-card [title]="workshop.attributes['title']"
+                          [imageUrl]="workshop.attributes['image'] | image"
+                          [avatarUrl]="workshop.attributes['avatar'] | image"
                           [linkUrl]="workshop.slug | workshopSlug" />
       }
     </section>
@@ -53,6 +52,6 @@ import { ContentService } from "../services/content.service";
 })
 export default class WorkshopsPage {
   workshops$ = of(inject(ContentService).workshops).pipe(
-    map(workshop => workshop.filter(talk => !talk.attributes.hidden)),
+    map(workshops => workshops.filter(workshop => !workshop.attributes['hidden'])),
   );
 }

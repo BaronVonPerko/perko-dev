@@ -1,5 +1,6 @@
 ---
 date: 2021-09-14
+slug: 2021-09-14-authorize-dotnet-api-with-jwt
 title: Authorize DotNet Core Web API with JWT with Ease!
 image: dotnetcore.png
 categories: DotNet Core

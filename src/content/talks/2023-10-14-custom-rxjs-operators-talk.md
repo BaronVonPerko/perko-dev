@@ -1,5 +1,6 @@
 ---
 date: 2023-10-14
+slug: 2023-10-14-custom-rxjs-operators-talk
 title: Custom RxJS Operators are Standing By!  Act Now! (Live Coding Version)
 image: custom-rxjs-operators-talk.png
 avatar: angular-logo.png

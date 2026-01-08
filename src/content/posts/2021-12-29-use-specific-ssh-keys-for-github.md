@@ -1,5 +1,6 @@
 ---
 date: 2021-12-29
+slug: 2021-12-29-use-specific-ssh-keys-for-github
 title: Multiple GitHub Profiles - Using Specific SSH Keys
 image: github-logo.png
 categories: github

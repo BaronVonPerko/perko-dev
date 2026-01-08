@@ -1,5 +1,6 @@
 ---
 date: 2018-01-25
+slug: 2018-01-25-multiple-css-transitions-vs-transformations
 title: Multiple CSS Transitions vs Transformations
 image: css3.png
 categories: Front-End Development

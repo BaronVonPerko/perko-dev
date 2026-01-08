@@ -1,5 +1,6 @@
 ---
 title: Intro to NGRX Signal-Store
+slug: intro-to-ngrx-signal-store
 image: epic-angular.png
 avatar: angular-logo.png
 ---

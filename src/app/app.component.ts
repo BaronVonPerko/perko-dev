@@ -1,7 +1,7 @@
 import { Component, effect, inject, OnInit, signal } from "@angular/core";
 import { RouterLink, RouterLinkActive, RouterOutlet } from "@angular/router";
 import { MatIcon } from "@angular/material/icon";
-import { MatAnchor, MatIconButton } from "@angular/material/button";
+import {MatAnchor, MatButton, MatIconButton} from "@angular/material/button";
 import { MatToolbar, MatToolbarRow } from "@angular/material/toolbar";
 import { SocialIconLinksComponent } from "./ui/social-icon-links.component";
 import { MatPrefix } from "@angular/material/form-field";
@@ -13,8 +13,7 @@ import { AsyncPipe } from "@angular/common";
 
 @Component({
     selector: 'app-root',
-    standalone: true,
-    imports: [AsyncPipe, RouterOutlet, MatIcon, MatIconButton, MatToolbar, MatToolbarRow, MatAnchor, RouterLink, SocialIconLinksComponent, MatPrefix, RouterLinkActive, MainIconComponent],
+    imports: [AsyncPipe, RouterOutlet, MatIcon, MatIconButton, MatButton, MatToolbar, MatToolbarRow, MatAnchor, RouterLink, SocialIconLinksComponent, MatPrefix, RouterLinkActive, MainIconComponent],
     providers: [{
        provide:  MAT_CARD_CONFIG, useValue: {appearance: 'outlined'}
     }],
@@ -60,13 +59,13 @@ import { AsyncPipe } from "@angular/common";
                             <app-social-icon-links />
                         </mat-toolbar-row>
                         <mat-toolbar-row>
-                            <a mat-button routerLink="/blog" routerLinkActive="button-nav-active">
+                            <a mat-button routerLink="/blog" routerLinkActive="button-nav-active" [routerLinkActiveOptions]="{exact: true}">
                                 <mat-icon matIconPrefix>article</mat-icon>
                                 Blog</a>
-                            <a mat-button routerLink="/talks" routerLinkActive="button-nav-active">
+                            <a mat-button routerLink="/talks" routerLinkActive="button-nav-active" [routerLinkActiveOptions]="{exact: true}">
                                 <mat-icon matIconPrefix>microphone</mat-icon>
                                 Talks</a>
-                            <a mat-button routerLink="/workshops" routerLinkActive="button-nav-active">
+                            <a mat-button routerLink="/workshops" routerLinkActive="button-nav-active" [routerLinkActiveOptions]="{exact: true}">
                                 <mat-icon matIconPrefix>laptop_mac</mat-icon>
                                 Workshops
                             </a>
@@ -100,12 +99,12 @@ import { AsyncPipe } from "@angular/common";
             padding: 2rem;
             margin: 0 auto;
             min-height: 100vh;
-            
+
             @media (max-width: 600px) {
                 padding: 1rem;
             }
         }
-        
+
         footer mat-toolbar {
             display: flex;
             justify-content: center;
@@ -119,14 +118,31 @@ export class AppComponent implements OnInit {
     protected isSmallScreen = inject(BreakpointObserver).observe('(max-width: 600px)').pipe(map(result => result.matches));
 
     themeUpdated = effect(() => {
+        const theme = this.theme();
         if (typeof window !== 'undefined' && 'localStorage' in window) {
-            localStorage.setItem('theme', this.theme() ?? '');
+            localStorage.setItem('theme', theme ?? '');
+        }
+        if (typeof document !== 'undefined') {
+            if (theme === 'dark') {
+                document.documentElement.classList.add('dark-theme');
+                document.documentElement.classList.remove('light-theme');
+            } else {
+                document.documentElement.classList.add('light-theme');
+                document.documentElement.classList.remove('dark-theme');
+            }
         }
     });
 
     ngOnInit() {
         if (typeof window !== 'undefined' && 'localStorage' in window) {
-            this.theme.set(localStorage.getItem('theme') as 'light' | 'dark' || 'light');
+            const savedTheme = localStorage.getItem('theme') as 'light' | 'dark';
+            if (savedTheme) {
+                this.theme.set(savedTheme);
+            } else {
+                this.theme.set('light');
+            }
+        } else {
+            this.theme.set('light');
         }
     }
 }

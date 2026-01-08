@@ -1,5 +1,6 @@
 ---
 date: 2024-10-31
+slug: 2024-10-31-exorcising-state-management-nightmares-angular-signals
 title: 'Exorcising State Management Nightmares with Angular Signals'
 avatar: angular-logo.png
 image: exorcising-state-management-nightmare-with-angular-signals.png

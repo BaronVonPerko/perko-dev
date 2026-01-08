@@ -1,5 +1,6 @@
 ---
 date: 2024-11-11
+slug: 2024-11-11-simple-angular-material-customization
 title: Simple Angular Material Customization with Design Tokens
 image: customize-material-m3.png
 avatar: angular-logo.png

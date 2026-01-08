@@ -1,5 +1,6 @@
 ---
 date: 2018-03-22
+slug: 2018-03-22-choosing-a-starter-theme-underscores-sage-awps
 title: "Choosing a Starter Theme: _Underscores vs Sage vs AWPS"
 image: wordpress-development.jpeg
 categories: WordPress

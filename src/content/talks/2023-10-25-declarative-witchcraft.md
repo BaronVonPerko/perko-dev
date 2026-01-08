@@ -1,5 +1,6 @@
 ---
 date: 2023-10-25
+slug: 2023-10-25-declarative-witchcraft
 title: 'Declarative Witchcraft: Casting Spells on Imperative Angular'
 image: declarative-witchcraft.png
 avatar: angular-logo.png

@@ -1,5 +1,6 @@
 ---
 date: 2025-02-19
+slug: 2025-02-19-thinking-reactively-with-signals
 title: Thinking Reactively with Angular Signals
 image: epic-angular.png
 avatar: angular-logo.png

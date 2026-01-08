@@ -1,5 +1,6 @@
 ---
 date: 2020-08-12
+slug: 2020-08-12-upgrading-my-site-with-scully
 title: Upgrading My Site With Scully
 image: scully-landing.png
 categories: Front-End Development

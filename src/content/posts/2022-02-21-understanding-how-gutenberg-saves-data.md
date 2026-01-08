@@ -1,5 +1,6 @@
 ---
 date: 2022-02-21
+slug: 2022-02-21-understanding-how-gutenberg-saves-data
 title: Understanding How Gutenberg Saves Data
 image: wordpress.jpg
 categories: WordPress

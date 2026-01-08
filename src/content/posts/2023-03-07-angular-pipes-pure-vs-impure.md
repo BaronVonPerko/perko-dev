@@ -1,5 +1,6 @@
 ---
 date: 2023-03-07
+slug: 2023-03-07-angular-pipes-pure-vs-impure
 title: "Angular Pipes: Pure vs Impure"
 image: pipes.jpg
 avatar: angular-logo.png

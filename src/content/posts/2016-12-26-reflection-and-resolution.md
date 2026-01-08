@@ -1,5 +1,6 @@
 ---
 date: 2016-12-26
+slug: 2016-12-26-reflection-and-resolution
 title: Reflection and Resolution
 image: github2017.png
 categories: General

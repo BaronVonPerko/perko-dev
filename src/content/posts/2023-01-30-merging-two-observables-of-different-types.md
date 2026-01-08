@@ -1,5 +1,6 @@
 ---
 date: 2023-01-30
+slug: 2023-01-30-merging-two-observables-of-different-types
 title: Merging Two Observables of Different Types
 image: RxJS.png
 avatar: rxjs-logo.png

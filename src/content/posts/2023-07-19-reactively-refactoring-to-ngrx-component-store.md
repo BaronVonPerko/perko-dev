@@ -1,5 +1,6 @@
 ---
 date: 2023-07-19
+slug: 2023-07-19-reactively-refactoring-to-ngrx-component-store
 title: Reactively Refactoring to NgRX Component Store
 image: ngrx.webp
 avatar: rxjs-logo.png

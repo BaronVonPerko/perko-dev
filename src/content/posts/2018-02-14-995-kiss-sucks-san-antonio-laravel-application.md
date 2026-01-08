@@ -1,5 +1,6 @@
 ---
 date: 2018-02-14
+slug: 2018-02-14-995-kiss-sucks-san-antonio-laravel-application
 title: "99.5 KISS Sucks! San Antonio - Laravel Application"
 image: kiss-sucks.jpg
 categories: General

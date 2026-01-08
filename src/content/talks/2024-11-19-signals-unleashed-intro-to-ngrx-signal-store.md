@@ -1,5 +1,6 @@
 ---
 date: 2024-11-19
+slug: 2024-11-19-signals-unleashed-intro-to-ngrx-signal-store
 title: 'Signals Unleashed: An Introduction to the NGRX Signal Store'
 avatar: angular-logo.png
 image: epic-angular.png

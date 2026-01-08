@@ -14,15 +14,25 @@ const extractRoutesFromFileNames = (routes: string[]): string[] => {
     const mappedRoutes = routes.map(route => {
         return route
             // strip all content files of their content prefix
-            .replace('/content/','')
+            .replace('src/content/posts/', '')
+            .replace('src/content/talks/', '')
+            .replace('src/content/workshops/', '')
+            .replace('src/content/portfolio/', '')
+            .replace('/content/', '')
+            .replace('src/content/', '')
+            .replace('src/app/pages/', '')
+            .replace('src/', '')
             // do analog transformation
-            .replace('src','')
-            .replace(/^\/(.*?)\/routes|\/app\/routes|\.(js|ts|md)$/g, '')
+            .replace(/^\/(.*?)\/routes|\/app\/routes|\/app\/pages|\.page\.(js|ts)|\.(md)$/g, '')
             .replace(/\[\.{3}.+\]/, '404')
             .replace(/\[([^\]]+)\]/g, ':$1')
             .replace(/index|\(.*?\)$/g, '')
+            // replace dots with slashes for routes that have dots in filename (like blog.page.ts -> /blog)
+            .replace(/\./g, '/')
             // remove trailing slashes
             .replace(/(?<!^)\/$/, '')
+            // remove leading slash if it exists
+            .replace(/^\//, '')
     })
     return [... new Set(mappedRoutes)]
 }
@@ -32,12 +42,23 @@ export const extractRoutesToPrerender = () => {
     // there will be one route that has a :slug parameter to indicate that it will be home of our blog
     const slugRouteIndex = routes.findIndex(route => route.includes(':slug'))
     // get all "content" routes
-    const contentSlugs = extractRoutesFromFileNames(readFilesInDirectory('./src/content'));
+    const contentFiles = readFilesInDirectory('src/content');
+    const contentSlugs = extractRoutesFromFileNames(contentFiles);
+
+    // Filter content files that should be handled by the slug route
+    // In this app, blog posts are in 'src/content/posts/'
+    const postSlugs = contentFiles
+        .filter(file => file.includes('/posts/'))
+        .map(file => {
+            const extracted = extractRoutesFromFileNames([file])[0];
+            return extracted.replace('posts/', '');
+        });
+
     // for our :slug route we replace the param with the actual content slug
-    const slugRoutes = contentSlugs.map(contentSlug => routes[slugRouteIndex].replace(':slug', contentSlug))
+    const slugRoutes = postSlugs.map(postSlug => routes[slugRouteIndex].replace(':slug', postSlug))
     // remove the placeholder :slug route
     routes.splice(slugRouteIndex,1)
     // add all content routes
     routes.push(...slugRoutes)
-    return routes
+    return routes.map(route => '/' + route);
 }

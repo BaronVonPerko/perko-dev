@@ -1,5 +1,6 @@
 ---
 date: 2017-07-31
+slug: 2017-07-31-elistings-real-estate-service
 title: eListings Real Estate Service
 image: elistings-demo.png
 categories: General

@@ -1,5 +1,6 @@
 ---
 date: 2025-03-11
+slug: 2025-03-11-state-management-with-angular-signals
 title: 'State Management with Angular Signals'
 avatar: angular-logo.png
 image: epic-angular.png

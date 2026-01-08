@@ -1,5 +1,6 @@
 ---
 date: 2019-08-14
+slug: 2019-08-14-changing-the-icon-and-tooltip-in-a-devExpress-grid
 title: Changing the Icon and Tooltip in a DevExpress Grid
 image: devexpress.png
 categories:

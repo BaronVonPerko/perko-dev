@@ -1,5 +1,6 @@
 ---
 date: 2017-11-17
+slug: 2017-11-17-tailwindcss-my-grumpy-views
 title: "TailwindCSS - My Grumpy Views"
 image: tailwind-twitter-card.jpg
 categories: Front-End Development

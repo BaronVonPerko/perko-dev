@@ -1,5 +1,6 @@
 ---
 date: 2017-12-26
+slug: 2017-12-26-my-2017-year-end-review
 title: "My 2017 Year-End Review"
 image: github2017.png
 categories: General

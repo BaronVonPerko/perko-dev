@@ -8,7 +8,6 @@
   --perko-page-width: 1400px;
   --perko-post-width: 800px;
   --perko-card-subtitle-align: left;
-   --mdc-outlined-card-container-color: mat.get-theme-color($light-theme, primary, 50);
 }
 
 $light-theme: mat.define-theme((
@@ -16,6 +15,10 @@ $light-theme: mat.define-theme((
     theme-type: light,
     primary: mat.$cyan-palette,
     tertiary: mat.$orange-palette,
+  ),
+  typography: (
+    brand-family: 'Roboto',
+    plain-family: 'Roboto',
   ),
 ));
 
@@ -25,31 +28,46 @@ $dark-theme: mat.define-theme((
     primary: mat.$cyan-palette,
     tertiary: mat.$orange-palette,
   ),
+  typography: (
+    brand-family: 'Roboto',
+    plain-family: 'Roboto',
+  ),
 ));
 
-
-html {
-  background-color: mat.get-theme-color($light-theme, primary, 50);
+html, body {
+  height: 100%;
 }
 
 body {
   margin: 0;
   padding: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
-
-  @include mat.core-theme($light-theme);
-  @include mat.button-theme($light-theme);
-  @include mat.card-theme($light-theme);
-  @include mat.toolbar-theme($light-theme);
-  @include mat.tooltip-theme($light-theme);
 }
 
-main.dark-theme {
-  @include mat.core-color($dark-theme);
-  @include mat.button-color($dark-theme);
-  @include mat.card-color($dark-theme);
-  @include mat.toolbar-color($dark-theme);
-  @include mat.tooltip-color($dark-theme);
+html {
+  @include mat.all-component-themes($light-theme);
+  @include mat.system-level-typography($light-theme);
+  @include mat.system-level-colors($light-theme);
+
+  --mat-card-outlined-container-color: mat.get-theme-color($light-theme, primary, 50);
+
+  background-color: mat.get-theme-color($light-theme, surface-container);
+  color: mat.get-theme-color($light-theme, on-surface);
+  transition: background-color 0.3s, color 0.3s;
+
+  &.dark-theme {
+    @include mat.all-component-colors($dark-theme);
+    @include mat.system-level-colors($dark-theme);
+
+    --mat-card-outlined-container-color: mat.get-theme-color($dark-theme, primary, 50);
+
+    background-color: mat.get-theme-color($dark-theme, surface-container);
+    color: mat.get-theme-color($dark-theme, on-surface);
+  }
+}
+
+main.mat-app-background {
+  min-height: 100vh;
 }
 
 @include mat.core();
@@ -70,6 +88,8 @@ main.dark-theme {
     margin: 1rem 0;
   }
 
+  color: inherit;
+
   pre {
     @include mat.elevation(3);
   }
@@ -84,14 +104,32 @@ main.dark-theme {
 
 a {
   text-decoration: none;
-  color: mat.get-theme-color($light-theme, primary, 60);
+}
 
-  &:hover {
-    color: mat.get-theme-color($light-theme, primary, 30);
+html {
+  a {
+    color: inherit;
+
+    &:hover {
+      color: mat.get-theme-color($light-theme, primary, 30);
+    }
   }
 
-  &:visited {
-    color: mat.get-theme-color($light-theme, primary, 60);
+  &.dark-theme {
+    a {
+      color: inherit;
+
+      &:hover {
+        color: mat.get-theme-color($dark-theme, primary, 95);
+      }
+    }
+  }
+}
+
+.mat-toolbar {
+  background: transparent !important;
+  a, .mdc-button {
+    color: var(--mat-sys-on-surface) !important;
   }
 }
 
@@ -101,7 +139,7 @@ analog-markdown, p {
 
 mat-card img {
   width: 100%;
-  border-radius: var(--mdc-outlined-card-container-shape);
+  border-radius: var(--mat-card-outlined-container-shape);
 }
 
 @mixin color($theme) {
@@ -113,4 +151,11 @@ mat-card img {
     color: mat.get-theme-color($theme, primary, 50);
   }
 }
-@include color($light-theme);
+
+html {
+  @include color($light-theme);
+
+  &.dark-theme {
+    @include color($dark-theme);
+  }
+}

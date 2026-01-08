@@ -1,26 +1,26 @@
 import { Injectable } from "@angular/core";
-import { InjectContentFilesFilterFunction } from "@analogjs/content/lib/inject-content-files";
 import { PortfolioAttributes, PostAttributes, TalkAttributes } from "../models";
-import { injectContentFiles } from "@analogjs/content";
+import {injectContentFiles, ContentFile, injectContent} from "@analogjs/content";
 import { WorkshopAttributes } from "../models/workshop-attributes";
 
 @Injectable({
   providedIn: "root"
 })
 export class ContentService {
-  private readonly postContentFn: InjectContentFilesFilterFunction<PostAttributes> =
-    (contentFile) => !!contentFile.filename.includes("/src/content/posts/");
-  readonly blogs = injectContentFiles(this.postContentFn);
+  readonly blogs = injectContentFiles<PostAttributes>((contentFile) => {
+    console.log(contentFile.filename);
+    return contentFile.filename.includes('/content/posts/');
+  });
 
-  private readonly talksFilterFn: InjectContentFilesFilterFunction<TalkAttributes> =
-    (contentFile) => !!contentFile.filename.includes("/src/content/talks/");
-  readonly talks = injectContentFiles(this.talksFilterFn);
+  readonly talks = injectContentFiles<TalkAttributes>((contentFile) => {
+    return contentFile.filename.includes('/content/talks/');
+  });
 
-  private readonly portfolioFilterFn: InjectContentFilesFilterFunction<PortfolioAttributes> =
-    (contentFile) => !!contentFile.filename.includes("/src/content/portfolio/");
-  readonly portfolio = injectContentFiles(this.portfolioFilterFn);
+  readonly portfolio = injectContentFiles<PortfolioAttributes>((contentFile) => {
+    return contentFile.filename.includes('/content/portfolio/');
+  });
 
-  private readonly workshopsFilterFn: InjectContentFilesFilterFunction<WorkshopAttributes> =
-    (contentFile) => !!contentFile.filename.includes("/src/content/workshops/");
-  readonly workshops = injectContentFiles(this.workshopsFilterFn);
+  readonly workshops = injectContentFiles<WorkshopAttributes>((contentFile) => {
+    return contentFile.filename.includes('/content/workshops/');
+  });
 }

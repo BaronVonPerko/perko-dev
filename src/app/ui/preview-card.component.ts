@@ -16,7 +16,6 @@ import {
 
 @Component({
     selector: 'app-preview-card',
-    standalone: true,
     imports: [CommonModule, BlogSlugPipe, ImagePipe, MatButton, MatAnchor, RouterLink, MatCard, MatCardHeader, MatCardTitle, MatCardSubtitle, MatCardAvatar, MatCardImage, MatCardActions, NgOptimizedImage],
     animations: [
         trigger('enterLeave', [

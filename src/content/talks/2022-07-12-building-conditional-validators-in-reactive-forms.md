@@ -1,5 +1,6 @@
 ---
 date: 2022-07-27
+slug: 2022-07-27-building-conditional-validators-in-reactive-forms
 title: Building Conditional Validators in Reactive Forms
 image: angular-rxjs.jpg
 avatar: angular-logo.png

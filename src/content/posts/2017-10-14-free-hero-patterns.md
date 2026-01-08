@@ -1,5 +1,6 @@
 ---
 date: 2017-10-14
+slug: 2017-10-14-free-hero-patterns
 title: Free Hero Patterns
 image: elistings-signup.png
 categories: Design

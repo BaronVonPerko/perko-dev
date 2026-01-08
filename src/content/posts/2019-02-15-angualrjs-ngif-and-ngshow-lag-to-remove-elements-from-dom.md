@@ -1,5 +1,6 @@
 ---
 date: 2019-02-15
+slug: 2019-02-15-angualrjs-ngif-and-ngshow-lag-to-remove-elements-from-dom
 title: AngularJS ngIf and ngShow - Lag to Remove Elements from DOM
 image: angular-shield.png
 avatar: angular-logo.png

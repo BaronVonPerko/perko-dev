@@ -1,5 +1,6 @@
 ---
 date: 2022-11-18
+slug: 2022-11-18-website-speed-boost-with-angular-15-and-ngOptimizedImage
 title: Website Speed Boost with Angular 15 and NgOptimizedImage
 image: google-lighthouse.jpg
 avatar: angular-logo.png

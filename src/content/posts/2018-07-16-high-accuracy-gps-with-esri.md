@@ -1,5 +1,6 @@
 ---
 date: 2018-07-16
+slug: 2018-07-16-high-accuracy-gps-with-esri
 title: High Accuracy GPS with ESRI
 image: esri-ipad.jpg
 categories: ESRI

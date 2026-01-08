@@ -1,5 +1,6 @@
 ---
 date: 2025-10-11
+slug: 2025-10-11-signals-your-delorean-to-modern-state-management
 title: 'Signals: Your DeLorean to Modern State Management'
 avatar: angular-logo.png
 image: signals-delorean-talk.png

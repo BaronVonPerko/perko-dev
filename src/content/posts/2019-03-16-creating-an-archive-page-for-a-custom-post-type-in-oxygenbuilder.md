@@ -1,5 +1,6 @@
 ---
 date: 2019-03-16
+slug: 2019-03-16-creating-an-archive-page-for-a-custom-post-type-in-oxygenbuilder
 title: Creating an Archive Page for a Custom Post Type in OxygenBuilder
 image: oxygenbuilder.png
 categories: WordPress

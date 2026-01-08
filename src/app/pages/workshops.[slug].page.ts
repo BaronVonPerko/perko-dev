@@ -5,7 +5,6 @@ import { AsyncPipe } from "@angular/common";
 import { MatCard, MatCardAvatar, MatCardHeader, MatCardImage, MatCardTitle } from "@angular/material/card";
 
 @Component({
-  standalone: true,
   template: `
     @if (workshop$ | async; as workshop) {
       <mat-card>
