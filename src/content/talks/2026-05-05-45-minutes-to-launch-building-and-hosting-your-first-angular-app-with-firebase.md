@@ -13,4 +13,4 @@ abstract: ""
 - [Google Antigravity](https://antigravity.google/)
 - [Firebase](https://firebase.google.com/)
 - [Gemini Models for Firebase](https://firebase.google.com/docs/ai-logic/models)
-- Source Code (coming soon...)
+- Source Code (https://github.com/BaronVonPerko/scenic-city-summit-message-board)
