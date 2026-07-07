@@ -2,7 +2,19 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono:wght@100;300;500;700&display=swap');
 @import 'prismjs/plugins/toolbar/prism-toolbar.css';
-@import 'prismjs/themes/prism.css';
+@import 'prismjs/themes/prism';
+
+.dark-theme {
+  @import 'prismjs/themes/prism-dark';
+
+  .token.operator,
+  .token.entity,
+  .token.url,
+  .language-css .token.string,
+  .style .token.string {
+    background: none;
+  }
+}
 
 :root {
   --perko-page-width: 1400px;
@@ -94,6 +106,7 @@ main.mat-app-background {
     @include mat.elevation(3);
     overflow-x: auto;
     max-width: 100%;
+    padding: 1em;
   }
 
   p > img {
