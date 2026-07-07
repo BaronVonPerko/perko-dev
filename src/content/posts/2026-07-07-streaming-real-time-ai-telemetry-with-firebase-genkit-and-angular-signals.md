@@ -219,6 +219,3 @@ storage overheads entirely.
 ## Summary
 By connecting Genkit's server-side telemetry capabilities with Angular's blazing-fast Signal system, you transform 
 an inherently sluggish AI workflow into a highly interactive, responsive application experience.
-
-How are you managing multi-step AI prompts in your application pipelines? Let's discuss your preferred state 
-patterns in the comments!
