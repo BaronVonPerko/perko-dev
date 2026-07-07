@@ -136,17 +136,17 @@ export class ResumeAnalyzerService {
         const runFlow = httpsCallable<{ resumeText: string }, any>(this.functions, 'analyzeResumeFlow');
     
         try {
-          // 1. Invoke the callable function to initiate the connection
+          // 3. Invoke the callable function to initiate the connection
           const streamResult = await runFlow({ resumeText: rawText });
           
-          // 2. Loop through stream chunks in true real-time using for await...of
+          // 4. Loop through stream chunks in true real-time using for await...of
           for await (const chunk of streamResult.stream) {
             if (chunk.status) {
               this._currentStep.set(chunk.status as ResumeStep);
             }
           }
     
-          // 3. Capture the final completely-resolved JSON structure
+          // 5. Capture the final completely-resolved JSON structure
           const finalResult = await streamResult.data;
           this._analysisResult.set(finalResult);
           this._currentStep.set('complete');
