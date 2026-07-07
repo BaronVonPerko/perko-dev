@@ -18,7 +18,7 @@ export const routeMeta: RouteMeta = {
     const postAttributes = route.data['content']?.attributes as PostAttributes;
 
     const title = postAttributes?.title || 'Perko Dev Blog';
-    const ogImage = postAttributes?.image || '/images/angular-logo.png';
+    const ogImage = postAttributes?.image ? `https://perko.dev/images/${postAttributes?.image}` : 'https://perko.dev/images/angular-logo.png';
     const url = `https://perko.dev/blog/${route.params?.['slug']}`;
 
     return [
