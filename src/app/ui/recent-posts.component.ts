@@ -40,7 +40,8 @@ export class RecentPostsComponent implements OnInit {
         ...post,
         slug: post.filename.split('/').pop()?.replace('.md', '') || ''
       }))),
-      sortPostsByDate(),
+      map(posts => posts.filter(post => !post.attributes['hidden'])),
+        sortPostsByDate(),
       takeArray(this.count),
     );
   }

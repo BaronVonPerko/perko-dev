@@ -4,4 +4,5 @@ export interface PostAttributes {
     avatar: string;
     date: string;
     tags: string;
+    hidden?: boolean;
 }
