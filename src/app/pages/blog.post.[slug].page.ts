@@ -1,4 +1,4 @@
-import { injectContent, MarkdownComponent } from "@analogjs/content";
+import { injectContent, MarkdownComponent, injectContentFiles } from "@analogjs/content";
 import { PostAttributes } from "../models";
 import { AsyncPipe, DatePipe, JsonPipe, NgOptimizedImage } from "@angular/common";
 import {
@@ -9,31 +9,44 @@ import {
   MatCardSubtitle,
   MatCardTitle
 } from "@angular/material/card";
-import { Component, inject } from "@angular/core";
-import { RouteMeta } from "@analogjs/router";
+import { Component } from "@angular/core";
+import { ActivatedRouteSnapshot, ResolveFn } from "@angular/router";
+import { MetaTag, RouteMeta } from "@analogjs/router";
+
+function injectActivePostAttributes(
+  route: ActivatedRouteSnapshot,
+): PostAttributes {
+  const file = injectContentFiles<PostAttributes>().find((contentFile) => {
+    return (
+      contentFile.filename === `/src/content/${route.params['slug']}.md` ||
+      contentFile.slug === route.params['slug']
+    );
+  });
+
+  return file!.attributes;
+}
+
+export const postMetaResolver: ResolveFn<MetaTag[]> = (route) => {
+  const postAttributes = injectActivePostAttributes(route);
+  return [
+    {
+      name: 'author',
+      content: 'Chris Perko',
+    },
+    {
+      property: 'og:title',
+      content: postAttributes.title,
+    },
+    {
+      property: 'og:image',
+      content: `https://perko.dev/images/${postAttributes.image}`,
+    },
+  ];
+}
 
 export const routeMeta: RouteMeta = {
-  meta: (route) => {
-    // Analog injects the resolved Markdown content attributes into the route data object
-    const postAttributes = route.data['content']?.attributes as PostAttributes;
-
-    const title = postAttributes?.title || 'Perko Dev Blog';
-    const ogImage = postAttributes?.image ? `https://perko.dev/images/${postAttributes?.image}` : 'https://perko.dev/images/angular-logo.png';
-    const url = `https://perko.dev/blog/${route.params?.['slug']}`;
-
-    return [
-      // Open Graph Tags
-      { property: 'og:title', content: title },
-      { property: 'og:type', content: 'article' },
-      { property: 'og:url', content: url },
-      { property: 'og:image', content: ogImage },
-      // Twitter Card
-      { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:title', content: title },
-      { name: 'twitter:image', content: ogImage },
-    ];
-  },
-};
+  meta: postMetaResolver,
+}
 
 @Component({
   selector: 'app-blog-post-page',
