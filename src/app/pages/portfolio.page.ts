@@ -3,6 +3,7 @@ import {Component, inject} from "@angular/core";
     import { AsyncPipe} from "@angular/common";
     import { PreviewCardComponent } from "../ui/preview-card.component";
     import { ImagePipe } from "../pipes/image.pipe";
+    import { ContentService } from "../services/content.service";
 
 @Component({
   selector: 'app-portfolio-page',
