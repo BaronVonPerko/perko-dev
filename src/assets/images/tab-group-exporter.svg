@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400" role="img" aria-label="Tab Group Exporter">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0e7490"/>
+      <stop offset="100%" stop-color="#155e75"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="400" fill="url(#bg)"/>
+  <rect x="72" y="88" width="496" height="224" rx="16" fill="#ecfeff" opacity="0.95"/>
+  <rect x="96" y="112" width="140" height="36" rx="8" fill="#22d3ee"/>
+  <rect x="248" y="112" width="140" height="36" rx="8" fill="#67e8f9"/>
+  <rect x="400" y="112" width="140" height="36" rx="8" fill="#a5f3fc"/>
+  <rect x="96" y="168" width="448" height="18" rx="4" fill="#083344" opacity="0.2"/>
+  <rect x="96" y="200" width="400" height="18" rx="4" fill="#083344" opacity="0.18"/>
+  <rect x="96" y="232" width="360" height="18" rx="4" fill="#083344" opacity="0.16"/>
+  <circle cx="520" cy="280" r="36" fill="#0891b2"/>
+  <path d="M508 280 h18 M517 271 v18" stroke="#ecfeff" stroke-width="4" stroke-linecap="round"/>
+  <path d="M532 268 l16 16 M548 268 l-16 16" stroke="#ecfeff" stroke-width="3" stroke-linecap="round" opacity="0"/>
+  <path d="M508 268 h24 v24" fill="none" stroke="#ecfeff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="320" y="360" text-anchor="middle" fill="#ecfeff" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">Tab Group Exporter</text>
+</svg>

@@ -31,6 +31,9 @@ import { AsyncPipe } from "@angular/common";
                         <a mat-button routerLink="/talks" routerLinkActive="button-nav-active">
                             <mat-icon matIconPrefix>microphone</mat-icon>
                             Talks</a>
+                        <a mat-button routerLink="/projects" routerLinkActive="button-nav-active">
+                            <mat-icon matIconPrefix>apps</mat-icon>
+                            Projects</a>
                         <a mat-button routerLink="/workshops" routerLinkActive="button-nav-active">
                             <mat-icon matIconPrefix>laptop_mac</mat-icon>
                             Workshops
@@ -65,6 +68,9 @@ import { AsyncPipe } from "@angular/common";
                             <a mat-button routerLink="/talks" routerLinkActive="button-nav-active" [routerLinkActiveOptions]="{exact: true}">
                                 <mat-icon matIconPrefix>microphone</mat-icon>
                                 Talks</a>
+                            <a mat-button routerLink="/projects" routerLinkActive="button-nav-active" [routerLinkActiveOptions]="{exact: true}">
+                                <mat-icon matIconPrefix>apps</mat-icon>
+                                Projects</a>
                             <a mat-button routerLink="/workshops" routerLinkActive="button-nav-active" [routerLinkActiveOptions]="{exact: true}">
                                 <mat-icon matIconPrefix>laptop_mac</mat-icon>
                                 Workshops
