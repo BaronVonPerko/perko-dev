@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { PortfolioAttributes, PostAttributes, TalkAttributes } from "../models";
+import { PortfolioAttributes, PostAttributes, ProjectAttributes, TalkAttributes } from "../models";
 import {injectContentFiles, ContentFile, injectContent} from "@analogjs/content";
 import { WorkshopAttributes } from "../models/workshop-attributes";
 
@@ -22,5 +22,9 @@ export class ContentService {
 
   readonly workshops = injectContentFiles<WorkshopAttributes>((contentFile) => {
     return contentFile.filename.includes('/content/workshops/');
+  });
+
+  readonly projects = injectContentFiles<ProjectAttributes>((contentFile) => {
+    return contentFile.filename.includes('/content/projects/');
   });
 }

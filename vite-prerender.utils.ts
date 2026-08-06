@@ -18,6 +18,8 @@ const extractRoutesFromFileNames = (routes: string[]): string[] => {
             .replace('src/content/talks/', '')
             .replace('src/content/workshops/', '')
             .replace('src/content/portfolio/', '')
+            .replace('src/content/projects/', '')
+            .replace('src/content/project-privacy/', '')
             .replace('/content/', '')
             .replace('src/content/', '')
             .replace('src/app/pages/', '')
@@ -36,17 +38,22 @@ const extractRoutesFromFileNames = (routes: string[]): string[] => {
     })
     return [... new Set(mappedRoutes)]
 }
+
+const basenameWithoutExtension = (file: string): string =>
+    path.basename(file).replace(/\.(md|MD)$/, '');
+
 export const extractRoutesToPrerender = () => {
     // first get all "regular" routes similar to analog
     const routes = extractRoutesFromFileNames(readFilesInDirectory('./src/app/pages'));
-    // there will be one route that has a :slug parameter to indicate that it will be home of our blog
-    const slugRouteIndex = routes.findIndex(route => route.includes(':slug'))
     // get all "content" routes
     const contentFiles = readFilesInDirectory('src/content');
-    const contentSlugs = extractRoutesFromFileNames(contentFiles);
 
-    // Filter content files that should be handled by the slug route
-    // In this app, blog posts are in 'src/content/posts/'
+    // Prefer the blog post slug route so other :slug templates (talks/projects) are not consumed
+    const blogPostRouteIndex = routes.findIndex(route => route.includes('blog/post/:slug'));
+    const slugRouteIndex = blogPostRouteIndex >= 0
+        ? blogPostRouteIndex
+        : routes.findIndex(route => route.includes(':slug'));
+
     const postSlugs = contentFiles
         .filter(file => file.includes('/posts/'))
         .map(file => {
@@ -54,11 +61,31 @@ export const extractRoutesToPrerender = () => {
             return extracted.replace('posts/', '');
         });
 
-    // for our :slug route we replace the param with the actual content slug
-    const slugRoutes = postSlugs.map(postSlug => routes[slugRouteIndex].replace(':slug', postSlug))
-    // remove the placeholder :slug route
-    routes.splice(slugRouteIndex,1)
-    // add all content routes
-    routes.push(...slugRoutes)
-    return routes.map(route => '/' + route);
+    // for our blog :slug route we replace the param with the actual content slug
+    if (slugRouteIndex >= 0) {
+        const slugRoutes = postSlugs.map(postSlug => routes[slugRouteIndex].replace(':slug', postSlug));
+        routes.splice(slugRouteIndex, 1);
+        routes.push(...slugRoutes);
+    }
+
+    const projectSlugs = contentFiles
+        .filter(file => file.includes('/content/projects/'))
+        .map(basenameWithoutExtension);
+
+    const projectPrivacySlugs = contentFiles
+        .filter(file => file.includes('/content/project-privacy/'))
+        .map(basenameWithoutExtension);
+
+    // Remove unresolved projects slug templates and add concrete project routes
+    for (const unresolved of ['projects/:slug', 'projects/:slug/privacy']) {
+        const index = routes.indexOf(unresolved);
+        if (index >= 0) {
+            routes.splice(index, 1);
+        }
+    }
+
+    routes.push(...projectSlugs.map(slug => `projects/${slug}`));
+    routes.push(...projectPrivacySlugs.map(slug => `projects/${slug}/privacy`));
+
+    return [...new Set(routes)].map(route => '/' + route);
 }
