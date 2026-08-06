@@ -38,7 +38,7 @@ import { MatCard, MatCardContent, MatCardHeader, MatCardImage, MatCardTitle } fr
         <app-preview-card [title]="project.attributes['title']"
                           [subtitle]="project.attributes['type']"
                           [imageUrl]="(project.attributes['image'] || 'logo.png') | image"
-                          [avatarUrl]="project.attributes['avatar'] | image"
+                          [avatarUrl]="project.attributes['avatar'] ? (project.attributes['avatar'] | image) : undefined"
                           [linkUrl]="project.slug | projectSlug">
           {{ project.attributes['description'] }}
         </app-preview-card>
